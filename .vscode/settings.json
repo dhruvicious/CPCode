@@ -28,6 +28,8 @@
         "ranges": "cpp",
         "stacktrace": "cpp",
         "text_encoding": "cpp",
-        "print": "cpp"
+        "print": "cpp",
+        "__locale": "cpp",
+        "bitset": "cpp"
     }
 }
