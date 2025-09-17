@@ -30,6 +30,8 @@
         "text_encoding": "cpp",
         "print": "cpp",
         "__locale": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp"
     }
 }

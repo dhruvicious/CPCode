@@ -22,7 +22,7 @@ vector<string> readCamelCase(string& s){
         read++;
     }
     if(!currWord.empty()) words.push_back(currWord);
-    return words;
+    return words;t
 }
 
 int32_t main() {

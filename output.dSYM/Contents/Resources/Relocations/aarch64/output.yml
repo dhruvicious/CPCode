@@ -2,13 +2,9 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/thehalfbldprinc3/Desktop/CPCode/output'
 relocations:
-  - { offset: 0x16DE8, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x664EF, symBinAddr: 0x100008000, symSize: 0x0 }
-  - { offset: 0x17085, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_CFR1043Div3.cpp, symObjAddr: 0x5C4, symBinAddr: 0x100000C94, symSize: 0x14 }
-  - { offset: 0x1709C, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x588, symBinAddr: 0x100000C58, symSize: 0x3C }
-  - { offset: 0x17106, size: 0x8, addend: 0x0, symName: __ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE, symObjAddr: 0x430, symBinAddr: 0x100000B78, symSize: 0xE0 }
-  - { offset: 0x17287, size: 0x8, addend: 0x0, symName: __ZNSt15__new_allocatorIcED2Ev, symObjAddr: 0x41C, symBinAddr: 0x100000B64, symSize: 0x14 }
-  - { offset: 0x172A8, size: 0x8, addend: 0x0, symName: __ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_S5_, symObjAddr: 0x370, symBinAddr: 0x100000AB8, symSize: 0xAC }
-  - { offset: 0x1733D, size: 0x8, addend: 0x0, symName: __ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EES5_RKS8_, symObjAddr: 0x2CC, symBinAddr: 0x100000A14, symSize: 0xA4 }
-  - { offset: 0x173F7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xFC, symBinAddr: 0x100000844, symSize: 0x1D0 }
-  - { offset: 0x17491, size: 0x8, addend: 0x0, symName: __Z3simRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_iS5_, symObjAddr: 0x0, symBinAddr: 0x100000748, symSize: 0xFC }
+  - { offset: 0x16D06, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x64742, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x16FA3, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_traingleNumber.cpp, symObjAddr: 0x130, symBinAddr: 0x1000007FC, symSize: 0x14 }
+  - { offset: 0x16FBA, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0xF4, symBinAddr: 0x1000007C0, symSize: 0x3C }
+  - { offset: 0x16FD8, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x40, symBinAddr: 0x100000738, symSize: 0x88 }
+  - { offset: 0x1700A, size: 0x8, addend: 0x0, symName: __Z12recursiveSumi, symObjAddr: 0x0, symBinAddr: 0x1000006F8, symSize: 0x40 }
 ...
