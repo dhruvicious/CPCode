@@ -1,39 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define all(x) x.begin(), x.end()
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(0);
-#define endl '\n'
+#define vi vector<int>
 
-class Solution{
-public:
-    void printArray(vector<vector<int>> arr){
-        for(int i =0;i<arr.size();i++){
-            for(int j =0;j<arr[0].size();j++){
-                cout<<arr[i][j]<<" ";
+class Solution {
+   public:
+    void rotate(vector<vi> &matrix) {
+        int n = matrix.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                swap(matrix[i][j], matrix[j][i]);
             }
-            cout<<endl;
         }
-    }
 
-    void rotate(vector<vector<int>> &matrix){
-        a
+        for (int j = 0; j < n; j++) {
+            int top = 0, bottom = n - 1;
+            while (top < bottom) {
+                swap(matrix[top][j], matrix[bottom][j]);
+                top++;
+                bottom--;
+            }
+        }
     }
 };
 
-int32_t main()
-{
-    fastio
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-
-    vector<vector<int>> martix={{1,2,3},{4,5,6},{7,8,9}};
+int32_t main() {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    int n;
+    cin >> n;
+    vector<vector<int>> mat(n, vector<int>(n));
+    for (vector<int> &row : mat) {
+        for (int &val : row) {
+            cin >> val;
+        }
+    }
     Solution s;
-    s.rotate(martix);
+    s.rotate(mat);
+    for (vector<int> &row : mat) {
+        for (int &val : row) {
+            cout << val << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
