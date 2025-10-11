@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Function Demonstration</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            padding: 10px;
+            width: 300px;
+        }
+        .highlight{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading">DOM Example</h2>
+    <div id="container">
+        <p class="text">This is a paragraph</p>
+        <p class="text">This is another paragraph</p>
+        <button id="btn">Click ME!</button>
+    </div>
+
+    <!-- <script>
+        let heading = document.getElementById("heading");
+        console.log(heading.textContent);
+
+        let paragraph = document.getElementsByClassName("text");
+        console.log(paragraph[0].textContent);
+
+        let divs= document.getElementsByTagName("div");
+        console.log(divs);
+
+        let firstParagraph = document.querySelector(".text");
+        firstParagraph.style.color = "blue";
+
+        let allParagraphs = document.querySelectorAll(".text");
+        allParagraphs.forEach(p=>p.style.fontSize = "16px");
+
+        heading.textContent = "DOM Example Modifed";
+        heading.innerHTML = "<em>DOM Example Modified<em/>";
+        
+        heading.setAttribute("class", "highlight");
+        console.log(heading.getAttribute("class"));
+        heading.removeAttribute("class");
+        
+        let newPara = document.createElement("p");
+        newPara.textContent="This is a new Paragraph added Dynamically";
+
+        document.getElementById("container").appendChild(newPara);
+
+        let referenceNode = document.querySelector(".text");
+        let insertedParagraph = document.createElement("p");
+        insertedParagraph.textContent = "Inserted before first Paragraph";
+        document.getElementById("container").insertBefore(insertedParagraph, referenceNode);
+
+        let conatiner = document.getElementById("container");
+        conatiner.removeChild(allParagraphs[1]);
+
+        let replacementPara = document.createElement("p");
+        replacementPara.textContent = "this is a replacement Paragraph";
+        conatiner.replaceChild(replacementPara, allParagraphs[0]);
+
+        console.log(newPara.parentNode);
+        console.log(conatiner.firstChild);
+        console.log(conatiner.lastChild);
+        console.log(insertedParagraph.nextSibling);
+
+        document.getElementById("btn").addEventListener("click",()=>{
+            if(document.getElementById("btn").style.color === "red"){
+                document.getElementById("btn").style.color = "green";
+            }else{
+                document.getElementById("btn").style.color = "red";
+            }
+        });
+    </script> -->
+
+    <script>
+        const container = document.getElementById("container");
+        let toggle = false;
+        let interval;
+
+        container.addEventListener("mouseover", () => {
+            clearInterval(interval);  // Prevent multiple intervals
+            interval = setInterval(() => {
+                container.style.backgroundColor = toggle ? "red" : "green";
+                toggle = !toggle;
+            }, 500); // change every 500ms
+        });
+
+        container.addEventListener("mouseleave", () => {
+        clearInterval(interval);
+        container.style.backgroundColor = "";
+    });
+    </script>
+</body>
+</html>

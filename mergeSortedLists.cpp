@@ -10,6 +10,11 @@ class node {
         next = nullptr;
     }
 };
+void insertAtTail(node*& head, node*& tail, int data);
+void printList(node* head);
+node* reverseList(node* head);
+node* mergeLists(node* head1, node* head2);
+
 void insertAtTail(node*& head, node*& tail, int data) {
     node* newNode = new node(data);
     if (!head) {
@@ -17,6 +22,16 @@ void insertAtTail(node*& head, node*& tail, int data) {
     } else {
         tail->next = newNode;
         tail = newNode;
+    }
+}
+
+void insertAtHead(node*& head, node*& tail, int data) {
+    node* newNode = new node(data);
+    if (!head) {
+        head = tail = newNode;
+    } else {
+        newNode->next = head;
+        head = newNode;
     }
 }
 
@@ -43,31 +58,21 @@ node* reverseList(node* head) {
     return prev;
 }
 
-node* deleteNodes(node* head) {
-    head = reverseList(head);
-
-    node* curr = head;
-    node* prev = nullptr;
-    int maxSoFar = INT_MIN;
-
-    while (curr != nullptr) {
-        if (curr->val >= maxSoFar) {
-            maxSoFar = curr->val;
-            prev = curr;
-            curr = curr->next;
+node* mergeLists(node* head1, node* head2) {
+    node* dummy = new node(0);
+    node* tail = dummy;
+    while (head1 && head2) {
+        if (head1->val < head2->val) {
+            tail->next = head1;
+            head1 = head1->next;
         } else {
-            node* temp = curr;
-            curr = curr->next;
-            if (prev) {
-                prev->next = curr;
-            } else {
-                head = curr;
-            }
-            delete temp;
+            tail->next = head2;
+            head2 = head2->next;
         }
+        tail = tail->next;
     }
-    head = reverseList(head);
-    return head;
+    tail->next = head1 ? head1 : head2;
+    return dummy->next;
 }
 
 int32_t main() {
@@ -81,14 +86,22 @@ int32_t main() {
 
     node* h1 = nullptr;
     node* t1 = nullptr;
+    node* h2 = nullptr;
+    node* t2 = nullptr;
 
     for (int i = 0; i < n; i++) {
         int val;
         cin >> val;
         insertAtTail(h1, t1, val);
     }
-
-    node* ans = deleteNodes(h1);
+    int m;
+    cin >> m;
+    for (int i = 0; i < m; i++) {
+        int val;
+        cin >> val;
+        insertAtTail(h2, t2, val);
+    }
+    node* ans = mergeLists(h1, h2);
     printList(ans);
     return 0;
 }
