@@ -14,7 +14,6 @@ void insertAtTail(node*& head, node*& tail, int data);
 void printList(node* head);
 node* reverseList(node* head);
 node* mergeLists(node* head1, node* head2);
-node* appendKNodesToLast(node* head, int k);
 
 void insertAtTail(node*& head, node*& tail, int data) {
     node* newNode = new node(data);
@@ -59,44 +58,26 @@ node* reverseList(node* head) {
     return prev;
 }
 
-int lenOfList(node* head) {
-    if (!head) return 0;
-    int len = 1;
-    while (head) {
-        head = head->next;
-        len++;
-    }
-    return len;
-}
+node* revK(node* head, int k) {
+    if (head == nullptr) return head;
+    node* prev = nullptr;
+    node* curr = head;
+    node* next = nullptr;
 
-/**
- * @brief appends the last k nodes to the front of the list
- * @return returns the new head of the list
- */
-node* appendKNodesToLast(node* head, int k) {
-    if (!head || k == 0) return head;
-
-    node* temp = head;
-    int len = 1;
-    while (temp->next) {
-        temp = temp->next;
-        len++;
+    int count = 0;
+    while (count < k && curr != nullptr) {
+        next = curr->next;
+        curr->next= prev;
+        prev = curr;
+        curr = next;
+        count++;
     }
-    k = k % len;
-    if (k == 0) {
-        return head;
-    }
-    temp->next = head;
-    int stepsToNewHead = len - k;
 
-    node* newTail = head;
-    while (--stepsToNewHead) {
-        newTail = newTail->next;
+    if(next!=nullptr){
+        head->next = revK(next, k);
     }
-    node* newHead = newTail->next;
-    newTail->next = nullptr;
 
-    return newHead;
+    return prev;
 }
 
 int32_t main() {
@@ -104,21 +85,18 @@ int32_t main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    int n;
-    cin >> n;
 
+    int n, k;
+    cin >> n;
+    cin >> k;
     node* head = nullptr;
     node* tail = nullptr;
-
     for (int i = 0; i < n; i++) {
         int val;
         cin >> val;
         insertAtTail(head, tail, val);
     }
-
-    int k;
-    cin >> k;
-    node* ans = appendKNodesToLast(head, k);
+    node* ans = revK(head, k);
     printList(ans);
     return 0;
 }

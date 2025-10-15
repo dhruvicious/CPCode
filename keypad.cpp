@@ -5,7 +5,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define fastio                   \
     ios::sync_with_stdio(false); \
-    cin.tie(0);
+    cin.tie(0);∑
 #define endl '\n'
 
 class Solution {

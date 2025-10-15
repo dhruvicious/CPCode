@@ -9,7 +9,6 @@ using namespace std;
 #define endl '\n'
 
 void balancedParanthesis(int open, int close, int n, string& s) {
-    if (open == 0 && close == 0) {
         cout << s << endl;
         return;
     }
