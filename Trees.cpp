@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <queue>
 using namespace std;
 
 class node {
@@ -20,6 +21,8 @@ int heightOfTree(node* root);
 int countNodes(node* root);
 int diameterOTree(node* root);
 pair<int, int> fastDiameter(node* root);
+void printLevelOrder(node* root);
+void mirrorTree(node* root);
 
 node* buildTree() {
     int data;
@@ -107,8 +110,8 @@ void printLevelOrder(node* root) {
         q.pop();
         if (x != nullptr) {
             cout << x->data << " ";
-            q.push(x->left);
-            q.push(x->right);
+            if (x->left) q.push(x->left);
+            if (x->right) q.push(x->right);
         } else {
             cout << '\n';
             if (!q.empty()) q.push(nullptr);
@@ -116,13 +119,24 @@ void printLevelOrder(node* root) {
     }
 }
 
+void mirrorTree(node* root){
+    if(!root) return;
+    node* temp = root->right;
+    root->right= root->left;
+    root->left= temp;
+    mirrorTree(root->right);
+    mirrorTree(root->left);
+}
+
 int32_t main() {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
     node* root = nullptr;
     root = buildTree();
+    printLevelOrder(root);
+    mirrorTree(root);
     printLevelOrder(root);
     return 0;
 }

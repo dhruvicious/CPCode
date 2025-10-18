@@ -5,7 +5,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define fastio                   \
     ios::sync_with_stdio(false); \
-    cin.tie(0);∑
+    cin.tie(0);
 #define endl '\n'
 
 class Solution {
@@ -38,7 +38,6 @@ class Solution {
 };
 
 int32_t main() {
-    fastio
 // #ifndef ONLINE_JUDGE
 //         freopen("input.txt", "r", stdin);
 //     freopen("output.txt", "w", stdout);
