@@ -119,20 +119,38 @@ void printLevelOrder(node* root) {
     }
 }
 
-void mirrorTree(node* root){
-    if(!root) return;
+void mirrorTree(node* root) {
+    if (!root) return;
     node* temp = root->right;
-    root->right= root->left;
-    root->left= temp;
+    root->right = root->left;
+    root->left = temp;
     mirrorTree(root->right);
     mirrorTree(root->left);
 }
 
+vector<int> preOrder = {};
+int k = 0;
+
+node* createTreeFromInPre(vector<int>& inOrder, int start, int end) {
+    if (start > end) return nullptr;
+    node* root = new node(preOrder[k]);
+    int i;
+    for (int j = start; j <= end; j++) {
+        if(inOrder[j]==root->data){
+            i=j;
+            break;
+        }
+    }
+    root->left= createTreeFromInPre(inOrder, start, i-1);
+    root->right = createTreeFromInPre(inOrder, i+1, end);
+    return root;
+}
+
 int32_t main() {
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     node* root = nullptr;
     root = buildTree();
     printLevelOrder(root);
