@@ -14,7 +14,7 @@ class Solution {
     // }
 
    public:
-    int minimumTotal(vector<vector<int>> &triangle) {
+    int minimumTotal(vector<vector<int>>& triangle) {
         // return backtrack(triangle, 0, 0);
         int n = triangle.size();
         vector<int> dp(triangle.back());

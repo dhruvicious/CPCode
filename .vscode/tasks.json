@@ -13,27 +13,26 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/output"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "problemMatcher": ["$gcc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: /opt/homebrew/bin/g++-15"
+            "detail": "Build active C++ file using Homebrew GCC 15"
         },
         {
             "label": "Run Executable",
             "type": "shell",
-            "command": "${fileDirname}/output",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "dependsOn": "C/C++: g++-15 build active file",
             "group": {
                 "kind": "test",
-                "isDefault": true
+                "isDefault": false
             },
             "presentation": {
                 "echo": true,

@@ -32,6 +32,9 @@
         "__locale": "cpp",
         "bitset": "cpp",
         "ios": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp",
+        "complex": "cpp"
     }
 }

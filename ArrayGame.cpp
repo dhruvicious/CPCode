@@ -26,16 +26,18 @@ int solve(vector<int>& a, int l, int r) {
 
 int32_t main() {
     fastio
-// #ifndef ONLINE_JUDGE
-//         freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    int t; cin >> t;
-    while (t--){
-        int N; cin>>N;
+        // #ifndef ONLINE_JUDGE
+        //         freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
         vector<int> a(N);
-        for(int i =0;i<N;i++) cin>>a[i];
-        cout<<solve(a, 0, N-1)<<endl;
+        for (int i = 0; i < N; i++) cin >> a[i];
+        cout << solve(a, 0, N - 1) << endl;
     }
     return 0;
 }

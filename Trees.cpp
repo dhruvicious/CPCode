@@ -14,6 +14,7 @@ class node {
 };
 
 node* buildTree();
+void insertInTree(int val, node* root);
 void printTreePreOrder(node* root);
 void printTreeInOrder(node* root);
 void printTreePostOrder(node* root);
@@ -56,6 +57,37 @@ void printTreePostOrder(node* root) {
     printTreePostOrder(root->left);
     printTreePostOrder(root->right);
     cout << root->data << " ";
+}
+
+void insertInTree(int val, node* root) {
+    if (!root) {
+        cout << "Tree is Empty Build a Tree first.\n";
+        return;
+    }
+    queue<node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        node* temp = q.front();
+        q.pop();
+
+        if (!temp->left) {
+            temp->left = new node(val);
+            cout << "Inserted " << val << " to the left of " << temp->data
+                 << '\n';
+            return;
+        } else {
+            q.push(temp->left);
+        }
+        if (!temp->right) {
+            temp->right = new node(val);
+            cout << "Inserted " << val << " to the left of " << temp->data
+                 << '\n';
+            return;
+        } else {
+            q.push(temp->right);
+        }
+    }
 }
 
 int heightOfTree(node* root) {
@@ -133,16 +165,16 @@ int k = 0;
 
 node* createTreeFromInPre(vector<int>& inOrder, int start, int end) {
     if (start > end) return nullptr;
-    node* root = new node(preOrder[k]);
+    node* root = new node(preOrder[k++]);
     int i;
     for (int j = start; j <= end; j++) {
-        if(inOrder[j]==root->data){
-            i=j;
+        if (inOrder[j] == root->data) {
+            i = j;
             break;
         }
     }
-    root->left= createTreeFromInPre(inOrder, start, i-1);
-    root->right = createTreeFromInPre(inOrder, i+1, end);
+    root->left = createTreeFromInPre(inOrder, start, i - 1);
+    root->right = createTreeFromInPre(inOrder, i + 1, end);
     return root;
 }
 

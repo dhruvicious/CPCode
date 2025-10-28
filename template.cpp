@@ -1,85 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class node {
-   public:
-    int val;
-    node* next;
-    node(int data = 0) {
-        val = data;
-        next = nullptr;
-    }
-};
+#define ll long long
+#define all(x) x.begin(), x.end()
+#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define endl '\n'
 
-void insertAtTail(node*& head, node*& tail, int val) {
-    node* newNode = new node(val);
-    if (!head)
-        head = tail = newNode;
-    else {
-        tail->next = newNode;
-        tail = newNode;
-    }
-}
 
-void insertAtHead(node*& head, node*& tail, int val) {
-    node* newNode = new node(val);
-    if (!head)
-        head = tail = newNode;
-    else {
-        newNode->next = head;
-        head = newNode;
-    }
-}
-
-void printList(node* head) {
-    while (head) {
-        cout << head->val << ' ';
-        head = head->next;
-    }
-    cout << endl;
-}
-
-int lenOfList(node* head) {
-    int len = 0;
-    while (head) {
-        len++;
-        head = head->next;
-    }
-    return len;
-}
-
-node* reverseList(node* head) {
-    node *prev = nullptr, *curr = head, *next = nullptr;
-    while (curr) {
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-}
 
 int32_t main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
-    int n;
-    cin >> n;
-    node *head = nullptr, *tail = nullptr;
-    for (int i = 0; i < n; i++) {
-        int x;
-        cin >> x;
-        insertAtTail(head, tail, x);
-    }
-
-    printList(head);
-    head = reverseList(head);
-    printList(head);
 
     return 0;
 }
