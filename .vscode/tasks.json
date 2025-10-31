@@ -2,8 +2,8 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build (g++-15)",
             "type": "cppbuild",
-            "label": "C/C++: g++-15 build active file",
             "command": "/opt/homebrew/bin/g++-15",
             "args": [
                 "-fdiagnostics-color=always",
@@ -23,16 +23,16 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Build active C++ file using Homebrew GCC 15"
+            "detail": "Build active C++ file with Homebrew GCC 15"
         },
         {
             "label": "Run Executable",
             "type": "shell",
             "command": "${fileDirname}/${fileBasenameNoExtension}",
-            "dependsOn": "C/C++: g++-15 build active file",
+            "dependsOn": "Build (g++-15)",
             "group": {
                 "kind": "test",
-                "isDefault": false
+                "isDefault": true
             },
             "presentation": {
                 "echo": true,
