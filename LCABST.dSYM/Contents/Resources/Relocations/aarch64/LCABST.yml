@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/bedhruvicious/Desktop/CPCode/LCABST'
+relocations:
+  - { offset: 0x2F11F, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xD6923, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x2FA36, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_LCABST.cpp, symObjAddr: 0x338, symBinAddr: 0x1000009AC, symSize: 0x14 }
+  - { offset: 0x2FA4E, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x2FC, symBinAddr: 0x100000970, symSize: 0x3C }
+  - { offset: 0x2FA6D, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1A4, symBinAddr: 0x100000844, symSize: 0x12C }
+  - { offset: 0x2FB04, size: 0x8, addend: 0x0, symName: __Z7findLCAP4nodeii, symObjAddr: 0xF0, symBinAddr: 0x100000790, symSize: 0xB4 }
+  - { offset: 0x2FB58, size: 0x8, addend: 0x0, symName: __Z11insertInBSTP4nodei, symObjAddr: 0x34, symBinAddr: 0x1000006D4, symSize: 0xBC }
+  - { offset: 0x2FBBC, size: 0x8, addend: 0x0, symName: __ZN4nodeC1Ei, symObjAddr: 0x0, symBinAddr: 0x1000006A0, symSize: 0x34 }
+...
