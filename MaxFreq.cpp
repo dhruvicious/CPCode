@@ -8,19 +8,7 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-char MaxFreqChar(const string& s) {
-    unordered_map<char, int> freqMap;
-    for (char c : s) freqMap[c]++;
-    int globalMaxFreq = INT_MIN;
-    char maxChar = ' ';
-    for (auto& p : freqMap) {
-        char c = p.first;
-        int f = p.second;
-        maxChar = (f > globalMaxFreq) ? c : maxChar;
-        globalMaxFreq = max(globalMaxFreq, f);
-    }
-    return maxChar;
-}
+void solve() {}
 
 int32_t main() {
     fastio
@@ -28,8 +16,23 @@ int32_t main() {
         freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    string s;
-    getline(cin, s);
-    cout << MaxFreqChar(s);
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int& i : arr) cin >> i;
+
+    unordered_map<int, int> arrMap;
+    for (int i : arr) arrMap[i]++;
+    int maxf = INT_MIN;
+    int maxval = INT_MIN;
+
+    for (auto& v : arrMap) {
+        if (v.second > maxf) {
+            maxval = v.first;
+            maxf = v.second;
+        }
+    }
+
+    cout << maxval << endl;
     return 0;
 }
