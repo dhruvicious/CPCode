@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -169,16 +170,54 @@ class Solution {
     //     return result;
     // }
 
-    long long trailingZeroes(long long n) {
-        long long zeroCount = 0;
-        long long divisor = 5;
+    // long long trailingZeroes(long long n) {
+    //     long long zeroCount = 0;
+    //     long long divisor = 5;
 
-        while (divisor <= n) {
-            zeroCount += n / divisor;
-            divisor *= 5;
+    //     while (divisor <= n) {
+    //         zeroCount += n / divisor;
+    //         divisor *= 5;
+    //     }
+
+    //     return zeroCount;
+    // }
+
+    // bool coinPiles(int a, int b) {
+    //     return ((a + b) % 3 == 0 && min(a, b) * 2 >= max(a, b));
+    // }
+
+    void PalindromeReorder(string& s) {
+        vector<int> freq(26, 0);
+
+        for (char c : s) freq[c - 'A']++;
+        int oddCount = 0;
+        int oddchar = -1;
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] % 2 == 1) {
+                oddCount++;
+                oddchar = i;
+            }
         }
 
-        return zeroCount;
+        if (oddCount > 1) {
+            cout << "NO SOLUTION" << endl;
+            return;
+        }
+        string left = "";
+        for (int i = 0; i < 26; i++) {
+            left.append(freq[i] / 2, char('A' + i));
+        }
+
+        string middle = "";
+        if (oddchar != -1) {
+            middle.append(1, char('A' + oddchar));
+        }
+
+        string right = left;
+        reverse(right.begin(), right.end());
+
+        cout << left + middle + right;
+        return;
     }
 };
 
@@ -191,8 +230,8 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     Solution s;
-    long long n;
-    cin>>n;
-    cout << s.trailingZeroes(n);
+    string str;
+    cin >> str;
+    s.PalindromeReorder(str);
     return 0;
 }
