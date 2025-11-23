@@ -23,11 +23,11 @@ node* buildTreeFromLevelOrder() {
         int leftVal, rightVal;
         if (!(cin >> leftVal >> rightVal)) break;
 
-        if (!leftVal == -1) {
+        if (leftVal != -1) {
             curr->left = new node(leftVal);
             q.push(curr->left);
         }
-        if (!rightVal == -1) {
+        if (rightVal != -1) {
             curr->right = new node(rightVal);
             q.push(curr->right);
         }

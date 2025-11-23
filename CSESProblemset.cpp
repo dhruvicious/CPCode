@@ -223,7 +223,7 @@ class Solution {
 
 const long long MOD = 1e9 + 7;
 
-int32_t main() {
+int32_t main(string args[]) {
     fastio
 #ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
