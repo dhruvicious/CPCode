@@ -1,0 +1,19 @@
+[
+  {
+    "label": "Build C++ with GCC",
+    "command": "g++-15",
+    "args": ["-std=c++20", "-Wall", "-Wextra", "$ZED_FILE", "-o", "$ZED_STEM"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never"
+  },
+  {
+    "label": "Run Executable",
+    "command": "./$ZED_STEM",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never"
+  }
+]
