@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
 #define ll long long
@@ -17,16 +21,16 @@ class Solution {
 
         for (int i = 0; i < n - 2; i++) {
             int left = i + 1, right = n - 1;
-            while(left<right){
-                int currSum= nums[i]+nums[left]+nums[right];
-                if(abs(currSum-target)<abs(closestSum-target)){
-                    closestSum=currSum;
+            while (left < right) {
+                int currSum = nums[i] + nums[left] + nums[right];
+                if (abs(currSum - target) < abs(closestSum - target)) {
+                    closestSum = currSum;
                 }
-                if(currSum<target){
+                if (currSum < target) {
                     left++;
-                }else if(currSum>target){
+                } else if (currSum > target) {
                     right--;
-                }else{
+                } else {
                     return target;
                 }
             }
@@ -35,11 +39,10 @@ class Solution {
     }
 };
 
-int32_t main() {
-    fastio
+int main() {
 #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    return 0;
+    cout << "Hello" return 0;
 }
