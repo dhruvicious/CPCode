@@ -1,7 +1,6 @@
 #include <climits>
-#include <iostream>
+#include <cstdio>
 #include <queue>
-#include <vector>
 
 using namespace std;
 struct TreeNode {
@@ -47,10 +46,6 @@ int32_t main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    int t = 1;
-    // cin >> t;
-    while (t--) {
-        solve();
-    }
+
     return 0;
 }
