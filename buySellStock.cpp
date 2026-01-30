@@ -30,6 +30,17 @@ class Solution {
         };
         return backtrack(0, false);
     }
+    int maxProfit2(vector<int>& prices, int fees) {
+        int n = prices.size();
+        int cash = 0;
+        int hold = -prices[0];
+        for (int i = 1; i < n; i++) {
+            int prevCash = cash;
+            cash = max(cash, hold + prices[i] - fees);
+            hold = max(hold, prevCash - prices[i]);
+        }
+        return cash;
+    }
 };
 
 int main() {

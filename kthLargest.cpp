@@ -1,4 +1,9 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cstdio>
+#include <functional>
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -10,7 +15,7 @@ int main() {
     cin >> n >> k;
     vector<int> arr(n);
     for (int& i : arr) cin >> i;
-
+    sort(arr.begin(), arr.end());
     priority_queue<int, vector<int>, greater<int>> pq;
 
     for (int x : arr) {
