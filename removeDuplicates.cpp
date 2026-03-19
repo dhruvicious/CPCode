@@ -4,7 +4,7 @@
 #include <vector>
 
 void fastIO() {
-    std::ios::sync_with_stdio(0);
+    std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
     std::cout.tie(0);
 }
@@ -21,7 +21,9 @@ void IO(int argsCount, char* argsValue[]) {
 class Solution {
    public:
     int removeDuplicates(std::vector<int>& nums) {
-        if (nums.empty()) return 0;
+        if (nums.size() == 0) {
+            return 0;
+        }
 
         int writeHead = 1;
         for (int readHead = 1; readHead < (int) nums.size(); readHead++) {

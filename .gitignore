@@ -1,2 +1,58 @@
-/.DS_Store
-*.dSYM
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.zed/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# C++ build / executables
+# =========================
+*.out
+*.exe
+*.app
+.i86
+*.x86_64
+*.hex
+
+# Object / build files
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# =========================
+# Rust
+# =========================
+target/
+Cargo.lock
+
+# =========================
+# Node
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# =========================
+# Competitive programming temp
+# =========================
+input.txt
+output.txt
+test.txt

@@ -1,12 +1,7 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
+#include <vector>
 using namespace std;
-
-#define ll long long
-#define all(x) x.begin(), x.end()
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(0);
-#define endl '\n'
 
 class Solution {
    public:
@@ -28,12 +23,10 @@ class Solution {
     }
 };
 
-int32_t main() {
-    fastio
+int main() {
 #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-
     return 0;
 }

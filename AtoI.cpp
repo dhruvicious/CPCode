@@ -1,43 +1,43 @@
-#include <bits/stdc++.h>
+#include <cctype>
+#include <climits>
+#include <cstdlib>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
-#define ll long long
-#define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
-#define endl '\n'
+class Solution {
+   private:
+    int buildNumber(string& s, int i, long res, int sign) {
+        if (i > s.size() || !isdigit(s[i])) {
+            return sign * res;
+        }
+        int digit = s[i] - '0';
+        if (res > (LONG_MAX / 10)) {
+            return sign == 1 ? INT_MAX : INT_MIN;
+        }
+        long newRes = res * 10 + digit;
+        if (sign == 1 && newRes > INT_MAX) return INT_MAX;
+        if (sign == -1 && newRes < INT_MIN) return INT_MIN;
 
-class Solution{
-public:
-    int myAtoI(string s){
-        int i =0, n=s.size();
+        return buildNumber(s, i + 1, newRes, sign);
+    }
 
-        while(i<n && s[i]==' ') i++;
+   public:
+    int myAtoi(string s) {
+        int i = 0;
+        int n = s.size();
+        while (i < n && s[i] == ' ') i++;
 
-        bool isNeg=false;
-        if(i<n && (s[i]=='+' || s[i]=='-')){
-            isNeg=s[i]=='-';
+        int sign = 1;
+        if (i < n && (s[i] == '-' || s[i] == '+')) {
+            if (s[i] == '-') sign = -1;
             i++;
         }
 
-        int result=0;
-        while(i<n && isdigit(s[i])){
-            int digit=s[i]-'0';
-            if(result>(INT_MAX-digit)/10){
-                return isNeg?INT_MIN:INT_MAX;
-            }
-            result=result*10+digit;
-            i++;
-        }
-        
-        return isNeg?-result:result;
+        return buildNumber(s, i, 0, sign);
     }
 };
 
-int32_t main() {
-    fastio
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-    return 0;
+int main() {
 }
