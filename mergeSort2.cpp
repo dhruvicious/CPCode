@@ -12,7 +12,6 @@ void MergeSort(vector<int>::iterator start, vector<int>::iterator end) {
     advance(middle, distance(start, end) / 2);
     MergeSort(start, middle);
     MergeSort(middle, end);
-
     inplace_merge(start, middle, end);
 }
 

@@ -1,45 +1,34 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <string>
+#include <vector>
 
-#define ll long long
-#define all(x) x.begin(), x.end()
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(0);
-#define endl '\n'
+using namespace std;
 
 class Solution {
    private:
-    void backtrack(int start, int end, int n, string currStr,
-                   vector<string>& result) {
+    void backtrack(int start, int end, vector<string>& ans, string curr,
+                   int n) {
         if (start > n || end > n) return;
         if (start == n && end == n) {
-            result.push_back(currStr);
+            ans.push_back(curr);
             return;
         }
-
         if (start < n) {
-            backtrack(start + 1, end, n, currStr + '(', result);
+            backtrack(start + 1, end, ans, curr + '(', n);
         }
         if (end < start) {
-            backtrack(start, end + 1, n, currStr + ')', result);
+            backtrack(start, end + 1, ans, curr + ')', n);
         }
     }
 
    public:
     vector<string> generateParenthesis(int n) {
-        vector<string> result;
-        backtrack(0, 0, n, "", result);
-        return result;
+        vector<string> generatedParenthesis;
+        string         curr;
+        backtrack(0, 0, generatedParenthesis, curr, n);
+        return generatedParenthesis;
     }
 };
 
-int32_t main() {
-    fastio
-#ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
-    return 0;
+int main() {
 }
