@@ -47,7 +47,7 @@ int main() {
     cin >> t;
     Solution s;
     while (t--) {
-        int n;
+        int                 n;
         vector<vector<int>> squares(n, vector<int>(3, 0));
         for (auto& vec : squares) {
             for (auto& i : vec) cin >> i;

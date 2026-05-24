@@ -10,10 +10,10 @@ class Solution {
    public:
     int minTimeToVisitAllPoints(vector<vector<int>>& points) {
         int ans = 0;
-        int n = points.size();
+        int n   = points.size();
         for (int i = 0; i < n; i++) {
-            int X = points[i][0];
-            int Y = points[i][1];
+            int X  = points[i][0];
+            int Y  = points[i][1];
             int Xn = points[i + 1][0];
             int Yn = points[i + 1][1];
             ans += max(abs(X - Xn), abs(Y - Yn));
@@ -31,7 +31,7 @@ int main() {
     cin >> t;
     Solution s;
     while (t--) {
-        int n;
+        int                 n;
         vector<vector<int>> points(n, vector<int>(2, 0));
         for (vector<int>& vec : points) {
             for (int& i : vec) cin >> i;

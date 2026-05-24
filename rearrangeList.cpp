@@ -3,18 +3,18 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
 
     node(int data = 0) {
         this->next = nullptr;
-        this->val = data;
+        this->val  = data;
     }
 };
 void insertAtTail(node*& head, node*& tail, int val);
 void insertAtHead(node*& head, node*& tail, int val);
 void printList(node* head);
-int lenOfList(node* head);
+int  lenOfList(node* head);
 
 void insertAtTail(node*& head, node*& tail, int val) {
     node* newNode = new node(val);
@@ -22,7 +22,7 @@ void insertAtTail(node*& head, node*& tail, int val) {
         head = tail = newNode;
     } else {
         tail->next = newNode;
-        tail = newNode;
+        tail       = newNode;
     }
 }
 
@@ -32,7 +32,7 @@ void insertAtHead(node*& head, node*& tail, int val) {
         head = tail = newNode;
     } else {
         newNode->next = head;
-        head = newNode;
+        head          = newNode;
     }
 }
 
@@ -60,10 +60,10 @@ node* reverseList(node* head) {
     node* next = nullptr;
 
     while (curr) {
-        next = curr->next;
+        next       = curr->next;
         curr->next = prev;
-        prev = curr;
-        curr = next;
+        prev       = curr;
+        curr       = next;
     }
 
     return prev;

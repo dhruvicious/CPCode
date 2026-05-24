@@ -26,8 +26,6 @@ class Graph {
             cout << endl;
         }
     }
-
-
 };
 
 int main() {
@@ -43,6 +41,5 @@ int main() {
     g.addEdge("Java", "Android", false);
     g.addEdge("Android", "CyberSecurity", false);
 
-    
     return 0;
 }

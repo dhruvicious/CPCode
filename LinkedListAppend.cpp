@@ -3,15 +3,15 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
     node(int data = 0) {
-        val = data;
+        val  = data;
         next = nullptr;
     }
 };
-void insertAtTail(node*& head, node*& tail, int data);
-void printList(node* head);
+void  insertAtTail(node*& head, node*& tail, int data);
+void  printList(node* head);
 node* reverseList(node* head);
 node* mergeLists(node* head1, node* head2);
 node* appendKNodesToLast(node* head, int k);
@@ -22,7 +22,7 @@ void insertAtTail(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         tail->next = newNode;
-        tail = newNode;
+        tail       = newNode;
     }
 }
 
@@ -32,7 +32,7 @@ void insertAtHead(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         newNode->next = head;
-        head = newNode;
+        head          = newNode;
     }
 }
 
@@ -51,10 +51,10 @@ node* reverseList(node* head) {
     node* next = nullptr;
 
     while (curr != nullptr) {
-        next = curr->next;
+        next       = curr->next;
         curr->next = prev;
-        prev = curr;
-        curr = next;
+        prev       = curr;
+        curr       = next;
     }
     return prev;
 }
@@ -77,7 +77,7 @@ node* appendKNodesToLast(node* head, int k) {
     if (!head || k == 0) return head;
 
     node* temp = head;
-    int len = 1;
+    int   len  = 1;
     while (temp->next) {
         temp = temp->next;
         len++;
@@ -86,7 +86,7 @@ node* appendKNodesToLast(node* head, int k) {
     if (k == 0) {
         return head;
     }
-    temp->next = head;
+    temp->next         = head;
     int stepsToNewHead = len - k;
 
     node* newTail = head;

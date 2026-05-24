@@ -16,8 +16,8 @@ using namespace std;
 class Solution {
    public:
     bool isMatch(string s, string p) {
-        int n = s.size();
-        int m = p.size();
+        int                 n = s.size();
+        int                 m = p.size();
         vector<vector<int>> dp(n + 1, vector<int>(m + 1, -1));
 
         function<bool(int, int)> backtrack = [&](int i, int j) -> bool {
@@ -30,7 +30,8 @@ class Solution {
             } else {
                 bool firstMatch = (i < n && (p[j] == s[i] || p[j] == '.'));
                 if (j + 1 < m && p[j + 1] == '*') {
-                    result = backtrack(i, j + 2) || (firstMatch && backtrack(i + 1, j));
+                    result = backtrack(i, j + 2)
+                             || (firstMatch && backtrack(i + 1, j));
                 } else {
                     result = firstMatch && backtrack(i + 1, j + 1);
                 }

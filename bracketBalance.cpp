@@ -9,10 +9,10 @@ bool isBalanced(string s) {
         } else {
             if (st.empty()) return false;
             char top = st.top();
-            if ((c == ')' && top == '(') || (c == ')' && top == '(') ||
-                c == ')' && top == '(') {
-                    st.pop();
-            }else{
+            if ((c == ')' && top == '(') || (c == ')' && top == '(')
+                || c == ')' && top == '(') {
+                st.pop();
+            } else {
                 return false;
             }
         }

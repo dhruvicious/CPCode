@@ -11,11 +11,11 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n;
+        int       n;
         long long x;
         cin >> n >> x;
 
-        long long sumFr = 0;
+        long long sumFr   = 0;
         long long maxCEff = -4e18;
 
         for (int i = 0; i < n; i++) {
@@ -24,7 +24,7 @@ int main() {
 
             sumFr += a * (b - 1);
             long long currEff = (a * b) - c;
-            maxCEff = max(maxCEff, currEff);
+            maxCEff           = max(maxCEff, currEff);
         }
 
         if (sumFr >= x) {
@@ -36,7 +36,7 @@ int main() {
             continue;
         }
 
-        long long def = x - sumFr;
+        long long def        = x - sumFr;
         long long chodBhagda = (def + maxCEff - 1) / maxCEff;
         cout << chodBhagda << "\n";
     }

@@ -13,7 +13,7 @@ void fastIO() {
 }
 
 void IO(int argsC, char* argsV[]) {
-    const char* inputFile = (argsC >= 3) ? argsV[1] : "input.txt";
+    const char* inputFile  = (argsC >= 3) ? argsV[1] : "input.txt";
     const char* outputFile = (argsC >= 3) ? argsV[1] : "output.txt";
 
 #ifndef ONLINE_JUDGE
@@ -38,7 +38,7 @@ int main(int argsC, char* argsV[]) {
         vector<int> s = arr;
         sort(s.begin(), s.end());
 
-        int ans = INT_MAX;
+        int  ans       = INT_MAX;
         bool sortCheck = false;
 
         for (int i = 0; i < n; i++) {
@@ -46,10 +46,12 @@ int main(int argsC, char* argsV[]) {
                 sortCheck = true;
 
                 int constr = max(arr[i] - s[0], s.back() - arr[i]);
-                ans = min(ans, constr);
+                ans        = min(ans, constr);
             }
         }
-        if (!sortCheck) cout << "-1\n";
-        else cout << ans << '\n';
+        if (!sortCheck)
+            cout << "-1\n";
+        else
+            cout << ans << '\n';
     }
 }

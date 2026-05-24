@@ -11,7 +11,7 @@ class Solution {
 
         for (int num : nums) {
             int divisorSum = 0;
-            int count = 0;
+            int count      = 0;
 
             for (int i = 1; i * i <= num; i++) {
                 if (num % i == 0) {

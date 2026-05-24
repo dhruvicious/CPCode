@@ -1,44 +1,57 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
 using namespace std;
 
-#define ll long long
-#define all(x) x.begin(), x.end()
-#define fastio                   \
-    ios::sync_with_stdio(false); \
+void fastIO() {
+    ios::sync_with_stdio(0);
     cin.tie(0);
-#define endl '\n'
+    cout.tie(0);
+}
+
+void FileIO(char* inputFile, char* outputFile) {
+#ifndef ONLINE_JUDGE
+    freopen(inputFile, "r", stdin);
+    freopen(outputFile, "w", stdout);
+#endif
+}
 
 class Solution {
    public:
-    int trap(vector<int>& height) {
-        int n = height.size();
-        vector<int> leftMax(n);
-        vector<int> rightMax(n);
+    int trap(vector<int> height) {
+        int         n = height.size();
+        vector<int> leftM(n, 0);
+        vector<int> rightM(n, 0);
 
-        rightMax[n - 1] = height[n - 1];
-        leftMax[0] = height[0];
+        rightM[n - 1] = height[n - 1];
+        leftM[0]      = height[0];
 
         for (int i = 1; i < n; i++) {
-            leftMax[i] = max(leftMax[i - 1], height[i]);
+            leftM[i]  = max({leftM[i - 1], height[i]});
+            int j     = n - i - 1;
+            rightM[j] = max(rightM[j + 1], height[j]);
         }
 
-        for (int j = n - 2; j >= 0; j--) {
-            rightMax[j] = max(rightMax[j + 1], height[j]);
-        }
         int harvested = 0;
         for (int i = 0; i < n; i++) {
-            harvested += max(0, min(leftMax[i], rightMax[i]) - height[i]);
+            harvested += max(0, min(leftM[i], rightM[i]) - height[i]);
         }
 
         return harvested;
     }
 };
 
-int32_t main() {
-    fastio
-#ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+// argsV[0] -> executable name
+// argsV[1] -> input file
+// argsV[2] -> output file
+int main(int argC, char* argsV[]) {
+    fastIO();
+
+    if (argC >= 3) {
+        FileIO(argsV[1], argsV[2]);
+    }
+
     return 0;
 }

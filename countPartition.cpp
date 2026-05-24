@@ -25,7 +25,6 @@ int main() {
     cin >> n;
     vector<int> arr(n);
     for (int& i : arr) cin >> i;
-    
-    
+
     return 0;
 }

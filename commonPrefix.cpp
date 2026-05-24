@@ -25,11 +25,11 @@ class Solution {
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-    Solution s;
+    freopen("output.txt", "w", stdout);
+#endif
+    Solution       s;
     vector<string> strs = {"flowers", "flow", "flight"};
     cout << s.longestCommonPrefix(strs) << endl;
     return 0;

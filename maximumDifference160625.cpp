@@ -3,20 +3,22 @@ using namespace std;
 
 #define ll long long
 #define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);
 #define endl '\n'
 
-class Solution{
-public:
-    int maximumDifference(vector<int>& nums){
-        int minSoFar=nums[0];
-        int maxDiff=-1;
+class Solution {
+   public:
+    int maximumDifference(vector<int>& nums) {
+        int minSoFar = nums[0];
+        int maxDiff  = -1;
 
-        for(int i =0;i<nums.size();i++){
-            if(nums[i]>minSoFar){
-                maxDiff=max(maxDiff, nums[i]-minSoFar);
-            }else{
-                minSoFar=nums[i];
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] > minSoFar) {
+                maxDiff = max(maxDiff, nums[i] - minSoFar);
+            } else {
+                minSoFar = nums[i];
             }
         }
         return maxDiff;
@@ -25,10 +27,10 @@ public:
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-    
+    freopen("output.txt", "w", stdout);
+#endif
+
     return 0;
 }

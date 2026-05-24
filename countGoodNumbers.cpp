@@ -29,7 +29,5 @@ class Solution {
     }
 };
 
-
-int main(){
-    
+int main() {
 }

@@ -3,10 +3,10 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
     node(int data = 0) {
-        val = data;
+        val  = data;
         next = nullptr;
     }
 };
@@ -16,7 +16,7 @@ void insertAtTail(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         tail->next = newNode;
-        tail = newNode;
+        tail       = newNode;
     }
 }
 
@@ -45,7 +45,7 @@ void triplet(node* n1, node* n2, node* n3, int target) {
 void freeList(node* head) {
     while (head) {
         node* temp = head;
-        head = head->next;
+        head       = head->next;
         delete temp;
     }
 }

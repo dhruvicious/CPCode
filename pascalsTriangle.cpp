@@ -2,9 +2,7 @@
 using namespace std;
 
 void pascalsTriangle() {
-    
 }
 
 int main() {
-    
 }

@@ -72,7 +72,7 @@ class Solution {
             for (int j = i; i < i + windowlen; j += wordLen) {
                 windowHash += hasher(s.substr(j, wordLen));
             }
-            if(windowHash==targetHash) res.push_back(i);
+            if (windowHash == targetHash) res.push_back(i);
         }
         return res;
     }

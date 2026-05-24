@@ -8,7 +8,7 @@ class Trie {
    private:
     struct TrieNode {
         TrieNode* children[26];
-        bool isEndOfWord;
+        bool      isEndOfWord;
 
         TrieNode() {
             isEndOfWord = false;
@@ -74,7 +74,7 @@ class Trie {
     }
 
     vector<string> getSuggestions(string prefix) {
-        TrieNode* curr = root;
+        TrieNode*      curr = root;
         vector<string> result;
 
         // Traverse to prefix node
@@ -91,7 +91,8 @@ class Trie {
 };
 
 class Solution {
-    vector<vector<string>> suggestedProducts(vector<string>& products, string searchWord) {
+    vector<vector<string>> suggestedProducts(vector<string>& products,
+                                             string          searchWord) {
         Trie trie;
 
         sort(products.begin(), products.end());
@@ -99,7 +100,7 @@ class Solution {
         for (string& product : products) trie.insert(product);
 
         vector<vector<string>> answer;
-        string prefix = "";
+        string                 prefix = "";
 
         for (char ch : searchWord) {
             prefix += ch;

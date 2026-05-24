@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
    public:
     double largestTriangleArea(vector<vector<int>>& points) {
-        int n = points.size();
+        int    n       = points.size();
         double maxArea = 0.0;
 
         for (int i = 0; i < n; i++) {
@@ -15,11 +15,10 @@ class Solution {
                     double x3 = points[k][0], y3 = points[k][1];
 
                     double area =
-                        fabs(x1 * (y2 - y3) + 
-                            x2 * (y3 - y1) + 
-                            x3 * (y1 - y2)) /2.0;
+                        fabs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
+                        / 2.0;
 
-                    maxArea=max(maxArea, area);
+                    maxArea = max(maxArea, area);
                 }
             }
         }

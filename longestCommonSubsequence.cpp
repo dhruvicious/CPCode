@@ -2,7 +2,7 @@
 using namespace std;
 
 int longestCommonSubsequence(string str1, string str2) {
-    int m = str1.size(), n = str2.size();
+    int                 m = str1.size(), n = str2.size();
     vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
 
     for (int i = 1; i <= m; i++) {

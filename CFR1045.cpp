@@ -5,32 +5,32 @@ using namespace std;
     ios::sync_with_stdio(false); \
     cin.tie(0);
 
-void solve(long long n, long long a, long long b){
-    int m = max(a,b);
-    int mid=(n+1)/2;
+void solve(long long n, long long a, long long b) {
+    int m   = max(a, b);
+    int mid = (n + 1) / 2;
 
-    if(m<=mid){
-        cout<<"YES\n";
-    }else if(a==n || b==n){
-        cout<<"YES\n";
-    }else{
-        cout<<"NO\n";
+    if (m <= mid) {
+        cout << "YES\n";
+    } else if (a == n || b == n) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
     }
 }
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
+    freopen("output.txt", "w", stdout);
+#endif
     int t;
     cin >> t;
 
     while (t--) {
         long long n, a, b;
         cin >> n >> a >> b;
-        solve(n,a,b);
+        solve(n, a, b);
     }
     // Input
     //  7

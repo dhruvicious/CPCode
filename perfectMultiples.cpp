@@ -6,7 +6,7 @@
 using namespace std;
 
 void solve() {
-    int n;
+    int       n;
     long long k;
     cin >> n >> k;
     set<int> arr;
@@ -18,8 +18,8 @@ void solve() {
     vector<int> a(arr.begin(), arr.end());
     sort(a.begin(), a.end());
 
-    int m = a.size();
-    vector<bool> covered(m, false);
+    int               m = a.size();
+    vector<bool>      covered(m, false);
     vector<long long> b;
 
     for (int i = 0; i < m; i++) {

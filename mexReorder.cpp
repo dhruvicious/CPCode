@@ -15,7 +15,7 @@ int main() {
         int n;
         cin >> n;
         vector<int> arr(n);
-        int count1 = 0, count0 = 0;
+        int         count1 = 0, count0 = 0;
         for (int& i : arr) {
             cin >> i;
             if (i == 0) count0++;

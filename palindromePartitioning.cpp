@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -91,7 +90,7 @@ class Solution {
     }
 
     vector<vector<string>> partition(string s) {
-        vector<string> x;
+        vector<string>         x;
         vector<vector<string>> ans;
         backtrack(ans, x, s, 0, s.size());
     }
@@ -108,7 +107,7 @@ int main() {
 
     auto start1 = high_resolution_clock::now();
 
-    auto stop1 = high_resolution_clock::now();
+    auto stop1    = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop1 - start1);
 #ifndef ONLINE_JUDGE
     cerr << "Time: " << duration.count() << " ms" << endl;

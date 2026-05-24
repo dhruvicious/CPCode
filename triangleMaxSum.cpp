@@ -16,7 +16,7 @@ class Solution {
    public:
     int minimumTotal(vector<vector<int>>& triangle) {
         // return backtrack(triangle, 0, 0);
-        int n = triangle.size();
+        int         n = triangle.size();
         vector<int> dp(triangle.back());
         for (int row = n - 2; row >= 0; row--) {
             for (int col = 0; col <= row; col++) {

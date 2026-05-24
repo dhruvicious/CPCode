@@ -34,19 +34,21 @@ int main() {
 
         for (int j = 0; j < 6; j++) {
             int faceVal = j + 1;
-            dp[0][j] = (a[0] == faceVal) ? 0 : 1;
+            dp[0][j]    = (a[0] == faceVal) ? 0 : 1;
         }
 
         for (int i = 1; i < n; i++) {
             for (int curr = 0; curr < 6; curr++) {
-                int currFace = curr + 1;
+                int currFace   = curr + 1;
                 int changeCost = (a[i] == currFace) ? 0 : 1;
 
                 for (int prev = 0; prev < 6; prev++) {
-                    int prevFace = prev + 1;
-                    bool adjCheck = (currFace != prevFace) && (currFace + prevFace != 7);
+                    int  prevFace = prev + 1;
+                    bool adjCheck =
+                        (currFace != prevFace) && (currFace + prevFace != 7);
                     if (adjCheck) {
-                        dp[i][curr] = min(dp[i][curr], dp[i - 1][prev] + changeCost);
+                        dp[i][curr] =
+                            min(dp[i][curr], dp[i - 1][prev] + changeCost);
                     }
                 }
             }

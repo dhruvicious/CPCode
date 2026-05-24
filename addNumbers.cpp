@@ -21,9 +21,9 @@ class Solution {
         while (i >= 0) {
             int digit1 = charToValue[a[i]];
             int digit2 = (j >= 0) ? charToValue[b[j]] : 0;
-            int sum = digit1 + digit2 + carry;
-            a[i] = symbols[sum % base];
-            carry = sum / base;
+            int sum    = digit1 + digit2 + carry;
+            a[i]       = symbols[sum % base];
+            carry      = sum / base;
 
             i--;
             j--;

@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
-freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 #endif
     int t;
     cin >> t;
@@ -15,7 +15,7 @@ freopen("output.txt", "w", stdout);
         int n;
         cin >> n;
         vector<int> arr(n);
-        for (int &i : arr) {
+        for (int& i : arr) {
             cin >> i;
             i %= 2;
         }

@@ -1,12 +1,13 @@
 /*
- * Def:: A graph is a mathematical structure used to model pairwise relationships between
- * objects, Formally a graph is an ordered pair:
+ * Def:: A graph is a mathematical structure used to model pairwise
+ * relationships between objects, Formally a graph is an ordered pair:
  *
  * G = (V,E);
  *
  * where V = {v1, v2, v3, v4, ...}; is a non empty finite set of vertices.
  *
- * E is a subset of {V x V} is a set of edges representing relationship between vertices
+ * E is a subset of {V x V} is a set of edges representing relationship between
+ * vertices
  *
  * the nature of E determines the type of graph
  *
@@ -22,14 +23,13 @@
  * 2/ Undirected
  *      Def:: if edges have no orientation then (u,v) == (v,u);
  * 3/ Weighted Graph
- *      Def:: if a function w:E->R assigns a numeric weight to each edge, such a graph is
- *              called a weighted graph
+ *      Def:: if a function w:E->R assigns a numeric weight to each edge, such a
+ * graph is called a weighted graph
  *
  * Degree of a vertex
- *  Def:: For an undirected graph the degree of a vertex deg(v) is the number of edges incident
- *          on it
- *        For a directed graph there are two degree deg+(v) = out-degree
- *        deg-(v) = in-degree
+ *  Def:: For an undirected graph the degree of a vertex deg(v) is the number of
+ * edges incident on it For a directed graph there are two degree deg+(v) =
+ * out-degree deg-(v) = in-degree
  *
  * Order of a graph = number of vertices
  * Size of a graph  = number of edges
@@ -61,7 +61,8 @@
  *
  * Loops
  *  Def:: A loop is an edge connecting a vertex to itself
- * Two or more edges connecting the same pair of vertices are called parallel edges
+ * Two or more edges connecting the same pair of vertices are called parallel
+ * edges
  *
  *
  * Closed Walk
@@ -110,8 +111,8 @@
 
 template <typename T>
 struct Edge {
-    T src;
-    T dest;
+    T      src;
+    T      dest;
     double weight;
     Edge(T s, T d, double w) : src(s), dest(d), weight(w) {}
 };
@@ -119,11 +120,12 @@ struct Edge {
 template <typename T>
 class GraphEL {
    private:
-    std::vector<T> vertices;
+    std::vector<T>       vertices;
     std::vector<Edge<T>> edges;
-    bool isDirected;
-    bool vertexExists(const T& data) const {
-        return std::find(vertices.begin(), vertices.end(), data) != vertices.end();
+    bool                 isDirected;
+    bool                 vertexExists(const T& data) const {
+        return std::find(vertices.begin(), vertices.end(), data)
+               != vertices.end();
     }
 
    public:
@@ -158,7 +160,8 @@ class GraphEL {
 
         std::cout << "\nEdge List:\n";
         for (const Edge<T>& e : edges) {
-            std::cout << e.src << " -> " << e.dest << " |Weight:" << e.weight << std::endl;
+            std::cout << e.src << " -> " << e.dest << " |Weight:" << e.weight
+                      << std::endl;
         }
     }
 };
@@ -167,12 +170,13 @@ class GraphEL {
 template <typename T>
 class graphAM {
    private:
-    std::vector<T> vertices;
+    std::vector<T>                   vertices;
     std::vector<std::vector<double>> AdjMat;
-    bool isDirected;
+    bool                             isDirected;
 
     bool vertexExists(const T& data) const {
-        return std::find(vertices.begin(), vertices.end(), data) != vertices.end();
+        return std::find(vertices.begin(), vertices.end(), data)
+               != vertices.end();
     }
 
     int getIndex(const T& data) const {
@@ -196,7 +200,7 @@ class graphAM {
         AdjMat.push_back(std::vector<double>(vertices.size(), 0.0f));
     }
     void addEdge(const T& src, const T& dest, double weight = 1) {
-        int srcIndex = getIndex(src);
+        int srcIndex  = getIndex(src);
         int destIndex = getIndex(dest);
 
         if (srcIndex == -1 || destIndex == -1) {
@@ -229,12 +233,13 @@ class graphAM {
 template <typename T>
 class graphAL {
    private:
-    std::vector<T> vertices;
+    std::vector<T>                                           vertices;
     std::unordered_map<T, std::vector<std::pair<T, double>>> adjList;
-    bool isDirected;
+    bool                                                     isDirected;
 
     bool vertexExists(const T& data) const {
-        return std::find(vertices.begin(), vertices.end(), data) != vertices.end();
+        return std::find(vertices.begin(), vertices.end(), data)
+               != vertices.end();
     }
 
    public:
@@ -357,9 +362,12 @@ void testGraphsALClass() {
 }
 
 void DrawLine() {
-    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
-    std::cout << "=========================================================" << std::endl;
-    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+              << std::endl;
+    std::cout << "========================================================="
+              << std::endl;
+    std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+              << std::endl;
 }
 
 int main() {

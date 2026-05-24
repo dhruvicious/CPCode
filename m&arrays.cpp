@@ -38,7 +38,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     Solution ss;
-    string s;
+    string   s;
     getline(cin, s);
     vector<string> ans = ss.comb(s);
     for (string str : ans) {

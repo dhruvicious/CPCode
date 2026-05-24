@@ -8,8 +8,8 @@ class Solution {
    public:
     int residuePrefixes(string s) {
         vector<int> freq(26, 0);
-        int dCount = 0;
-        int result = 0;
+        int         dCount = 0;
+        int         result = 0;
 
         for (int i = 0; i < s.size(); i++) {
             int idx = s[i] - 'a';

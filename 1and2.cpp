@@ -24,7 +24,7 @@ int main() {
         int n;
         cin >> n;
         vector<int> a(n);
-        int count2 = 0;
+        int         count2 = 0;
         for (int i = 0; i < n; i++) {
             cin >> a[i];
             if (a[i] == 2) count2++;
@@ -33,9 +33,9 @@ int main() {
             cout << "-1\n";
             continue;
         }
-        int half = count2 / 2;
+        int half    = count2 / 2;
         int prefix2 = 0;
-        int ans = -1;
+        int ans     = -1;
 
         for (int i = 0; i < n; i++) {
             if (a[i] == 2) {

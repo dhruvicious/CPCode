@@ -9,8 +9,8 @@ using namespace std;
 class Solution {
    public:
     int maxProfit(vector<int>& prices, int fee) {
-        int n = prices.size();
-        vector<vector<int>> dp(n, vector<int>(2, INT_MIN));
+        int                      n = prices.size();
+        vector<vector<int>>      dp(n, vector<int>(2, INT_MIN));
         function<int(int, bool)> backtrack = [&](int day, bool holding) -> int {
             if (day == n) {
                 return 0;
@@ -31,13 +31,13 @@ class Solution {
         return backtrack(0, false);
     }
     int maxProfit2(vector<int>& prices, int fees) {
-        int n = prices.size();
+        int n    = prices.size();
         int cash = 0;
         int hold = -prices[0];
         for (int i = 1; i < n; i++) {
             int prevCash = cash;
-            cash = max(cash, hold + prices[i] - fees);
-            hold = max(hold, prevCash - prices[i]);
+            cash         = max(cash, hold + prices[i] - fees);
+            hold         = max(hold, prevCash - prices[i]);
         }
         return cash;
     }

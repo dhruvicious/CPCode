@@ -10,7 +10,7 @@ void printOdd(int n) {
 void printEven(int curr, int n) {
     if (curr > n) return;
     cout << curr << endl;
-    printEven(curr+2, n);
+    printEven(curr + 2, n);
 }
 
 int32_t main() {

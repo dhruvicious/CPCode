@@ -35,7 +35,9 @@ class Solution {
         unordered_map<int, int> freq;
         for (int i : nums) freq[i]++;
 
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>,
+                       greater<pair<int, int>>>
+            pq;
         for (const auto& f : freq) {
             pq.push({f.second, f.first});
 
@@ -61,8 +63,8 @@ class Solution {
 
     vector<string> decode(string s) {
         vector<string> tokens;
-        string token;
-        stringstream ss(s);
+        string         token;
+        stringstream   ss(s);
 
         // Extract substrings separated by the delimiter
         while (getline(ss, token, '#')) {

@@ -8,13 +8,15 @@ constexpr int MAGIC_NUMBER = 0x20;
 
 void toLowerCase(string& s) {
     for (char& c : s) {
-        c = static_cast<char>(static_cast<unsigned char>(c) ^ ((c >= 'A' && c <= 'Z') ? MAGIC_NUMBER : 0));
+        c = static_cast<char>(static_cast<unsigned char>(c)
+                              ^ ((c >= 'A' && c <= 'Z') ? MAGIC_NUMBER : 0));
     }
 }
 
 void toUpperCase(string& s) {
     for (char& c : s) {
-        c = static_cast<char>(static_cast<unsigned char>(c) ^ ((c >= 'a' && c <= 'z') ? MAGIC_NUMBER : 0));
+        c = static_cast<char>(static_cast<unsigned char>(c)
+                              ^ ((c >= 'a' && c <= 'z') ? MAGIC_NUMBER : 0));
     }
 }
 

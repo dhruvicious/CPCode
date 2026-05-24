@@ -33,8 +33,8 @@ int main() {
             }
         }
 
-        int spec = min(countS, countV);
-        int rem = countV - spec;
+        int spec   = min(countS, countV);
+        int rem    = countV - spec;
         int pairsV = rem / 2;
 
         cout << (spec + pairsV) << '\n';

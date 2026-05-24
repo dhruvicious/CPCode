@@ -12,7 +12,7 @@ void fastIO() {
 }
 
 void IO(int argsC, char* argsV[]) {
-    const char* inputFile = (argsC >= 3) ? argsV[1] : "input.txt";
+    const char* inputFile  = (argsC >= 3) ? argsV[1] : "input.txt";
     const char* outputFile = (argsC >= 3) ? argsV[2] : "output.txt";
 
 #ifndef ONLINE_JUDGE
@@ -47,7 +47,7 @@ int main(int argsC, char* argsV[]) {
         addStd += (occIdx[0] + 1) / 3;
         addStd += (n - occIdx.back()) / 3;
 
-        for (size_t i = 0; i < occIdx.size()-1; i++) {
+        for (size_t i = 0; i < occIdx.size() - 1; i++) {
             addStd += (occIdx[i + 1] - occIdx[i] - 1) / 3;
         }
 

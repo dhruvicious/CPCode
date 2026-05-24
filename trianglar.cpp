@@ -11,8 +11,8 @@ int32_t main() {
     cin >> n;
     vector<vector<int>> mat(n, vector<int>(n));
 
-    for (vector<int> &row : mat) {
-        for (int &val : row) {
+    for (vector<int>& row : mat) {
+        for (int& val : row) {
             cin >> val;
         }
     }
@@ -26,7 +26,9 @@ int32_t main() {
         }
         if (!isTriag) break;
     }
-    if(isTriag) cout<<"true";
-    else cout<<"false";
+    if (isTriag)
+        cout << "true";
+    else
+        cout << "false";
     return 0;
 }

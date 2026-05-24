@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -121,7 +120,7 @@ int main() {
     }
     vector<vector<int>> ans;
     ratInMaze(maze, ans, n, m, 0, 0);
-    auto stop1 = high_resolution_clock::now();
+    auto stop1    = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop1 - start1);
 #ifndef ONLINE_JUDGE
     cout << "Time: " << duration.count() << " ms" << endl;

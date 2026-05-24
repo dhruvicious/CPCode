@@ -38,7 +38,7 @@ void NQueens(vector<vector<int>>& board, int i, int n, int& count) {
 int main() {
     int n;
     cin >> n;
-    int count = 0;
+    int                 count = 0;
     vector<vector<int>> board(n, vector<int>(n, 0));
     NQueens(board, 0, n, count);
     cout << count;

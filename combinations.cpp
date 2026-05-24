@@ -19,7 +19,7 @@ class Solution {
         }
     }
     vector<vector<int>> combine(int n, int k) {
-        vector<int> x;
+        vector<int>         x;
         vector<vector<int>> ans;
         backtrack(x, ans, k, n, 1);
         return ans;

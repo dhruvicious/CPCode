@@ -18,7 +18,7 @@ void replaceSpace(string& s) {
 
 void replaceSpaces(string& s) {
     int originalLen = s.size();
-    int spaceCount = 0;
+    int spaceCount  = 0;
 
     for (char c : s) {
         spaceCount += ((c == ' ') ? 1 : 0);

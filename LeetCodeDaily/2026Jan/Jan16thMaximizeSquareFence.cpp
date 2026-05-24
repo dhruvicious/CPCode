@@ -20,10 +20,11 @@ class Solution {
     }
 
    public:
-    int maximizeSquareArea(int m, int n, vector<int>& hFences, vector<int>& vFences) {
+    int maximizeSquareArea(int m, int n, vector<int>& hFences,
+                           vector<int>& vFences) {
         auto hEdges = getEdges(hFences, m);
         auto vEdges = getEdges(vFences, n);
-        int res = 0;
+        int  res    = 0;
         for (auto e : hEdges) {
             if (vEdges.contains(e)) {
                 res = max(res, e);
@@ -43,7 +44,7 @@ int main() {
     cin >> t;
     Solution s;
     while (t--) {
-        int n, m;
+        int         n, m;
         vector<int> hFences(m), vFences(n);
         for (int& i : hFences) cin >> i;
         for (int& i : vFences) cin >> i;

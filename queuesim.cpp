@@ -14,10 +14,10 @@ int32_t main() {
         int n;
         cin >> n;
         vector<int> ops(n);
-        for (int &i : ops) {
+        for (int& i : ops) {
             cin >> i;
         }
-        int size = 0;
+        int  size  = 0;
         bool valid = true;
         for (int op : ops) {
             if (op == 1) {

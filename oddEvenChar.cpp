@@ -20,11 +20,11 @@ void oddEven(string& s) {
 
 int32_t main() {
     fastio
-    // #ifndef ONLINE_JUDGE
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // #endif
-    string s;
+        // #ifndef ONLINE_JUDGE
+        //     freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        string s;
     getline(cin, s);
     oddEven(s);
     cout << s;

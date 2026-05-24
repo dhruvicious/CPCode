@@ -16,8 +16,10 @@ class Solution {
         for (int i = 0; i < n; i++) {
             pairs[i] = {nums1[i], nums2[i]};
         }
-        sort(pairs.begin(), pairs.end(), [](const auto& a, const auto& b) { return a.second > b.second; });
-        priority_queue<long long, vector<long long>, greater<long long>> minHeap;
+        sort(pairs.begin(), pairs.end(),
+             [](const auto& a, const auto& b) { return a.second > b.second; });
+        priority_queue<long long, vector<long long>, greater<long long>>
+                  minHeap;
         long long selectSum = 0, maxScore = 0;
 
         for (auto& pair : pairs) {
@@ -30,7 +32,7 @@ class Solution {
             }
             if (minHeap.size() == k) {
                 long long currScore = selectSum * pair.second;
-                maxScore = max(maxScore, currScore);
+                maxScore            = max(maxScore, currScore);
             }
         }
         return maxScore;

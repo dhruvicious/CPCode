@@ -19,8 +19,11 @@ class Solution {
             for (int j = 0; j < m; j++) {
                 row[i][j] = grid[i][j] + ((j > 0) ? row[i][j - 1] : 0);
                 col[i][j] = grid[i][j] + ((j > 0) ? row[i - 1][j] : 0);
-                diag1[i][j] = grid[i][j] + ((i > 0 && j > 0) ? diag1[i - 1][j - 1] : 0);
-                diag2[i][j] = grid[i][j] + ((i > 0 && j < n - 1) ? diag2[i - 1][j + 1] : 0);
+                diag1[i][j] =
+                    grid[i][j] + ((i > 0 && j > 0) ? diag1[i - 1][j - 1] : 0);
+                diag2[i][j] =
+                    grid[i][j]
+                    + ((i > 0 && j < n - 1) ? diag2[i - 1][j + 1] : 0);
             }
         }
 
@@ -32,7 +35,7 @@ class Solution {
                     int r = i + k - 1;
                     int c = j + k - 1;
 
-                    int target = row[i][c] - (j > 0 ? row[i][j - 1] : 0);
+                    int  target  = row[i][c] - (j > 0 ? row[i][j - 1] : 0);
                     bool isValid = true;
 
                     for (int x = i; x <= r && isValid; ++x) {
@@ -47,8 +50,10 @@ class Solution {
                     }
 
                     // Check diagonals
-                    int d1 = diag1[r][c] - (i > 0 && j > 0 ? diag1[i - 1][j - 1] : 0);
-                    int d2 = diag2[r][j] - (i > 0 && c + 1 < n ? diag2[i - 1][c + 1] : 0);
+                    int d1 = diag1[r][c]
+                             - (i > 0 && j > 0 ? diag1[i - 1][j - 1] : 0);
+                    int d2 = diag2[r][j]
+                             - (i > 0 && c + 1 < n ? diag2[i - 1][c + 1] : 0);
 
                     if (d1 != target || d2 != target) isValid = false;
 

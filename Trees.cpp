@@ -4,26 +4,26 @@ using namespace std;
 
 class node {
    public:
-    int data;
+    int   data;
     node *left, *right;
     node(int data) {
         this->data = data;
-        left = nullptr;
-        right = nullptr;
+        left       = nullptr;
+        right      = nullptr;
     }
 };
 
-node* buildTree();
-void insertInTree(int val, node* root);
-void printTreePreOrder(node* root);
-void printTreeInOrder(node* root);
-void printTreePostOrder(node* root);
-int heightOfTree(node* root);
-int countNodes(node* root);
-int diameterOTree(node* root);
+node*          buildTree();
+void           insertInTree(int val, node* root);
+void           printTreePreOrder(node* root);
+void           printTreeInOrder(node* root);
+void           printTreePostOrder(node* root);
+int            heightOfTree(node* root);
+int            countNodes(node* root);
+int            diameterOTree(node* root);
 pair<int, int> fastDiameter(node* root);
-void printLevelOrder(node* root);
-void mirrorTree(node* root);
+void           printLevelOrder(node* root);
+void           mirrorTree(node* root);
 
 node* buildTree() {
     int data;
@@ -31,8 +31,8 @@ node* buildTree() {
     if (data == -1) {
         return nullptr;
     }
-    node* root = new node(data);
-    root->left = buildTree();
+    node* root  = new node(data);
+    root->left  = buildTree();
     root->right = buildTree();
 
     return root;
@@ -106,8 +106,8 @@ int countNodes(node* root) {
 
 int diameterOTree(node* root) {
     if (!root) return 0;
-    int rootDia = heightOfTree(root->left) + heightOfTree(root->right);
-    int leftDia = diameterOTree(root->left);
+    int rootDia  = heightOfTree(root->left) + heightOfTree(root->right);
+    int leftDia  = diameterOTree(root->left);
     int rightDia = diameterOTree(root->right);
 
     return max({rootDia, leftDia, rightDia});
@@ -119,7 +119,7 @@ pair<int, int> fastDiameter(node* root) {  // height,diameter;
         p.first = p.second = 0;
         return p;
     }
-    pair<int, int> left = fastDiameter(root->left);
+    pair<int, int> left  = fastDiameter(root->left);
     pair<int, int> right = fastDiameter(root->right);
 
     int op1 = left.first + right.first;
@@ -127,7 +127,7 @@ pair<int, int> fastDiameter(node* root) {  // height,diameter;
     int op3 = right.second;
 
     p.second = max({op1, op2, op3});
-    p.first = max(left.first, right.first) + 1;
+    p.first  = max(left.first, right.first) + 1;
     return p;
 }
 
@@ -153,27 +153,27 @@ void printLevelOrder(node* root) {
 
 void mirrorTree(node* root) {
     if (!root) return;
-    node* temp = root->right;
+    node* temp  = root->right;
     root->right = root->left;
-    root->left = temp;
+    root->left  = temp;
     mirrorTree(root->right);
     mirrorTree(root->left);
 }
 
 vector<int> preOrder = {};
-int k = 0;
+int         k        = 0;
 
 node* createTreeFromInPre(vector<int>& inOrder, int start, int end) {
     if (start > end) return nullptr;
     node* root = new node(preOrder[k++]);
-    int i;
+    int   i;
     for (int j = start; j <= end; j++) {
         if (inOrder[j] == root->data) {
             i = j;
             break;
         }
     }
-    root->left = createTreeFromInPre(inOrder, start, i - 1);
+    root->left  = createTreeFromInPre(inOrder, start, i - 1);
     root->right = createTreeFromInPre(inOrder, i + 1, end);
     return root;
 }
@@ -184,7 +184,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     node* root = nullptr;
-    root = buildTree();
+    root       = buildTree();
     printLevelOrder(root);
     mirrorTree(root);
     printLevelOrder(root);

@@ -13,7 +13,7 @@ int main() {
         long long s, k, m;
         cin >> s >> k >> m;
 
-        long long n = m / k;
+        long long n      = m / k;
         long long remain = m % k;
 
         if (s <= k) {

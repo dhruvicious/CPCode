@@ -11,8 +11,8 @@ using namespace std;
 class Solution {
    private:
     unordered_map<char, string> keypad = {
-        {'1', "abc"}, {'2', "def"}, {'3', "ghi"}, {'4', "jkl"}, {'5', "mno"},
-        {'6', "pqrs"}, {'7', "tuv"}, {'8', "wx"}, {'9', "yx"}};
+        {'1', "abc"},  {'2', "def"}, {'3', "ghi"}, {'4', "jkl"}, {'5', "mno"},
+        {'6', "pqrs"}, {'7', "tuv"}, {'8', "wx"},  {'9', "yx"}};
     vector<string> res;
 
    public:
@@ -38,15 +38,15 @@ class Solution {
 };
 
 int32_t main() {
-// #ifndef ONLINE_JUDGE
-//         freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //         freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
     Solution s;
-    string str;
+    string   str;
     cin >> str;
     vector<string> res = s.letterCombination(str);
     for (string s : res) cout << s << " ";
-    cout<<endl<<res.size()<<endl;
+    cout << endl << res.size() << endl;
     return 0;
 }

@@ -3,10 +3,10 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
     node(int data = 0) {
-        val = data;
+        val  = data;
         next = nullptr;
     }
 };
@@ -16,7 +16,7 @@ void insertAtTail(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         tail->next = newNode;
-        tail = newNode;
+        tail       = newNode;
     }
 }
 
@@ -35,10 +35,10 @@ node* reverseList(node* head) {
     node* next = nullptr;
 
     while (curr != nullptr) {
-        next = curr->next;
+        next       = curr->next;
         curr->next = prev;
-        prev = curr;
-        curr = next;
+        prev       = curr;
+        curr       = next;
     }
     return prev;
 }
@@ -46,18 +46,18 @@ node* reverseList(node* head) {
 node* deleteNodes(node* head) {
     head = reverseList(head);
 
-    node* curr = head;
-    node* prev = nullptr;
-    int maxSoFar = INT_MIN;
+    node* curr     = head;
+    node* prev     = nullptr;
+    int   maxSoFar = INT_MIN;
 
     while (curr != nullptr) {
         if (curr->val >= maxSoFar) {
             maxSoFar = curr->val;
-            prev = curr;
-            curr = curr->next;
+            prev     = curr;
+            curr     = curr->next;
         } else {
             node* temp = curr;
-            curr = curr->next;
+            curr       = curr->next;
             if (prev) {
                 prev->next = curr;
             } else {

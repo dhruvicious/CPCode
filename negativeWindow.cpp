@@ -13,15 +13,15 @@ int maxcandies(vector<int>& candies, int k) {
     int maxCandiesPile = 0;
 
     for (int i : candies) maxCandiesPile = max(maxCandiesPile, i);
-    int left = 1;
+    int left  = 1;
     int right = maxCandiesPile;
-    int ans = 0;
+    int ans   = 0;
 
     while (left <= right) {
         int mid = left + (right - left) / 2;
         if (canAllocateCandies(candies, k, mid)) {
-            ans = mid;
-            left = mid+1;
+            ans  = mid;
+            left = mid + 1;
         } else {
             right = mid - 1;
         }

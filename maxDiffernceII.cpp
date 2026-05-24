@@ -10,9 +10,7 @@ using namespace std;
 
 class Solution {
    public:
-    int maxDiffernce2(string s, int k) {
-        
-    }
+    int maxDiffernce2(string s, int k) {}
 };
 
 int32_t main() {

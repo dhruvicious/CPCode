@@ -7,8 +7,8 @@ using namespace std;
 class Solution {
    public:
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
-        int n = rooms.size();
-        vector<bool> visited(n, false);
+        int                 n = rooms.size();
+        vector<bool>        visited(n, false);
         function<void(int)> dfs = [&](int room) -> void {
             visited[room] = true;
             for (int key : visited) {

@@ -3,23 +3,25 @@ using namespace std;
 
 #define ll long long
 #define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);
 #define endl '\n'
 
-class Solution{
-public:
-    int longestConsecutive(vector<int>& nums){
+class Solution {
+   public:
+    int longestConsecutive(vector<int>& nums) {
         unordered_set<int> s(nums.begin(), nums.end());
-        int longest=0;
-        for(int num:s){
-            if(!s.count(num-1)){
-                int count=1;
-                int curr=num;
-                while(s.count(num+1)){
+        int                longest = 0;
+        for (int num : s) {
+            if (!s.count(num - 1)) {
+                int count = 1;
+                int curr  = num;
+                while (s.count(num + 1)) {
                     curr++;
                     count++;
                 }
-                longest=max(longest, count);
+                longest = max(longest, count);
             }
         }
         return longest;
@@ -28,12 +30,10 @@ public:
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-
-
+    freopen("output.txt", "w", stdout);
+#endif
 
     return 0;
 }

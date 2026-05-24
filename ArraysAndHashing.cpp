@@ -62,7 +62,7 @@ class Solution {
     //  and j that satisfy the condition.
     //  Return the answer with the smaller index first.
     vector<int> twoSum(vector<int>& nums, int target) {
-        int n = nums.size();
+        int                     n = nums.size();
         unordered_map<int, int> indexMap;
         for (int i = 0; i < n; i++) {
             int comp = target - nums[i];
@@ -75,8 +75,9 @@ class Solution {
     }
 
     // Question 5; Longest Common Prefix
-    //  Write a function to find the longest common prefix string amongst an array
-    //  of strings. If there is no common prefix, return an empty string "".
+    //  Write a function to find the longest common prefix string amongst an
+    //  array of strings. If there is no common prefix, return an empty string
+    //  "".
     //
     string longestCommonPrefix(vector<string>& strs) {
         int n = strs.size();
@@ -92,9 +93,9 @@ class Solution {
     }
 
     // Question 6; Group Anagrams
-    //  Given an array of strings strs, group all anagrams together into sublists.
-    //  You may return the output in any order.
-    //  An anagram is a string that contains the exact same characters as another string,
+    //  Given an array of strings strs, group all anagrams together into
+    //  sublists. You may return the output in any order. An anagram is a string
+    //  that contains the exact same characters as another string,
     //   but the order of the characters can be different.
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         unordered_map<string, vector<string>> map;
@@ -116,9 +117,9 @@ class Solution {
     }
 
     // Question 7; Remove Elements
-    //  You are given an integer array nums and an integer val. Your task is to remove
-    //  all occurrences of val from nums in-place.
-    //  After removing all occurrences of val, return the number of remaining elements, say k,
+    //  You are given an integer array nums and an integer val. Your task is to
+    //  remove all occurrences of val from nums in-place. After removing all
+    //  occurrences of val, return the number of remaining elements, say k,
     //   such that the first k elements of nums do not contain val.
     int removeElement(vector<int>& nums, int val) {
         int n = nums.size();
@@ -133,19 +134,20 @@ class Solution {
 
     // Question 8; Majority Elements
     //  Given an array nums of size n, return the majority element.
-    //  The majority element is the element that appears more than ⌊n / 2⌋ times in the array.
-    //  You may assume that the majority element always exists in the array.
+    //  The majority element is the element that appears more than ⌊n / 2⌋ times
+    //  in the array. You may assume that the majority element always exists in
+    //  the array.
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
         sort(nums.begin(), nums.end());
-        int ms = 0;
+        int ms  = 0;
         int mel = nums[0];
 
         int left = 0;
         for (int right = 1; right <= n; right++) {
             if (right == n || nums[right] != nums[left]) {
                 if (right - left > ms) {
-                    ms = right - left;
+                    ms  = right - left;
                     mel = nums[left];
                 }
                 left = right;
@@ -158,9 +160,9 @@ class Solution {
     //  Design a HashSet without using any built-in hash table libraries.
     //  Implement MyHashSet class:
     //  void add(key) Inserts the value key into the HashSet.
-    //  bool contains(key) Returns whether the value key exists in the HashSet or not.
-    //  void remove(key) Removes the value key in the HashSet. If key does not exist
-    //  in the HashSet, do nothing.
+    //  bool contains(key) Returns whether the value key exists in the HashSet
+    //  or not. void remove(key) Removes the value key in the HashSet. If key
+    //  does not exist in the HashSet, do nothing.
     class MyHashSet {
        private:
         vector<bool> table;
@@ -179,15 +181,15 @@ class Solution {
     // Design a HashMap without using any built-in hash table libraries.
     // Implement the MyHashMap class:
     // MyHashMap() initializes the object with an empty map.
-    // void put(int key, int value) inserts a (key, value) pair into the HashMap.
-    // If the key already exists in the map, update the corresponding value.
-    // int get(int key) returns the value to which the specified key is mapped,
-    // or -1 if this map contains no mapping for the key.
-    // void remove(key) removes the key and its corresponding value if the map
+    // void put(int key, int value) inserts a (key, value) pair into the
+    // HashMap. If the key already exists in the map, update the corresponding
+    // value. int get(int key) returns the value to which the specified key is
+    // mapped, or -1 if this map contains no mapping for the key. void
+    // remove(key) removes the key and its corresponding value if the map
     // contains the mapping for the key.
     class MyHashMap {
        private:
-        vector<int> table;
+        vector<int>  table;
         vector<bool> present;
 
        public:
@@ -197,7 +199,7 @@ class Solution {
         }
 
         void put(int key, int value) {
-            table[key] = value;
+            table[key]   = value;
             present[key] = true;
         }
 
@@ -210,9 +212,10 @@ class Solution {
     };
 
     // Question 11; Sort Array
-    // You are given an array of integers nums, sort the array in ascending order and return it.
-    // You must solve the problem without using any built-in functions in O(nlog(n)) time complexity
-    // and with the smallest space complexity possible.
+    // You are given an array of integers nums, sort the array in ascending
+    // order and return it. You must solve the problem without using any
+    // built-in functions in O(nlog(n)) time complexity and with the smallest
+    // space complexity possible.
     void merge(vector<int>& nums, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
@@ -260,14 +263,13 @@ class Solution {
     }
 
     // Question 12; Sort Colors
-    //  You are given an array nums consisting of n elements where each element is an integer
-    //  representing a color:
-    //  0 represents red
-    //  1 represents white
+    //  You are given an array nums consisting of n elements where each element
+    //  is an integer representing a color: 0 represents red 1 represents white
     //  2 represents blue
-    //  Your task is to sort the array in-place such that elements of the same color are grouped
-    //  together and arranged in the order: red (0), white (1), and then blue (2).
-    //  You must not use any built-in sorting functions to solve this problem.
+    //  Your task is to sort the array in-place such that elements of the same
+    //  color are grouped together and arranged in the order: red (0), white
+    //  (1), and then blue (2). You must not use any built-in sorting functions
+    //  to solve this problem.
     void sortColors(vector<int>& nums) {
         int count0 = 0, count1 = 0, count2 = 0;
         for (int i : nums) {
@@ -285,15 +287,17 @@ class Solution {
     }
 
     // Question 13; Top K Frequent Elements
-    //  Given an integer array nums and an integer k, return the k most frequent elements within the array.
-    //  The test cases are generated such that the answer is always unique.
-    //  You may return the output in any order.
+    //  Given an integer array nums and an integer k, return the k most frequent
+    //  elements within the array. The test cases are generated such that the
+    //  answer is always unique. You may return the output in any order.
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        int n = nums.size();
+        int                     n = nums.size();
         unordered_map<int, int> freq;
         for (int i : nums) freq[i]++;
 
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>,
+                       greater<pair<int, int>>>
+            pq;
         for (auto& p : freq) {
             pq.push({p.second, p.first});
             if (pq.size() > k) {
@@ -321,11 +325,11 @@ class Solution {
         }
         return encoded;
     }
-    
+
     vector<string> decode(string s) {
         vector<string> result;
-        int i = 0;
-        int n = s.size();
+        int            i = 0;
+        int            n = s.size();
 
         while (i < n) {
             int len = 0;
@@ -342,8 +346,6 @@ class Solution {
 
         return result;
     }
-    
-    
 };
 
 int main() {

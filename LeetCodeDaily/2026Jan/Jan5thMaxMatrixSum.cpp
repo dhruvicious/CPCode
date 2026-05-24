@@ -11,11 +11,11 @@ class Solution {
    public:
     long long maxMatrixSum(vector<vector<int>>& matrix) {
         long long negativeCount = 0;
-        long long modSum = 0;
-        long long leastAbs = LLONG_MAX;
+        long long modSum        = 0;
+        long long leastAbs      = LLONG_MAX;
         for (vector<int>& vec : matrix) {
             for (int& i : vec) {
-                modSum += llabs((long long)i);
+                modSum += llabs((long long) i);
                 negativeCount += i < 0 ? 1 : 0;
                 leastAbs = min(llabs((long long) i), leastAbs);
             }

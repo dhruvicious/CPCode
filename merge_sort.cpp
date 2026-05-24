@@ -5,7 +5,7 @@ using namespace std;
 
 vector<int> myMerge(vector<int>& left, vector<int>& right) {
     vector<int> srted;
-    int         p1=0, p2=0;
+    int         p1 = 0, p2 = 0;
     while (p1 < left.size() && p2 < right.size()) {
         if (left[p1] < right[p2]) {
             srted.push_back(left[p1++]);

@@ -9,7 +9,7 @@ pair<int, vector<int>> solve(int a, int b) {
         return {1, {x}};
     }
 
-    int m = a | b;
+    int m  = a | b;
     int x1 = a ^ m;
     int x2 = m ^ b;
 

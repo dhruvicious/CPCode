@@ -34,7 +34,7 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n;
+        int         n;
         vector<int> nums(n);
         for (int& i : nums) cin >> i;
     }

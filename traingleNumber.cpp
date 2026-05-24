@@ -12,6 +12,6 @@ int32_t main() {
 #endif
     int n;
     cin >> n;
-    cout<<recursiveSum(n);
+    cout << recursiveSum(n);
     return 0;
 }

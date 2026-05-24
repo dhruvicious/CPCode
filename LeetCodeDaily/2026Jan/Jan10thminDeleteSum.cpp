@@ -9,8 +9,9 @@ using namespace std;
 class Solution {
    public:
     int minimumDeleteSum(string s1, string s2) {
-        int n = s1.length(), m = s2.length();
-        vector<vector<int>> dp(s1.length() + 1, vector<int>(s2.length() + 1, -1));
+        int                 n = s1.length(), m = s2.length();
+        vector<vector<int>> dp(
+            s1.length() + 1, vector<int>(s2.length() + 1, -1));
 
         function<int(int, int)> rec = [&](int i, int j) -> int {
             if (dp[i][j] != -1) {

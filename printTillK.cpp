@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *right, *left;
     node(int val) : val(val), right(nullptr), left(nullptr) {}
     node() : val(INT_MIN), right(nullptr), left(nullptr) {}
@@ -36,14 +36,14 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int n;
-    cin>>n;
+    cin >> n;
     node* root = nullptr;
-    while(n--){
+    while (n--) {
         int val;
-        cin>>val;
+        cin >> val;
         root = insertInBST(root, val);
     }
     printTillK(root, k);
-    
+
     return 0;
 }

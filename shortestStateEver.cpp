@@ -32,7 +32,7 @@ int main(int argsC, char* argsV[]) {
         cin >> x >> y;
 
         int conflictBit = x & y;
-        int msb = -1;
+        int msb         = -1;
         for (int i = 29; i >= 0; i--) {
             if ((conflictBit >> i) & 1) {
                 msb = i;
@@ -78,8 +78,10 @@ int main(int argsC, char* argsV[]) {
         pair<int, int> cand1 = getCandi(true);
         pair<int, int> cand2 = getCandi(false);
 
-        long long cost1 = (long long) abs(x - cand1.first) + abs(y - cand1.second);
-        long long cost2 = (long long) abs(x - cand2.first) + abs(y - cand2.second);
+        long long cost1 =
+            (long long) abs(x - cand1.first) + abs(y - cand1.second);
+        long long cost2 =
+            (long long) abs(x - cand2.first) + abs(y - cand2.second);
 
         if (cost1 < cost2) {
             cout << cand1.first << ' ' << cand1.second << '\n';

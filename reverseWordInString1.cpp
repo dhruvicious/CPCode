@@ -8,18 +8,15 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-class Solution
-{
-public:
-    string reverseWords(string s)
-    {
+class Solution {
+   public:
+    string reverseWords(string s) {
         vector<string> words;
-        stringstream ss(s);
+        stringstream   ss(s);
     }
 };
 
-int32_t main()
-{
+int32_t main() {
     fastio
 #ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);

@@ -28,7 +28,7 @@ int main() {
         std::vector<long long> suffMax(n + 2, 0);
         for (int i = n; i >= 1; i--) {
             long long currSource = std::max(a[i - 1], b[i - 1]);
-            suffMax[i] = std::max(suffMax[i + 1], currSource);
+            suffMax[i]           = std::max(suffMax[i + 1], currSource);
         }
         std::vector<long long> pref(n + 1, 0);
         for (int i = 1; i <= n; i++) {

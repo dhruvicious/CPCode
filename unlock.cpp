@@ -10,9 +10,9 @@ int32_t main() {
     int k;
     cin >> n >> k;
 
-    vector<int> arr(n);
+    vector<int>             arr(n);
     unordered_map<int, int> posMap;
-    priority_queue<int> pq;
+    priority_queue<int>     pq;
 
     for (int& i : arr) cin >> i;
     for (int i = 0; i < n; i++) posMap[arr[i]] = i;
@@ -32,7 +32,7 @@ int32_t main() {
 
         swap(arr[i], arr[idx]);
         posMap[arr[idx]] = idx;
-        posMap[arr[i]] = i;
+        posMap[arr[i]]   = i;
 
         k--;
     }

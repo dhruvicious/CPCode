@@ -10,7 +10,7 @@ void fastIO() {
 }
 
 void IO(int argC, char* argV[]) {
-    const char* inputFile = argC > 3 ? argV[1] : "input.txt";
+    const char* inputFile  = argC > 3 ? argV[1] : "input.txt";
     const char* outputFile = argC > 3 ? argV[2] : "output.txt";
 #ifdef ONLINE_JUDGE
     freopen(inputFile, "r", stdin);

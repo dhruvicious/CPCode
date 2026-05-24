@@ -16,12 +16,12 @@ void solve(vector<int> arr, int target, int index, vector<int>& ans) {
 
 int32_t main() {
     fastio
-    // #ifndef ONLINE_JUDGE
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // #endif
+        // #ifndef ONLINE_JUDGE
+        //     freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
 
-    int n;
+        int n;
     cin >> n;
     vector<int> arr(n);
     for (auto& num : arr) cin >> num;

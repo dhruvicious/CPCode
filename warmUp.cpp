@@ -44,8 +44,6 @@ int main() {
         vector<int> a(n, 0), b(n, 0);
         for (int& ai : a) cin >> ai;
         for (int& bi : b) cin >> bi;
-        
-        
     }
     return 0;
 }

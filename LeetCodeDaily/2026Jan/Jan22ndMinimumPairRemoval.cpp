@@ -12,9 +12,9 @@ class Solution {
         int count = 0;
 
         while (nums.size() > 1) {
-            bool isAsc = true;
-            int minSum = numeric_limits<int>::max();
-            int targetIdx = -1;
+            bool isAsc     = true;
+            int  minSum    = numeric_limits<int>::max();
+            int  targetIdx = -1;
 
             for (size_t i = 0; i < nums.size() - 1; i++) {
                 int sum = nums[i] + nums[i + 1];
@@ -22,7 +22,7 @@ class Solution {
                     isAsc = false;
                 }
                 if (sum < minSum) {
-                    minSum = sum;
+                    minSum    = sum;
                     targetIdx = static_cast<int>(i);
                 }
             }

@@ -14,9 +14,10 @@ using namespace std;
 
 class Solution {
    public:
-    long long totalScore(int hp, vector<int>& damage, vector<int>& requirement) {
+    long long totalScore(int hp, vector<int>& damage,
+                         vector<int>& requirement) {
         long long totalscore = 0;
-        int n = damage.size();
+        int       n          = damage.size();
         for (int i = 0; i < n; i++) {
             long long currentHP = hp;
             for (int j = i; j < n; j++) {
@@ -34,9 +35,8 @@ class Solution2 {
     bool isPrime(int num) {
         if (num <= 1) return false;
         if (num <= 3) return true;
-        if (num % 2 == 0 || num % 3 == 0){
-            
-        } }
+        if (num % 2 == 0 || num % 3 == 0) {}
+    }
 
     int largestPrime(int n) {}
 };

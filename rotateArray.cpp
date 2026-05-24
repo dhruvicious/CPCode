@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
    public:
-    void rotate(vector<vi> &matrix) {
+    void rotate(vector<vi>& matrix) {
         int n = matrix.size();
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
@@ -32,15 +32,15 @@ int32_t main() {
     int n;
     cin >> n;
     vector<vector<int>> mat(n, vector<int>(n));
-    for (vector<int> &row : mat) {
-        for (int &val : row) {
+    for (vector<int>& row : mat) {
+        for (int& val : row) {
             cin >> val;
         }
     }
     Solution s;
     s.rotate(mat);
-    for (vector<int> &row : mat) {
-        for (int &val : row) {
+    for (vector<int>& row : mat) {
+        for (int& val : row) {
             cout << val << " ";
         }
         cout << endl;

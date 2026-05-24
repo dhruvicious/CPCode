@@ -3,14 +3,14 @@ using namespace std;
 
 class node {
    public:
-    int val;
-    node *next;
+    int   val;
+    node* next;
     node() {
-        this->val = 0;
+        this->val  = 0;
         this->next = nullptr;
     }
     node(int data) {
-        this->val = data;
+        this->val  = data;
         this->next = nullptr;
     }
 };
@@ -25,17 +25,17 @@ class linkedList {
     }
 
     void insertAtTail(int data) {
-        node *newNode = new node(data);
+        node* newNode = new node(data);
         if (!head) {
             head = tail = newNode;
         } else {
             tail->next = newNode;
-            tail = newNode;
+            tail       = newNode;
         }
     }
 
     void printList() {
-        node *temp = head;
+        node* temp = head;
         while (temp) {
             cout << temp->val << " ";
             temp = temp->next;
@@ -49,21 +49,21 @@ class linkedList {
         node *oddHead = nullptr, *oddTail = nullptr;
         node *evenHead = nullptr, *evenTail = nullptr;
 
-        node *curr = head;
+        node* curr = head;
         while (curr) {
             if (curr->val % 2 != 0) {
                 if (!oddHead) {
                     oddHead = oddTail = curr;
                 } else {
                     oddTail->next = curr;
-                    oddTail = oddTail->next;
+                    oddTail       = oddTail->next;
                 }
             } else {
                 if (!evenHead) {
                     evenHead = evenTail = curr;
                 } else {
                     evenTail->next = curr;
-                    evenTail = evenTail->next;
+                    evenTail       = evenTail->next;
                 }
             }
             curr = curr->next;

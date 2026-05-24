@@ -13,7 +13,7 @@ void fastIO() {
 }
 
 void IO(int argsC, char* argsV[]) {
-    const char* inputFile = (argsC >= 3) ? argsV[1] : "input.txt";
+    const char* inputFile  = (argsC >= 3) ? argsV[1] : "input.txt";
     const char* outputFile = (argsC >= 3) ? argsV[2] : "output.txt";
 
 #ifndef ONLINE_JUDGE
@@ -25,8 +25,8 @@ void IO(int argsC, char* argsV[]) {
 class Solution {
    public:
     long long maxSumTrionic(vector<int>& nums) {
-        int n = nums.size();
-        const ll INF = -1e18;
+        int        n   = nums.size();
+        const ll   INF = -1e18;
         vector<ll> incr1(n, INF);
         vector<ll> dec(n, INF);
         vector<ll> incr2(n, INF);
@@ -42,12 +42,14 @@ class Solution {
 
             if (nums[i] < nums[i - 1]) {
                 if (incr1[i - 1] != INF) dec[i] = incr1[i - 1] + nums[i];
-                if (dec[i - 1] != INF) dec[i] = max(dec[i], dec[i - 1] + nums[i]);
+                if (dec[i - 1] != INF)
+                    dec[i] = max(dec[i], dec[i - 1] + nums[i]);
             }
 
             if (nums[i] > nums[i - 1]) {
                 ll from_dec = (dec[i - 1] != INF) ? dec[i - 1] + nums[i] : INF;
-                ll from_incr2 = (incr2[i - 1] != INF) ? incr2[i - 1] + nums[i] : INF;
+                ll from_incr2 =
+                    (incr2[i - 1] != INF) ? incr2[i - 1] + nums[i] : INF;
                 incr2[i] = max(from_dec, from_incr2);
             }
         }

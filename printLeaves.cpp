@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    private:
-    int val;
+    int   val;
     node *right, *left;
 
    public:  // constructors
@@ -12,7 +12,7 @@ class node {
     // getters
     node* getLeft() { return this->left; }
     node* getRight() { return this->right; }
-    int getVal() { return this->val; }
+    int   getVal() { return this->val; }
     // setters
     void setRight(node* right) { this->right = right; }
     void setLeft(node* left) { this->left = left; }
@@ -47,7 +47,7 @@ node* buildTree() {
 node* buildTreeFromLevelOrder() {
     int val;
     if (!(cin >> val) || val == -1) return nullptr;
-    node* root = new node(val);
+    node*        root = new node(val);
     queue<node*> q;
     q.push(root);
 
@@ -118,7 +118,7 @@ int main() {
     istringstream in(input);
     ostringstream out;
     convertIP(in, out);
-    string fltInp = out.str();
+    string        fltInp = out.str();
     istringstream TreeStream(fltInp);
     cin.rdbuf(TreeStream.rdbuf());
 

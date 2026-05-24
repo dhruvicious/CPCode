@@ -22,7 +22,7 @@ int main() {
     while (t--) {
         int n, k;
         cin >> n >> k;
-        vector<int> arr(n);
+        vector<int>  arr(n);
         vector<bool> pre(n + 2, false);
 
         for (int i = 0; i < n; i++) {

@@ -25,7 +25,7 @@ int main() {
         } else {
             for (int i = 0; i < n - 1; i++) {
                 int diff = arr[i + 1] - arr[i];
-                ans = min(ans, diff / 2 + 1);
+                ans      = min(ans, diff / 2 + 1);
             }
             cout << ans << endl;
         }

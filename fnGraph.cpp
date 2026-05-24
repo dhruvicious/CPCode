@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int WIDTH = 1920;
+const int WIDTH  = 1920;
 const int HEIGHT = 1080;
 
 const double X_MIN = -10.00f;
@@ -22,8 +22,8 @@ int main() {
 
     auto setPixel = [&](int x, int y, int r, int g, int b) {
         if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
-            int index = (y * WIDTH + x) * 3;
-            image[index] = r;
+            int index        = (y * WIDTH + x) * 3;
+            image[index]     = r;
             image[index + 1] = g;
             image[index + 2] = b;
         }
@@ -43,7 +43,7 @@ int main() {
         double y = fn(x);
 
         int pixelY = (int) ((y - Y_MIN) / (Y_MAX - Y_MIN) * (HEIGHT - 1));
-        pixelY = HEIGHT - 1 - pixelY;
+        pixelY     = HEIGHT - 1 - pixelY;
 
         setPixel(i, pixelY, 255, 0, 0);
     }
@@ -52,7 +52,8 @@ int main() {
     file << "P3\n" << WIDTH << " " << HEIGHT << "\n255\n";
 
     for (int i = 0; i < WIDTH * HEIGHT * 3; i += 3) {
-        file << (int) image[i] << " " << (int) image[i + 1] << " " << (int) image[i + 2] << "\n";
+        file << (int) image[i] << " " << (int) image[i + 1] << " "
+             << (int) image[i + 2] << "\n";
     }
 
     file.close();

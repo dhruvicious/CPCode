@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    private:
-    int val;
+    int   val;
     node* right;
     node* left;
 
@@ -13,7 +13,7 @@ class node {
 
     node* getRight() { return this->right; }
     node* getLeft() { return this->left; }
-    int getVal() { return this->val; }
+    int   getVal() { return this->val; }
 
     void setVal(int val) { this->val = val; }
     void setRight(node* right) { this->right = right; }
@@ -79,7 +79,7 @@ vector<vector<int>> LevelOrderList(node* root) {
     vector<vector<int>> levels;
 
     while (!q.empty()) {
-        int size = q.size();
+        int         size = q.size();
         vector<int> level;
 
         for (int i = 0; i < size; i++) {
@@ -122,7 +122,7 @@ void printAlternatingLevelOrder(node* root) {
     q.push(root);
     int currLevel = 0;
     while (!q.empty()) {
-        int size = q.size();
+        int         size = q.size();
         vector<int> level;
 
         for (int i = 0; i < size; i++) {
@@ -154,16 +154,16 @@ void oddPrint(vector<vector<int>> ans) {
     }
     cout << ']';
 }
-    
+
 pair<int, bool> isBalanced(node* root) {
     pair<int, bool> p;
     if (!root) {
-        p.first = 0;
+        p.first  = 0;
         p.second = true;
         return p;
     }
 
-    pair<int, bool> left = isBalanced(root->getLeft());
+    pair<int, bool> left  = isBalanced(root->getLeft());
     pair<int, bool> right = isBalanced(root->getRight());
 
     p.first = 1 + max(left.first, right.first);
@@ -178,9 +178,9 @@ pair<int, bool> isBalanced(node* root) {
 
 int sumNodes(node* root) {
     if (!root) return 0;
-    int sumLeft = sumNodes(root->getLeft());
+    int sumLeft  = sumNodes(root->getLeft());
     int sumRight = sumNodes(root->getRight());
-    int total = sumLeft + sumRight + root->getVal();
+    int total    = sumLeft + sumRight + root->getVal();
 
     return total;
 }

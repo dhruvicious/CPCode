@@ -11,7 +11,7 @@ using namespace std;
 class Solution {
    public:
     bool isSubsetSum(vector<int> nums, int target) {
-        int n = nums.size();
+        int n            = nums.size();
         int totalSubsets = 1 << n;
         for (int mask = 0; mask < totalSubsets; mask++) {
             int sum = 0;
@@ -29,8 +29,8 @@ class Solution {
         if (index == nums.size()) {
             return currSum == target;
         }
-        return helper(nums, target, index + 1, currSum + nums[index]) ||
-               helper(nums, target, index + 1, currSum);
+        return helper(nums, target, index + 1, currSum + nums[index])
+               || helper(nums, target, index + 1, currSum);
 
         return false;
     }

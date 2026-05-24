@@ -22,9 +22,7 @@ class Solution {
             return false;
     }
 
-    bool isPowerOf2(int n) { 
-        return (n > 0 && (n & (n - 1) == 1)); 
-    }
+    bool isPowerOf2(int n) { return (n > 0 && (n & (n - 1) == 1)); }
 };
 
 int32_t main() {

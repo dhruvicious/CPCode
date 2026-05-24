@@ -10,7 +10,7 @@ void fastIO() {
 }
 
 void IO(int argsCount, char* argsValue[]) {
-    const char* inputFile = argsCount >= 3 ? argsValue[1] : "input.txt";
+    const char* inputFile  = argsCount >= 3 ? argsValue[1] : "input.txt";
     const char* outputFile = argsCount >= 3 ? argsValue[2] : "output.txt";
 #ifndef ONLINE_JUDGE
     freopen(inputFile, "r", stdin);
@@ -39,9 +39,9 @@ class Solution {
 int main(int argsCount, char* argsValue[]) {
     fastIO();
     IO(argsCount, argsValue);
-    Solution s;
+    Solution         s;
     std::vector<int> arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-    int ans = s.removeDuplicates(arr);
+    int              ans = s.removeDuplicates(arr);
     std::cout << ans << "\n";
     for (int i = 0; i < ans; i++) {
         std::cout << arr[i] << " ";

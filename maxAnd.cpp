@@ -14,10 +14,10 @@ class Solution {
    public:
     int maximumAND(vector<int>& nums, int k, int m) {
         int ans = 0;
-        int n = nums.size();
+        int n   = nums.size();
 
         for (int b = 29; b >= 0; b--) {
-            int target = ans | (1 << b);
+            int               target = ans | (1 << b);
             vector<long long> c;
             c.reserve(n);
 

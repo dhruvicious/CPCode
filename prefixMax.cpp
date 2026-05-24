@@ -15,8 +15,8 @@ int main() {
         for (int& i : arr) cin >> i;
 
         function<long long()> compVal = [&]() -> long long {
-            long long res = 0;
-            int currmx = 0;
+            long long res    = 0;
+            int       currmx = 0;
             for (int i : arr) {
                 currmx = max(currmx, i);
                 res += currmx;
@@ -31,7 +31,7 @@ int main() {
                 swap(arr[i], arr[j]);
 
                 long long currVal = compVal();
-                ans = max(currVal, ans);
+                ans               = max(currVal, ans);
 
                 swap(arr[i], arr[j]);
             }

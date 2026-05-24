@@ -20,6 +20,4 @@ void IO() {
 int main() {
     fastIO();
     IO();
-    
-    
 }

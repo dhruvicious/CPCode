@@ -32,7 +32,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     Solution s;
-    int n;
+    int      n;
     cin >> n;
     vector<string> ans = s.generateParenthesis(n);
 

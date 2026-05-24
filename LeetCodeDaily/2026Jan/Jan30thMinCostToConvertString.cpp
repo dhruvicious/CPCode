@@ -29,11 +29,9 @@ int main(int argsC, char* argsV[]) {
     while (t--) {
         string s, t;
         cin >> s >> t;
-        
+
         vector<string> original;
         vector<string> changed;
-        vector<int> cost;
-        
-        
+        vector<int>    cost;
     }
 }

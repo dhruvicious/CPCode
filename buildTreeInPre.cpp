@@ -5,15 +5,15 @@ class node {
    private:
     node* right;
     node* left;
-    int val;
+    int   val;
 
    public:
     node(int val) {
-        this->val = val;
+        this->val   = val;
         this->right = nullptr;
-        this->left = nullptr;
+        this->left  = nullptr;
     }
-    int getVal() { return val; }
+    int   getVal() { return val; }
     node* getRight() { return right; }
     node* getLeft() { return left; }
 
@@ -23,10 +23,10 @@ class node {
 
 node* buildTreeInPre(vector<int>& preOrder, vector<int>& inOrder, int start,
                      int end, int& k);
-void printPostOrder(node* root);
-void printPreOrder(node* root);
-void printInOrder(node* root);
-void printLevelOrder(node* root);
+void  printPostOrder(node* root);
+void  printPreOrder(node* root);
+void  printInOrder(node* root);
+void  printLevelOrder(node* root);
 
 node* buildTreeInPre(vector<int>& preOrder, vector<int>& inOrder, int start,
                      int end, int& k) {
@@ -34,7 +34,7 @@ node* buildTreeInPre(vector<int>& preOrder, vector<int>& inOrder, int start,
         return nullptr;
     }
     node* root = new node(preOrder[k++]);
-    int i = -1;
+    int   i    = -1;
     for (int j = start; j <= end; j++) {
         if (inOrder[j] == root->getVal()) {
             i = j;
@@ -61,10 +61,10 @@ void printPreOrder(node* root) {
     printPreOrder(root->getRight());
 }
 
-void printInOrder(node* root){
-    if(!root) return;
+void printInOrder(node* root) {
+    if (!root) return;
     printInOrder(root->getLeft());
-    cout<<root->getVal();
+    cout << root->getVal();
     printInOrder(root->getRight());
 }
 
@@ -101,7 +101,7 @@ int32_t main() {
 
     for (int& i : preOrder) cin >> i;
     for (int& i : inOrder) cin >> i;
-    int k = 0;
+    int   k    = 0;
     node* root = buildTreeInPre(preOrder, inOrder, 0, n - 1, k);
     printLevelOrder(root);
     return 0;

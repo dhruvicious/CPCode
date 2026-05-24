@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *right, *left;
     node(int val) : val(val), right(nullptr), left(nullptr) {}
     node() : val(INT_MIN), right(nullptr), left(nullptr) {}
@@ -12,7 +12,7 @@ class node {
 node* buildFromLevelOrder() {
     int val;
     if (!(cin >> val) || val == -1) return nullptr;
-    node* root = new node(val);
+    node*        root = new node(val);
     queue<node*> q;
     q.push(root);
 

@@ -4,7 +4,7 @@ using namespace std;
 template <typename T>
 class node {
    private:
-    T val;
+    T        val;
     node<T>* right;
     node<T>* left;
 
@@ -14,7 +14,7 @@ class node {
 
     node<T>* getRight() { return this->right; }
     node<T>* getLeft() { return this->left; }
-    T getVal() { return this->val; }
+    T        getVal() { return this->val; }
 
     void setVal(T val) { this->val = val; }
     void setRight(node<T>* right) { this->right = right; }

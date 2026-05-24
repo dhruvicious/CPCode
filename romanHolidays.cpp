@@ -17,7 +17,7 @@ int valueOf(char c, char next) {
 }
 
 int processQuery(string s, int cx, int cv, int ci) {
-    int n = s.size();
+    int    n = s.size();
     string t = s;
     for (int i = 0; i < n; i++) {
         if (t[i] == '?') {

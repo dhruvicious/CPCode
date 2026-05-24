@@ -18,7 +18,7 @@ class Solution {
                 return aBitCount < bBitCount;
         });
         return arr;
-    } 
+    }
 };
 
 int main() {

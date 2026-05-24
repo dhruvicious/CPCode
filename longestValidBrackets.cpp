@@ -3,25 +3,27 @@ using namespace std;
 
 #define ll long long
 #define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);
 #define endl '\n'
 
 class Solution {
-public:
+   public:
     int longestValidParentheses(string s) {
         stack<int> st;
         st.push(-1);
-        int maxLen=0;
+        int maxLen = 0;
 
-        for(int i=0;i<s.size();i++){
-            if(s[i]=='('){
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '(') {
                 st.push(i);
-            }else{
+            } else {
                 st.pop();
-                if(st.empty()){
+                if (st.empty()) {
                     st.push(i);
-                }else{
-                    maxLen=max(maxLen, i-st.top());
+                } else {
+                    maxLen = max(maxLen, i - st.top());
                 }
             }
         }
@@ -31,10 +33,10 @@ public:
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-    
+    freopen("output.txt", "w", stdout);
+#endif
+
     return 0;
 }

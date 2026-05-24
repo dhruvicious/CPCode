@@ -14,14 +14,16 @@ class Solution {
                  return a[1] > b[1];
              });
         int removals = 0;
-        int prevEnd = intervals[0][1];
-        
-        for(int i = 1;i<intervals.size();i++){
+        int prevEnd  = intervals[0][1];
+
+        for (int i = 1; i < intervals.size(); i++) {
             int start = intervals[i][0];
-            int end = intervals[i][1];
-            
-            if(start<prevEnd) removals++;
-            else prevEnd = end;
+            int end   = intervals[i][1];
+
+            if (start < prevEnd)
+                removals++;
+            else
+                prevEnd = end;
         }
         return removals;
     }

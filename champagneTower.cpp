@@ -14,7 +14,7 @@ class Solution {
             for (int c = 0; c <= r; c++) {
                 if (tower[r][c] > 1.0) {
                     double excess = (tower[r][c] - 1.0) / 2.0;
-                    tower[r][c] = 1.0;
+                    tower[r][c]   = 1.0;
                     tower[r + 1][c] += excess;
                     tower[r + 1][c + 1] += excess;
                 }
@@ -25,7 +25,7 @@ class Solution {
 
     double champagneTowerFastDp(int poured, int query_row, int query_glass) {
         vector<double> dp(query_row + 2, 0.0);
-        dp[0] = (double)poured;
+        dp[0] = (double) poured;
         for (int i = 1; i <= query_row; i++) {
             for (int j = i; j >= 0; j--) {
                 dp[j + 1] += dp[j] = max((dp[j] - 1) / 2, 0.0);

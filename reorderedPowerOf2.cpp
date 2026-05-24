@@ -15,8 +15,8 @@ class Solution {
 
         sort(s.begin(), s.end());
         for (int i = 0; i < 31; i++) {
-            int powerOf2 = 1 << i;
-            string t = to_string(powerOf2);
+            int    powerOf2 = 1 << i;
+            string t        = to_string(powerOf2);
 
             sort(t.begin(), t.end());
 

@@ -1,25 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve()
-{
+void solve() {
     int t;
     cin >> t;
-    while (t--){
+    while (t--) {
         string s;
         cin >> s;
         int year = stoi(s);
         int root = sqrt(year);
-        if (root * root == year){
+        if (root * root == year) {
             cout << 0 << " " << root << endl;
-        }else{
+        } else {
             cout << -1 << endl;
         }
     }
 }
 
-int main()
-{
+int main() {
     solve();
     return 0;
 }

@@ -34,7 +34,7 @@ int main() {
                 continue;
             }
             int secs = 0;
-            int i = 0;
+            int i    = 0;
             while (qu > 0) {
                 if (s[i] == 'A')
                     qu--;

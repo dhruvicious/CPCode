@@ -9,28 +9,28 @@ using namespace std;
 #define endl '\n'
 
 void balancedParanthesis(int open, int close, int n, string& s) {
-        cout << s << endl;
-        return;
-    }
-    if (close > open) {
-        s.push_back(')');
-        balancedParanthesis(open, close - 1, n, s);
-        s.pop_back();
-    }
-    if (open > 0) {
-        s.push_back('(');
-        balancedParanthesis(open - 1, close, n, s);
-        s.pop_back();
-    }
+    cout << s << endl;
+    return;
+}
+if (close > open) {
+    s.push_back(')');
+    balancedParanthesis(open, close - 1, n, s);
+    s.pop_back();
+}
+if (open > 0) {
+    s.push_back('(');
+    balancedParanthesis(open - 1, close, n, s);
+    s.pop_back();
+}
 }
 
 int32_t main() {
     fastio
-// #ifndef ONLINE_JUDGE
-//         freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    int n;
+        // #ifndef ONLINE_JUDGE
+        //         freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        int n;
     cin >> n;
     string curr;
     balancedParanthesis(n, n, n, curr);

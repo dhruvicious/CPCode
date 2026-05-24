@@ -15,20 +15,17 @@ void numberSpiral(ll X, ll Y) {
 
         if (Y % 2 != 0) {
             add = X;
-        }
-        else {
+        } else {
             add = 2 * Y - X;
         }
         cout << ans + add << "\n";
-    }
-    else {
+    } else {
         ll ans = (X - 1) * (X - 1);
         ll add = 0;
 
         if (X % 2 == 0) {
             add = Y;
-        }
-        else {
+        } else {
             add = 2 * X - Y;
         }
         cout << ans + add << "\n";
@@ -42,11 +39,11 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     ll t;
-    cin>>t;
+    cin >> t;
     while (t--) {
         ll x, y;
         cin >> y >> x;
-        numberSpiral(x,y);
+        numberSpiral(x, y);
     }
     return 0;
 }

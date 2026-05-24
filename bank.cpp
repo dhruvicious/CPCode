@@ -9,9 +9,9 @@ class Bank {
     Bank(vector<long long>& balance) { this->balance = balance; }
 
     bool transfer(int account1, int account2, long long money) {
-        if(money < 0) return false;
-        if (account1 < 1 || account1 > balance.size() || account2 < 1 ||
-            account2 > balance.size()) {
+        if (money < 0) return false;
+        if (account1 < 1 || account1 > balance.size() || account2 < 1
+            || account2 > balance.size()) {
             return false;
         }
         if (balance[account1] < money) {
@@ -23,7 +23,7 @@ class Bank {
     }
 
     bool deposit(int account, long long money) {
-        if(money < 0) return false;
+        if (money < 0) return false;
         if (account < 1 || account > balance.size()) {
             return false;
         }
@@ -32,9 +32,9 @@ class Bank {
     }
 
     bool withdraw(int account, long long money) {
-        if(money < 0) return false;
-        if (account < 1 || account > balance.size() ||
-            balance[account - 1] < money) {
+        if (money < 0) return false;
+        if (account < 1 || account > balance.size()
+            || balance[account - 1] < money) {
             return false;
         }
         balance[account - 1] -= money;

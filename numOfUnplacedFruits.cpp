@@ -15,20 +15,19 @@ class Solution {
         int m = baskets.size();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if(baskets[j]>=fruits[i]){
-                    baskets[j]=-1;
-                    fruits[i]=-1;
+                if (baskets[j] >= fruits[i]) {
+                    baskets[j] = -1;
+                    fruits[i]  = -1;
                     break;
                 }
             }
         }
-        int count=0;
-        for(int fruit: fruits) if(fruit!=-1) count++;
+        int count = 0;
+        for (int fruit : fruits)
+            if (fruit != -1) count++;
 
         return count;
     }
-
-    
 };
 
 int32_t main() {

@@ -17,7 +17,7 @@ void solveFor(int n) {
             cout << endl;
         }
         int spaceCount = 2 * i - 1;
-        int starCount = (2 * n - 1) - spaceCount;
+        int starCount  = (2 * n - 1) - spaceCount;
         for (int i = 0; i < starCount / 2; i++) {
             cout << "* ";
         }

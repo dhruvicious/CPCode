@@ -42,10 +42,10 @@ void printWays(vector<int>& arr, int i, vector<int>& g1, vector<int>& g2) {
 }
 
 int32_t main() {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
 
     int n;
     cin >> n;

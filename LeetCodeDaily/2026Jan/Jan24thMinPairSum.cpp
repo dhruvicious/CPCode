@@ -12,7 +12,7 @@ class Solution {
         int maxSum = INT_MIN;
         for (int i = 0; i < n / 2; i++) {
             int currSum = nums[i] + nums[n - 1 - i];
-            maxSum = max(currSum, maxSum);
+            maxSum      = max(currSum, maxSum);
         }
         return maxSum;
     }

@@ -11,7 +11,9 @@ class Solution {
    public:
     int findUnSortedSubarray(vector<int>& arr) {
         int n = arr.size();
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>,
+                       greater<pair<int, int>>>
+            pq;
         for (int i = 0; i < n; i++) {
             pq.push({arr[i], i});
         }
@@ -23,7 +25,7 @@ class Solution {
             pq.pop();
 
             if (curr.second != sortedIdx) {
-                left = min(left, curr.second);
+                left  = min(left, curr.second);
                 right = max(right, curr.second);
             }
             sortedIdx++;
@@ -33,7 +35,7 @@ class Solution {
     }
 
     int findUnsortedSubarray(vector<int>& nums) {
-        int n = nums.size();
+        int n    = nums.size();
         int left = -1, right = -1;
         int minS = nums[n - 1], maxS = nums[0];
 
@@ -61,7 +63,7 @@ int main() {
     cin >> t;
     Solution s;
     while (t--) {
-        int n;
+        int         n;
         vector<int> arr = {2, 6, 4, 8, 10, 9, 15};
         // for (int& i : arr) cin >> i;
         s.findUnsortedSubarray(arr);

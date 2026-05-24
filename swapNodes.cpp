@@ -2,7 +2,7 @@
 using namespace std;
 
 struct ListNode {
-    int val;
+    int       val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
@@ -12,24 +12,24 @@ struct ListNode {
 class Solution {
    public:
     ListNode* swapPairs(ListNode* head) {
-        if(!head || !head->next) return head;
+        if (!head || !head->next) return head;
 
-        ListNode* prev= nullptr;
-        ListNode* curr= head;
-        ListNode* newHead= head->next;
+        ListNode* prev    = nullptr;
+        ListNode* curr    = head;
+        ListNode* newHead = head->next;
 
-        while(curr && curr->next){
+        while (curr && curr->next) {
             ListNode* nextNode = curr->next;
             ListNode* nextPair = nextNode->next;
 
-            nextNode->next= curr;
-            curr->next= nextPair;
+            nextNode->next = curr;
+            curr->next     = nextPair;
 
-            if(prev){
-                prev->next= nextNode;
+            if (prev) {
+                prev->next = nextNode;
             }
 
-            prev= curr;
+            prev = curr;
             curr = nextPair;
         }
         return newHead;

@@ -11,9 +11,9 @@ using namespace std;
 class Solution {
    public:
     int totalFruit(vector<int>& fruits) {
-        int left = 0, maxLen = 0;
+        int                     left = 0, maxLen = 0;
         unordered_map<int, int> fruitCount;
-        int n = fruits.size();
+        int                     n = fruits.size();
         for (int right = 0; right < n; right++) {
             fruitCount[fruits[right]]++;
             while (fruitCount.size() > 2) {

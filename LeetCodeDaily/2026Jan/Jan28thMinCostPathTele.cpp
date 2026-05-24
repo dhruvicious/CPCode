@@ -14,10 +14,10 @@ void fastIO() {
 
 void IO(int argCount, char* argsValue[]) {
 #ifndef ONLINE_JUDGE
-    const char* inputFile = "input.txt";
+    const char* inputFile  = "input.txt";
     const char* outputFile = "output.txt";
     if (argCount >= 3) {
-        inputFile = argsValue[1];
+        inputFile  = argsValue[1];
         outputFile = argsValue[2];
     }
     freopen(inputFile, "r", stdin);
@@ -37,8 +37,10 @@ void IO(int argCount, char* argsValue[]) {
 //         int m = grid[0].size();
 //         int INF = 1e9;
 //         std::vector<std::vector<std::vector<int>>> dp(
-//             n, std::vector<std::vector<int>>(m, std::vector<int>(k + 1, INF)));
-//         std::priority_queue<State, std::vector<State>, std::greater<State>> pq;
+//             n, std::vector<std::vector<int>>(m, std::vector<int>(k + 1,
+//             INF)));
+//         std::priority_queue<State, std::vector<State>, std::greater<State>>
+//         pq;
 
 //         dp[0][0][0] = grid[0][0];
 //         pq.push({grid[0][0], 0, 0, 0});
@@ -95,23 +97,26 @@ void IO(int argCount, char* argsValue[]) {
 class Solution {
    public:
     int minCost(std::vector<std::vector<int>>& grid, int k) {
-        int m = grid.size(), n = grid[0].size();
+        int                              m = grid.size(), n = grid[0].size();
         std::vector<std::pair<int, int>> points;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 points.push_back({i, j});
             }
         }
-        sort(points.begin(), points.end(), [&](const auto& p1, const auto& p2) -> bool {
-            return grid[p1.first][p1.second] < grid[p2.first][p2.second];
-        });
+        sort(points.begin(), points.end(),
+             [&](const auto& p1, const auto& p2) -> bool {
+                 return grid[p1.first][p1.second] < grid[p2.first][p2.second];
+             });
         std::vector<std::vector<int>> costs(m, std::vector<int>(n, INT_MAX));
         for (int t = 0; t <= k; t++) {
             int minCost = INT_MAX;
             for (int i = 0, j = 0; i < points.size(); i++) {
-                minCost = std::min(minCost, costs[points[i].first][points[i].second]);
-                if (i + 1 < points.size() &&
-                    grid[points[i].first][points[i].second] == grid[points[i + 1].first][points[i + 1].second]) {
+                minCost =
+                    std::min(minCost, costs[points[i].first][points[i].second]);
+                if (i + 1 < points.size()
+                    && grid[points[i].first][points[i].second]
+                           == grid[points[i + 1].first][points[i + 1].second]) {
                     continue;
                 }
                 for (int r = j; r <= i; r++) {
@@ -126,10 +131,12 @@ class Solution {
                         continue;
                     }
                     if (i != m - 1) {
-                        costs[i][j] = std::min(costs[i][j], costs[i + 1][j] + grid[i + 1][j]);
+                        costs[i][j] = std::min(
+                            costs[i][j], costs[i + 1][j] + grid[i + 1][j]);
                     }
                     if (j != n - 1) {
-                        costs[i][j] = std::min(costs[i][j], costs[i][j + 1] + grid[i][j + 1]);
+                        costs[i][j] = std::min(
+                            costs[i][j], costs[i][j + 1] + grid[i][j + 1]);
                     }
                 }
             }
@@ -141,7 +148,7 @@ class Solution {
 int main(int argCount, char* argsValue[]) {
     fastIO();
     IO(argCount, argsValue);
-    
+
     int t;
     std::cin >> t;
     Solution s;

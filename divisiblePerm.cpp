@@ -11,7 +11,7 @@ void fastIO() {
 }
 
 void IO(int argsC, char* argsV[]) {
-    const char* inputFile = argsC >= 3 ? argsV[1] : "input.txt";
+    const char* inputFile  = argsC >= 3 ? argsV[1] : "input.txt";
     const char* outputFile = argsC >= 3 ? argsV[2] : "output.txt";
 #ifndef ONLINE_JUDGE
     freopen(inputFile, "r", stdin);
@@ -29,7 +29,7 @@ int main(int argsC, char* argsV[]) {
         int n;
         cin >> n;
 
-        int l = 1, r = n;
+        int         l = 1, r = n;
         vector<int> arr(n);
 
         for (int i = n - 1; i >= 0; i--) {

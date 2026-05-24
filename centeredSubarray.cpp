@@ -8,7 +8,7 @@ class Solution {
     int centeredSubarrays(vector<int>& nums) {
         int c = 0;
         for (int l = 0; l < nums.size(); l++) {
-            long long sum = 0;
+            long long                sum = 0;
             unordered_set<long long> exists;
 
             for (int r = l; r < nums.size(); r++) {

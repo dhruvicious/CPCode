@@ -9,7 +9,7 @@ class Solution {
    public:
     int repeatedNTimes(vector<int>& nums) {
         unordered_map<int, int> freq;
-        int ans;
+        int                     ans;
         for (int i : nums) {
             freq[i]++;
         }

@@ -15,11 +15,11 @@ class Solution {
     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
         int n = arr.size();
         sort(arr.begin(), arr.end());
-        int minAbsDiff = INT_MAX;
+        int                 minAbsDiff = INT_MAX;
         vector<vector<int>> retVal;
 
         for (int i = 0; i < n - 1; i++) {
-            int diff = abs(arr[i] - arr[i + 1]);
+            int diff   = abs(arr[i] - arr[i + 1]);
             minAbsDiff = min(minAbsDiff, diff);
         }
 
@@ -44,7 +44,7 @@ int main() {
     cin >> t;
     int totalTests = t;  // Preserve original count
 
-    Solution s;
+    Solution    s;
     long double totalTimeMicroseconds = 0.0;
 
     while (t--) {
@@ -57,12 +57,15 @@ int main() {
         s.minimumAbsDifference(arr);
         auto end = high_resolution_clock::now();
 
-        totalTimeMicroseconds += duration_cast<microseconds>(end - start).count();
+        totalTimeMicroseconds +=
+            duration_cast<microseconds>(end - start).count();
     }
 
-    long double averageTime = totalTimeMicroseconds / static_cast<long double>(totalTests);
+    long double averageTime =
+        totalTimeMicroseconds / static_cast<long double>(totalTests);
 
-    timingFile << "Average runtime per test case (microseconds): " << averageTime << endl;
+    timingFile << "Average runtime per test case (microseconds): "
+               << averageTime << endl;
 
     timingFile.close();
     return 0;

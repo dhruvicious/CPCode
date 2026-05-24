@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
    public:
     int minSubarray(vector<int>& nums, int p) {
-        int n = nums.size();
+        int n   = nums.size();
         int sum = 0;
         for (int i : nums) sum += i;
         int remainder = sum % p;

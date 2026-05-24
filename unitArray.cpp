@@ -12,7 +12,7 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        int NegOneCount = 0;
+        int NegOneCount  = 0;
         int PosiOneCount = 0;
         for (int i = 0; i < n; i++) {
             int x;
@@ -22,7 +22,7 @@ int main() {
             else if (x == 1)
                 PosiOneCount++;
         }
-        int S = PosiOneCount - NegOneCount;
+        int S          = PosiOneCount - NegOneCount;
         int operations = 0;
 
         if (S < 0) {

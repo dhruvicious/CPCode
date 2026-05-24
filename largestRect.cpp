@@ -2,10 +2,10 @@
 using namespace std;
 
 int largestRectArea(vector<int> heights) {
-    int n = heights.size();
+    int        n = heights.size();
     stack<int> s;
-    int maxArea = 0;
-    int i = 0;
+    int        maxArea = 0;
+    int        i       = 0;
 
     while (i < n) {
         if (s.empty() || heights[i] >= heights[s.top()]) {
@@ -14,8 +14,8 @@ int largestRectArea(vector<int> heights) {
             int top = s.top();
             s.pop();
             int width = s.empty() ? i : i - s.top() - 1;
-            int area = heights[top] * width;
-            maxArea = max(maxArea, area);
+            int area  = heights[top] * width;
+            maxArea   = max(maxArea, area);
         }
     }
 
@@ -23,8 +23,8 @@ int largestRectArea(vector<int> heights) {
         int top = s.top();
         s.pop();
         int width = s.empty() ? i : i - s.top() - 1;
-        int area = heights[top] * width;
-        maxArea = max(maxArea, area);
+        int area  = heights[top] * width;
+        maxArea   = max(maxArea, area);
     }
 
     return maxArea;
@@ -39,7 +39,7 @@ int32_t main() {
     int n;
     cin >> n;
     vector<int> barHeights(n);
-    for (int &h : barHeights) {
+    for (int& h : barHeights) {
         cin >> h;
     }
     cout << largestRectArea(barHeights) << endl;

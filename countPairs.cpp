@@ -12,7 +12,7 @@ class Solution {
         unordered_map<string, long long> freq;
         for (const string& s : words) {
             if (s.empty()) continue;
-            int shift = s[0] - 'a';
+            int    shift = s[0] - 'a';
             string nor;
             nor.reserve(s.size());
 
@@ -38,7 +38,7 @@ int main() {
     freopen("output.txt", "w", stdout);
 #endif
     vector<string> vec = {"ab", "aa", "za", "aa"};
-    Solution s;
-    cout<<s.countPairs(vec);
+    Solution       s;
+    cout << s.countPairs(vec);
     return 0;
 }

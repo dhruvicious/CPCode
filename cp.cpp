@@ -2,135 +2,135 @@
 using namespace std;
 
 struct ListNode {
-    int val;
-    ListNode *next;
+    int       val;
+    ListNode* next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
 ListNode* createLinkedList(const int arr[], int size) {
     if (size == 0) return nullptr;
-    
-    ListNode* head = new ListNode(arr[0]);
+
+    ListNode* head    = new ListNode(arr[0]);
     ListNode* current = head;
-    
+
     for (int i = 1; i < size; ++i) {
         current->next = new ListNode(arr[i]);
-        current = current->next;
+        current       = current->next;
     }
-    
+
     return head;
 }
 
-class Solution{
-    public:
-        // bool WaterMelon(int w){
-        //     int remainder= w & 1;
-        //     return (remainder==0);
-        // };
+class Solution {
+   public:
+    // bool WaterMelon(int w){
+    //     int remainder= w & 1;
+    //     return (remainder==0);
+    // };
 
-        // void HalloumiBoxes(){
-        //     //if k is greater than or equal to 2 print yes else no
-        //     int t;
-        //     cin>>t;
-        //     while(t--){
-        //         long long n,k;
-        //         cin >> n >> k;
-        //         vector<long long> arr(n) 
-        //         for (int i = 0; i < n; i++)
-        //         {
-        //             /* code */
-        //             cin >> arr[i];
-        //         }
-        //         vector<long long> copy_arr=arr;
-        //         sort(copy_arr.begin(), copy_arr.end());
-        //         if(copy_arr == arr || k>=2){
-        //             cout << "Yes"<< endl;
-        //         }
-        //         else{
-        //             cout<< "No" << endl;
-        //         }
-        //     }
-        // }
+    // void HalloumiBoxes(){
+    //     //if k is greater than or equal to 2 print yes else no
+    //     int t;
+    //     cin>>t;
+    //     while(t--){
+    //         long long n,k;
+    //         cin >> n >> k;
+    //         vector<long long> arr(n)
+    //         for (int i = 0; i < n; i++)
+    //         {
+    //             /* code */
+    //             cin >> arr[i];
+    //         }
+    //         vector<long long> copy_arr=arr;
+    //         sort(copy_arr.begin(), copy_arr.end());
+    //         if(copy_arr == arr || k>=2){
+    //             cout << "Yes"<< endl;
+    //         }
+    //         else{
+    //             cout<< "No" << endl;
+    //         }
+    //     }
+    // }
 
-        // void HalloumiBoxes(){
-        //     int t;
-        //     cin >> t;
-        //     while(t--){
-        //         //inputs
-        //         long long n,k;
-        //         cin >> n >> k;
-        //         vector<long long> arr(n);
-        //         for(int i=0; i < n; i++){
-        //             cin >> arr[i];
-        //         }
-        //         vector<long long> copy_arr=arr;
-        //         sort(copy_arr.begin(), copy_arr.end());
-        //         if(copy_arr==arr||k>=2){
-        //             cout<< "Yes"<<endl;
-        //         }else{
-        //             cout<< "No"<<endl;
-        //         }
-        //     }
-        // }
+    // void HalloumiBoxes(){
+    //     int t;
+    //     cin >> t;
+    //     while(t--){
+    //         //inputs
+    //         long long n,k;
+    //         cin >> n >> k;
+    //         vector<long long> arr(n);
+    //         for(int i=0; i < n; i++){
+    //             cin >> arr[i];
+    //         }
+    //         vector<long long> copy_arr=arr;
+    //         sort(copy_arr.begin(), copy_arr.end());
+    //         if(copy_arr==arr||k>=2){
+    //             cout<< "Yes"<<endl;
+    //         }else{
+    //             cout<< "No"<<endl;
+    //         }
+    //     }
+    // }
 
-        // void lineTrip(){
-        //     int maxDiff;
-        //     int t;
-        //     cin >> t;
-        //     while(t--){
-        //         //inputs
-        //         int x, n;
-        //         cin>>n>>x;
-        //         vector<int> arr(n);
-        //         for(int i =0; i < n; i++){
-        //             cin>>arr[i];
-        //         }
-        //         maxDiff=arr[0]-0;
-        //         for(int i = 0; i < n-1; i++){
-        //             int diff=arr[i+1]-arr[i];
-        //             if(diff>maxDiff){
-        //                 maxDiff=diff;
-        //             }
-        //         }
-        //         if((x-arr[n-1])*2>maxDiff){
-        //             maxDiff=(x-arr[n-1])*2;
-        //         }
-        //         cout << maxDiff<<endl;
-        //     }
-        // }
+    // void lineTrip(){
+    //     int maxDiff;
+    //     int t;
+    //     cin >> t;
+    //     while(t--){
+    //         //inputs
+    //         int x, n;
+    //         cin>>n>>x;
+    //         vector<int> arr(n);
+    //         for(int i =0; i < n; i++){
+    //             cin>>arr[i];
+    //         }
+    //         maxDiff=arr[0]-0;
+    //         for(int i = 0; i < n-1; i++){
+    //             int diff=arr[i+1]-arr[i];
+    //             if(diff>maxDiff){
+    //                 maxDiff=diff;
+    //             }
+    //         }
+    //         if((x-arr[n-1])*2>maxDiff){
+    //             maxDiff=(x-arr[n-1])*2;
+    //         }
+    //         cout << maxDiff<<endl;
+    //     }
+    // }
 
-        // bool isPrime(int x){
-        //     if(x<2) return false;
-        //     for(int i = 2; i *i<= x; i++){
-        //         if(x%i==0){
-        //             return false;
-        //         }
-        //     }
-        //     return true;
-        // }
-        // vector<int> closestPrimes(int left, int right) {
-        //     std::vector<int> primeArray;
-        //     // find primes between left and right that have minimum difference between them
-        //     for(int i = left; i <= right; i++){
-        //         if(isPrime(i)){
-        //             //add it to the prime array
-        //             primeArray.push_back(i);
-        //         }
-        //     }
-        //     if(primeArray.size()<2) return {-1,-1};
-        //     int minDiff= INT_MAX;
-        //     vector<int> result(2);
-        //     for(int i =1;i<primeArray.size();i++){
-        //         int diff= primeArray[i]-primeArray[i-1];
-        //         if(diff<minDiff){
-        //             minDiff=diff;
-        //             result= {primeArray[i-1], primeArray[i]};
-        //         }
-        //     }
-        //     return result;
-        // }
+    // bool isPrime(int x){
+    //     if(x<2) return false;
+    //     for(int i = 2; i *i<= x; i++){
+    //         if(x%i==0){
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // vector<int> closestPrimes(int left, int right) {
+    //     std::vector<int> primeArray;
+    //     // find primes between left and right that have minimum difference
+    //     between them for(int i = left; i <= right; i++){
+    //         if(isPrime(i)){
+    //             //add it to the prime array
+    //             primeArray.push_back(i);
+    //         }
+    //     }
+    //     if(primeArray.size()<2) return {-1,-1};
+    //     int minDiff= INT_MAX;
+    //     vector<int> result(2);
+    //     for(int i =1;i<primeArray.size();i++){
+    //         int diff= primeArray[i]-primeArray[i-1];
+    //         if(diff<minDiff){
+    //             minDiff=diff;
+    //             result= {primeArray[i-1], primeArray[i]};
+    //         }
+    //     }
+    //     return result;
+    // }
 
     // void CoverInWater(){
     //     int t;
@@ -181,7 +181,7 @@ class Solution{
     //         }else{
     //             cout << 2 << endl;
     //         }
-    //     } 
+    //     }
     // }
 
     // void gameWithIntegers(){
@@ -266,7 +266,7 @@ class Solution{
     //     }
     //     return result;
     // }
-    
+
     // int maximumCount(vector<int>& nums){
     //     int neg=0;
     //     int pos=0;
@@ -330,8 +330,8 @@ class Solution{
     //     for(int i = 0; i < flowerbed.size();i++){
     //         if(flowerbed[i]==0){
     //             bool isLeftEmpty= (i==0)|| flowerbed[i-1]==0;
-    //             bool isRightEmpty= (i==flowerbed.size()-1) || flowerbed[i+1]==0;
-    //             if(isRightEmpty&&isLeftEmpty)
+    //             bool isRightEmpty= (i==flowerbed.size()-1) ||
+    //             flowerbed[i+1]==0; if(isRightEmpty&&isLeftEmpty)
     //             {
     //                 flowerbed[i]=1;
     //                 n--;
@@ -342,7 +342,7 @@ class Solution{
     //     if(n<=0) return true;
     //     return n==0;
     // }
-    
+
     // void doremyPaint(){
     //     int t;
     //     cin>>t;
@@ -364,7 +364,7 @@ class Solution{
     //         }else{
     //             int freq1= freqMap.begin()->second;
     //             int freq2= freqMap.rbegin()->second;
-                
+
     //             if(freq1==freq2){
     //                 cout<<"YES"<<"\n";
     //             }else if(n%2==1 && abs(freq2-freq1)==1){
@@ -452,7 +452,7 @@ class Solution{
 
     //     cout<<"fractional part is "<<fracPart<<"\n";
     //     cout<<"integral part is "<<intPart<<"\n";
-        
+
     // }
 
     // vector<int> productExceptSelf(vector<int>& nums){
@@ -489,7 +489,7 @@ class Solution{
     // bool increasingTriplet(vector<int>& nums){
     //     int first=INT_MAX;
     //     int second=INT_MAX;
-        
+
     //     for(int i=0;i<nums.size();i++){
     //         if(nums[i]<=first) first=nums[i];
     //         else if(nums[i]<=second) second=nums[i];
@@ -510,18 +510,18 @@ class Solution{
     //     }
     // }
 
-//    bool isSubsequences(string s, string t){
-//         int i =0,j=0;
-//         while(j<t.size()){
-//             if(s[i]==t[j]){
-//                 i++;
-//             }
-//             j++;
-//         }
-//         if(i==s.size()) return true;
-//         else return false;
-//     }
-    
+    //    bool isSubsequences(string s, string t){
+    //         int i =0,j=0;
+    //         while(j<t.size()){
+    //             if(s[i]==t[j]){
+    //                 i++;
+    //             }
+    //             j++;
+    //         }
+    //         if(i==s.size()) return true;
+    //         else return false;
+    //     }
+
     // int maxArea(vector<int>& height){
     //     int left=0, right= height.size()-1;
     //     int max_area=0,area;
@@ -718,8 +718,9 @@ class Solution{
     //     }
     //     return -1;
     // }
-    
-    // vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2){
+
+    // vector<vector<int>> findDifference(vector<int>& nums1, vector<int>&
+    // nums2){
     //     sort(nums1.begin(), nums1.end());
     //     sort(nums2.begin(), nums2.end());
 
@@ -734,7 +735,8 @@ class Solution{
     //             diff1.push_back(nums1[i]);
     //             i++;
     //         }
-    //         else if(j<nums2.size() && (i==nums1.size() || nums1[i]>nums2[j])){
+    //         else if(j<nums2.size() && (i==nums1.size() ||
+    //         nums1[i]>nums2[j])){
     //             diff2.push_back(nums2[i]);
     //             j++;
     //         }else{
@@ -743,17 +745,18 @@ class Solution{
     //         }
     //     }
     //     while(i<nums1.size()){
-    //         if (i == 0 || nums1[i] != nums1[i - 1]) diff1.push_back(nums1[i]);
-    //         i++;
+    //         if (i == 0 || nums1[i] != nums1[i - 1])
+    //         diff1.push_back(nums1[i]); i++;
     //     }
     //     while(j<nums2.size()){
-    //         if (j == 0 || nums1[j] != nums1[j - 1]) diff2.push_back(nums2[j]);
-    //         j++;
+    //         if (j == 0 || nums1[j] != nums1[j - 1])
+    //         diff2.push_back(nums2[j]); j++;
     //     }
-    //     return {diff1,diff2};        
+    //     return {diff1,diff2};
     // }
 
-    // vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2){
+    // vector<vector<int>> findDifference(vector<int>& nums1, vector<int>&
+    // nums2){
     //     unordered_set<int> set1(nums1.begin(), nums1.end());
     //     unordered_set<int> set2(nums2.begin(), nums2.end());
 
@@ -811,7 +814,7 @@ class Solution{
     //     }
     //     sort(freq1.begin(), freq1.end());
     //     sort(freq2.begin(), freq2.end());
-        
+
     //     if(freq1!= freq2){
     //         return false;
     //     }
@@ -842,7 +845,7 @@ class Solution{
 
     // int sumOfGoodNumbers(vector<int>& nums, int k){
     //     int totalsum=0;
-        
+
     //     for(int i =0;i<nums.size();i++){
     //         int right, left;
     //         if(i-k<0){
@@ -943,8 +946,8 @@ class Solution{
     //             }
     //             currString=lastString;
     //         }else{
-    //             //code to execute if anything else is encountered like normal characters
-    //             currString+=c;
+    //             //code to execute if anything else is encountered like normal
+    //             characters currString+=c;
     //         }
     //     }
     //     return currString;
@@ -1009,7 +1012,7 @@ class Solution{
     //     return head;
     // }
 
-    // 
+    //
 
     // int reverseDegree(string s){
     //     int sum=0;
@@ -1039,7 +1042,7 @@ class Solution{
     //         slow=slow->next;
     //     }
     //     ListNode* reverseMidHead=reverseList(slow);
-        
+
     //     int maxPairSum=INT_MIN;
 
     //     while(reverseMidHead != nullptr){
@@ -1052,10 +1055,11 @@ class Solution{
     // }
 
     // vector<int> countBits(int n){
-        
+
     // }
 
-    // vector<int> successfulPairs(vector<int>& spells, vector<int>& potions,int success){
+    // vector<int> successfulPairs(vector<int>& spells, vector<int>& potions,int
+    // success){
     //     vector<int> result(spells.size());
     //     sort(potions.begin(), potions.end());
     //     for(int i=0;i<spells.size();i++){
@@ -1143,7 +1147,8 @@ class Solution{
     //     if(merged.size()%2!=0){
     //         return merged[(int)merged.size()/2];
     //     }else{
-    //         int median= (merged[floor(merged.size()/2)]+merged[(int)merged.size()/2])/2;
+    //         int median=
+    //         (merged[floor(merged.size()/2)]+merged[(int)merged.size()/2])/2;
     //         return median;
     //     }
     // }
@@ -1195,13 +1200,11 @@ class Solution{
     // }
 
     // vector<int> largestDivisibleSubset(vector<int>& nums){
-        
-    // }
 
-    
+    // }
 };
 
-int main(){
+int main() {
     Solution solution;
     // int weight;
     // cin >> weight;
@@ -1219,13 +1222,11 @@ int main(){
     // solution.extractInt(5.6);
     // cout<<solution.maxVowels("abciiidef", 3)<<endl;
     // solution.doremyPaint();
-    // int arr[] = {7,57,13,31,17,65,32,3,97,22,7,20,69,35,69,75,13,33,50,80,64,71,15,28,2,27,39,48,13,22,84,5,51,46,26,78,56,63};
+    // int arr[] =
+    // {7,57,13,31,17,65,32,3,97,22,7,20,69,35,69,75,13,33,50,80,64,71,15,28,2,27,39,48,13,22,84,5,51,46,26,78,56,63};
     // int size = sizeof(arr) / sizeof(arr[0]);
     // ListNode* head = createLinkedList(arr, size);
     // cout<<solution.pairSum(head);
 
     return 0;
-    
 };
-
-

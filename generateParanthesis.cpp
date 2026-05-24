@@ -2,14 +2,13 @@
 using namespace std;
 
 void generateParanthesis(int n, int i, string& s);
-bool validParanthesis(string &s);
+bool validParanthesis(string& s);
 
-
-bool validParanthesis(string &s){
-    
+bool validParanthesis(string& s) {
 }
 
-void generateParanthesis(int n, int i, string& s, int &openCount, int &closeCount) {
+void generateParanthesis(int n, int i, string& s, int& openCount,
+                         int& closeCount) {
     if (i == 2 * n) {
         cout << s;
     }
@@ -18,7 +17,7 @@ void generateParanthesis(int n, int i, string& s, int &openCount, int &closeCoun
     s.pop_back();
 
     s.push_back(')');
-    generateParanthesis(n,i+1, s);
+    generateParanthesis(n, i + 1, s);
     s.pop_back();
 }
 

@@ -10,7 +10,7 @@ void solve() {
     vector<int> arr(n);
     for (int& i : arr) cin >> i;
     int l = 0, r = 0;
-    int maxLen = 0;
+    int maxLen  = 0;
     int currLen = 0;
     for (int i = 0; i < n; i++) {
         if (arr[i] == 0)

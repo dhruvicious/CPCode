@@ -60,7 +60,7 @@ int main() {
     freopen("output.txt", "w", stdout);
 #endif
     int arr[100] = {0};
-    int n = 10;
+    int n        = 10;
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }

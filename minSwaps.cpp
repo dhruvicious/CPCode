@@ -22,7 +22,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             int needZeroCount = n - i - 1;
 
-            int j = i;  
+            int j = i;
             while (j < n && TrailZero[j] < needZeroCount) j++;
             if (j == n) return -1;
             while (j > i) {

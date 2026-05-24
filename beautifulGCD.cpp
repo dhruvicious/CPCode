@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -66,8 +65,7 @@ void print(auto a) {
 // --- Write your solve() function here ---
 void solve() {
     int n;
-    cin>>n;
-    
+    cin >> n;
 }
 
 #undef int
@@ -88,7 +86,7 @@ int main() {
         solve();
     }
 
-    auto stop1 = high_resolution_clock::now();
+    auto stop1    = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop1 - start1);
 #ifndef ONLINE_JUDGE
     cerr << "Time: " << duration.count() << " ms" << endl;

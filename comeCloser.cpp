@@ -2,7 +2,6 @@
 using namespace std;
 typedef long long ll;
 
-
 void solve() {
     int t;
     cin >> t;
@@ -12,7 +11,7 @@ void solve() {
         cin >> n;
 
         vector<pair<int, int>> coords(n);
-        vector<int> xs(n), ys(n);
+        vector<int>            xs(n), ys(n);
 
         for (int i = 0; i < n; ++i) {
             cin >> coords[i].first >> coords[i].second;
@@ -45,9 +44,10 @@ void solve() {
         };
 
         ll base_area = get_area(min_x1, max_x1, min_y1, max_y1);
-        ll min_area = base_area;
+        ll min_area  = base_area;
 
-        set<int> extreme_indices = {idx_min_x1, idx_max_x1, idx_min_y1, idx_max_y1};
+        set<int> extreme_indices = {
+            idx_min_x1, idx_max_x1, idx_min_y1, idx_max_y1};
 
         for (int idx : extreme_indices) {
             int new_min_x = INT_MAX, new_max_x = INT_MIN;
@@ -62,7 +62,7 @@ void solve() {
             }
 
             ll new_area = get_area(new_min_x, new_max_x, new_min_y, new_max_y);
-            min_area = min(min_area, new_area);
+            min_area    = min(min_area, new_area);
         }
 
         cout << min_area << "\n";
@@ -70,7 +70,6 @@ void solve() {
 }
 
 int main() {
-
     solve();
 
     return 0;

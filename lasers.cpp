@@ -8,7 +8,8 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-void solve() {}
+void solve() {
+}
 
 int32_t main() {
     fastio

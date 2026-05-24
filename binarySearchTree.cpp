@@ -3,12 +3,12 @@ using namespace std;
 
 class node {
    public:
-    int data;
+    int   data;
     node *right, *left;
     node(int data) {
         this->data = data;
-        right = nullptr;
-        left = nullptr;
+        right      = nullptr;
+        left       = nullptr;
     }
 };
 
@@ -16,8 +16,8 @@ node* buildTree() {
     int val;
     cin >> val;
     if (val == -1) return nullptr;
-    node* root = new node(val);
-    root->left = buildTree();
+    node* root  = new node(val);
+    root->left  = buildTree();
     root->right = buildTree();
 }
 
@@ -87,18 +87,18 @@ node* search(node* root, int target) {
 bool BSTorNOT(node* root, int min = INT_MIN, int max = INT_MAX) {
     if (!root) return true;
     if (root->data <= min || root->data >= max) return false;
-    return BSTorNOT(root->left, min, root->data) &&
-           BSTorNOT(root->right, root->data, max);
+    return BSTorNOT(root->left, min, root->data)
+           && BSTorNOT(root->right, root->data, max);
 }
 
 pair<int, bool> isBalanced(node* root) {
     pair<int, bool> p;
     if (!root) {
-        p.first = 0;
+        p.first  = 0;
         p.second = true;
         return p;
     }
-    pair<int, bool> left = isBalanced(root->left);
+    pair<int, bool> left  = isBalanced(root->left);
     pair<int, bool> right = isBalanced(root->right);
 
     p.first = max(left.first, right.first) + 1;
@@ -119,7 +119,7 @@ LinkedListNode BSTtoLL(node* root) {
     // baseCase
     if (!root) return {nullptr, nullptr};
     // recursion
-    LinkedListNode left = BSTtoLL(root->left);
+    LinkedListNode left  = BSTtoLL(root->left);
     LinkedListNode right = BSTtoLL(root->right);
 
     if (left.tail) left.tail->right = root;

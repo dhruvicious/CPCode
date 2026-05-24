@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define forin for(int i =0;i<n;i++)
+#define forin for (int i = 0; i < n; i++)
 
-void solve(){
+void solve() {
     int t;
     cin >> t;
     while (t--) {
@@ -15,13 +15,13 @@ void solve(){
             long long x;
             cin >> x;
             if (totalLeaves < k) {
-                int twos = __builtin_ctzll(x);
+                int       twos   = __builtin_ctzll(x);
                 long long leaves = (1LL << twos);
                 totalLeaves += leaves;
                 if (totalLeaves > k) {
                     totalLeaves = k;
                 }
-            }   
+            }
         }
         if (k >= n && k <= totalLeaves) {
             cout << "YES\n";
@@ -30,7 +30,6 @@ void solve(){
         }
     }
 }
-
 
 int main() {
     solve();

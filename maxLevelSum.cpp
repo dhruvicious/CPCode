@@ -8,11 +8,12 @@ class TreeNode {
    private:
     TreeNode* right;
     TreeNode* left;
-    int val;
-    bool hasValue;
+    int       val;
+    bool      hasValue;
 
    public:
-    TreeNode(int data) : right(nullptr), left(nullptr), val(data), hasValue(true) {}
+    TreeNode(int data) :
+        right(nullptr), left(nullptr), val(data), hasValue(true) {}
     TreeNode() : right(nullptr), left(nullptr), val(INT_MIN), hasValue(false) {}
 
     void setRight(TreeNode* rTree) {
@@ -37,7 +38,7 @@ class TreeNode {
 
     void setVal(int data) {
         if (!this->hasValue) {
-            this->val = data;
+            this->val      = data;
             this->hasValue = true;
         } else {
             throw std::logic_error("Value Already Assigned");

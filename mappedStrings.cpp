@@ -9,7 +9,7 @@ void backtrack(string& s, int i, string curr, vector<string>& result) {
         return;
     }
     if (s[i] != '0') {
-        int od = s[i] - '0';
+        int  od     = s[i] - '0';
         char letter = 'A' + od - 1;
         backtrack(s, i + 1, curr + letter, result);
     }

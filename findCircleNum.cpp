@@ -5,7 +5,8 @@ using namespace std;
 
 class Solution {
    private:
-    void dfs(int node, vector<vector<int>>& isConnected, vector<bool>& visited) {
+    void dfs(int node, vector<vector<int>>& isConnected,
+             vector<bool>& visited) {
         visited[node] = true;
         for (int i = 0; i < isConnected.size(); i++) {
             if (isConnected[node][i] && !visited[i]) {
@@ -16,8 +17,8 @@ class Solution {
 
    public:
     int findCircleNum(vector<vector<int>>& isConnected) {
-        int n = isConnected.size();
-        int noOfComp = 0;
+        int          n        = isConnected.size();
+        int          noOfComp = 0;
         vector<bool> visited(n);
 
         for (int i = 0; i < n; i++) {

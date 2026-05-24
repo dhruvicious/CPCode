@@ -191,7 +191,7 @@ class Solution {
 
         for (char c : s) freq[c - 'A']++;
         int oddCount = 0;
-        int oddchar = -1;
+        int oddchar  = -1;
         for (int i = 0; i < 26; i++) {
             if (freq[i] % 2 == 1) {
                 oddCount++;
@@ -230,7 +230,7 @@ int32_t main(string args[]) {
     freopen("output.txt", "w", stdout);
 #endif
     Solution s;
-    string str;
+    string   str;
     cin >> str;
     s.PalindromeReorder(str);
     return 0;

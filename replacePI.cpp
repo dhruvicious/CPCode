@@ -8,15 +8,15 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-void replacePI(const string &s, string &result, int i) {
-    if (i >= (int)s.size()) return;
-    
-    if(i+1<(int)s.size() && s[i]=='p' && s[i+1]=='i'){
-        result+="3.14";
-        replacePI(s, result, i+2);
-    }else{
-        result+=s[i];
-        replacePI(s, result, i+1);
+void replacePI(const string& s, string& result, int i) {
+    if (i >= (int) s.size()) return;
+
+    if (i + 1 < (int) s.size() && s[i] == 'p' && s[i + 1] == 'i') {
+        result += "3.14";
+        replacePI(s, result, i + 2);
+    } else {
+        result += s[i];
+        replacePI(s, result, i + 1);
     }
 }
 
@@ -47,9 +47,9 @@ int32_t main() {
     while (n--) {
         string s;
         getline(cin, s);
-        string result="";
+        string result = "";
         replacePI(s, result, 0);
-        cout<<result<<'\n';
+        cout << result << '\n';
     }
     return 0;
 }

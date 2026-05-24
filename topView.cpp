@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *right, *left;
     node() : val(INT_MIN), right(nullptr), left(nullptr) {}
     node(int val) : val(val), right(nullptr), left(nullptr) {}
@@ -12,7 +12,7 @@ class node {
 node* buildTreeFromLevelOrder() {
     int val;
     if (!(cin >> val) || val == -1) return nullptr;
-    node* root = new node(val);
+    node*        root = new node(val);
     queue<node*> q;
     q.push(root);
 
@@ -42,8 +42,8 @@ void topViewHelper(node* root, int level, map<int, int>& h) {
         auto p = q.front();
         q.pop();
 
-        node* x = p.first;
-        int currLevel = p.second;
+        node* x         = p.first;
+        int   currLevel = p.second;
 
         if (h.count(currLevel) == 0) {
             h[currLevel] = x->val;
@@ -69,8 +69,8 @@ int main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    node* root = buildTreeFromLevelOrder();
-    vector<int> ans = topView(root);
+    node*       root = buildTreeFromLevelOrder();
+    vector<int> ans  = topView(root);
     for (int& i : ans) cout << i << " ";
     return 0;
 }

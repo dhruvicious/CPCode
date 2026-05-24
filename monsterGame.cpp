@@ -25,6 +25,5 @@ int main() {
         std::vector<int> b(n);
         for (int& i : a) std::cin >> i;
         for (int& i : b) std::cin >> i;
-        
     }
 }

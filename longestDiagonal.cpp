@@ -12,14 +12,14 @@ class Solution {
    public:
     int areaOfMaxDiagonal(vector<vector<int>>& dimensions) {
         int maxSQDiag = -1;
-        int maxArea=0;
+        int maxArea   = 0;
 
         for (auto& vec : dimensions) {
             long long SqDiag = 1LL * vec[0] * vec[0] + 1LL * vec[1] * vec[1];
-            int area=vec[0]*vec[1];
-            if (SqDiag > maxSQDiag || (SqDiag==maxSQDiag && area>maxArea)) {
+            int       area   = vec[0] * vec[1];
+            if (SqDiag > maxSQDiag || (SqDiag == maxSQDiag && area > maxArea)) {
                 maxSQDiag = SqDiag;
-                maxArea= area;
+                maxArea   = area;
             }
         }
         return maxArea;
@@ -34,7 +34,7 @@ int32_t main() {
 #endif
     vector<vector<int>> dimensions = {{1, 10}, {3, 10}, {4, 4}, {2, 6}, {6, 3},
                                       {6, 4},  {9, 1},  {6, 1}, {2, 3}};
-    Solution s;
+    Solution            s;
     cout << s.areaOfMaxDiagonal(dimensions);
     return 0;
 }

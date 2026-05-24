@@ -28,8 +28,8 @@ int countSubsets(vector<int>& arr, int idx, int target) {
     if (idx == arr.size()) {
         return (target == 0) ? 1 : 0;
     }
-    return countSubsets(arr, idx + 1, target - arr[idx]) +
-           countSubsets(arr, idx + 1, target);
+    return countSubsets(arr, idx + 1, target - arr[idx])
+           + countSubsets(arr, idx + 1, target);
 }
 
 int32_t main() {

@@ -21,8 +21,8 @@ int main() {
         int ans = -1;
         for (int i = 1; i <= 31; ++i) {
             long long pow = 1LL << i;
-            long long l = n / pow;
-            long long h = (n + pow - 1) / pow;
+            long long l   = n / pow;
+            long long h   = (n + pow - 1) / pow;
 
             if (l == k || h == k) {
                 ans = i;

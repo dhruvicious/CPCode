@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> nextGreatestElement(const vector<int> &arr) {
-    int n = arr.size();
+vector<int> nextGreatestElement(const vector<int>& arr) {
+    int         n = arr.size();
     vector<int> nge(n);
-    stack<int> st;
+    stack<int>  st;
 
     for (int i = n - 1; i >= 0; i--) {
         while (!st.empty() && st.top() <= arr[i]) {
@@ -24,11 +24,11 @@ int32_t main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int &num : nums) {
+    for (int& num : nums) {
         cin >> num;
     }
     vector<int> ans = nextGreatestElement(nums);
-    for (int &num : ans) {
+    for (int& num : ans) {
         cout << num << " ";
     }
     return 0;

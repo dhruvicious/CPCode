@@ -12,7 +12,7 @@ int32_t main() {
 
     queue<int> mainQueue;
     queue<int> courseQueue[5];
-    bool inQueue[5] = {false};
+    bool       inQueue[5] = {false};
 
     while (q--) {
         string op;
@@ -28,7 +28,7 @@ int32_t main() {
             }
         } else if (op == "D") {
             int course = mainQueue.front();
-            int roll = courseQueue[course].front();
+            int roll   = courseQueue[course].front();
             cout << course << " " << roll << "\n";
             courseQueue[course].pop();
             if (courseQueue[course].empty()) {

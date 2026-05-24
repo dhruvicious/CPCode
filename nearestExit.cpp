@@ -16,7 +16,7 @@ class Solution {
         q.push({entrance[0], entrance[1]});
 
         maze[entrance[0]][entrance[1]] = '+';
-        int steps = 0;
+        int steps                      = 0;
 
         const vector<vector<int>> dir = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
@@ -31,9 +31,12 @@ class Solution {
                     int newRow = row + dir[d][0];
                     int newCol = col + dir[d][1];
 
-                    if (newRow < 0 || newRow >= n || newCol < 0 || newCol >= m) continue;
+                    if (newRow < 0 || newRow >= n || newCol < 0 || newCol >= m)
+                        continue;
                     if (maze[newRow][newCol] == '+') continue;
-                    if (newRow == 0 || newRow == n - 1 || newCol == 0 || newCol == m - 1) return steps;
+                    if (newRow == 0 || newRow == n - 1 || newCol == 0
+                        || newCol == m - 1)
+                        return steps;
                     maze[newRow][newCol] = '+';
                     q.push({newRow, newCol});
                 }

@@ -5,7 +5,8 @@ using namespace std;
 
 class Solution {
    public:
-    int maximizeSquareHoleArea(int n, int m, vector<int>& hBars, vector<int>& vBars) {
+    int maximizeSquareHoleArea(int n, int m, vector<int>& hBars,
+                               vector<int>& vBars) {
         sort(hBars.begin(), hBars.end());
         sort(vBars.begin(), vBars.end());
 
@@ -38,7 +39,7 @@ int main() {
     cin >> t;
     Solution s;
     while (t--) {
-        int n, m;
+        int         n, m;
         vector<int> hBars(n);
         vector<int> vBars(m);
         for (int& i : hBars) cin >> i;

@@ -4,16 +4,16 @@ using namespace std;
 class DSU {
    public:
     int* parent;
-    int n;
+    int  n;
     int* rank;
     DSU(int N) {
-        n = N;
+        n      = N;
         parent = new int[N + 1];
-        rank = new int[N+1];
+        rank   = new int[N + 1];
         for (int i = 0; i <= N; i++) {
             // Initially everyone is a parent of itself
             parent[i] = i;
-            rank[i]=1;
+            rank[i]   = 1;
         }
     }
 
@@ -26,12 +26,12 @@ class DSU {
         int leaderU = getLeader(u);
         int leaderV = getLeader(v);
         if (leaderU != leaderV) {
-            if(rank[leaderU]<rank[leaderV]){
+            if (rank[leaderU] < rank[leaderV]) {
                 swap(leaderU, leaderV);
             }
 
-            parent[leaderV]= leaderU;
-            if(rank[leaderU]==rank[leaderV]){
+            parent[leaderV] = leaderU;
+            if (rank[leaderU] == rank[leaderV]) {
                 rank[leaderU]++;
             }
         }

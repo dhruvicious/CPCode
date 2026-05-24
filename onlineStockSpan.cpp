@@ -17,4 +17,5 @@ class StockSpanner {
     }
 };
 
-int main() {}
+int main() {
+}

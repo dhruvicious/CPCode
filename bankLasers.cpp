@@ -28,7 +28,7 @@ int32_t main() {
 #endif
 
     vector<string> bank;
-    string s;
+    string         s;
     while (cin >> s) {
         bank.push_back(s);
     }

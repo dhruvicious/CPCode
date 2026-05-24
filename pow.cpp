@@ -13,22 +13,22 @@ class Solution {
     double pow(double x, int n) {
         if (x == 0.0 && n <= 0) return NAN;
 
-        long long N = n;
-        double ans = 1.0;
+        long long N   = n;
+        double    ans = 1.0;
 
         if (N < 0) {
-            x=1/x;
-            N=-N;
+            x = 1 / x;
+            N = -N;
         }
 
-        while(N>0){
-            if(N%2==1){
-                ans*=x;
+        while (N > 0) {
+            if (N % 2 == 1) {
+                ans *= x;
             }
-            x*=x;
-            N/=2;
+            x *= x;
+            N /= 2;
         }
-        
+
         return ans;
     }
 };

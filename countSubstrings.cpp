@@ -8,9 +8,8 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-int countSubstring(string s){
-    if(s.empty() || s.size()==1) return 1;
-    
+int countSubstring(string s) {
+    if (s.empty() || s.size() == 1) return 1;
 }
 
 int expandAroundMiddle(string s, int start, int end) {
@@ -18,7 +17,7 @@ int expandAroundMiddle(string s, int start, int end) {
         start--;
         end++;
     }
-    return end-start-1;
+    return end - start - 1;
 }
 
 int32_t main() {

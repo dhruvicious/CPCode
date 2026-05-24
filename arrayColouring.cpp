@@ -21,13 +21,13 @@ int main() {
         for (int& i : arr) cin >> i;
         vector<pair<int, int>> cards(n);
         for (int i = 0; i < n; i++) {
-            cards[i].first = arr[i];
+            cards[i].first  = arr[i];
             cards[i].second = i;
         }
         sort(cards.begin(), cards.end());
         bool possible = true;
         for (int i = 0; i < n - 1; i++) {
-            int idx = cards[i].second;
+            int idx  = cards[i].second;
             int idx2 = cards[i + 1].second;
             if (abs(idx - idx2) % 2 == 0) {
                 possible = false;

@@ -3,15 +3,15 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *right, *left;
     node(int val) : val(val), right(nullptr), left(nullptr) {}
     node() : val(INT_MIN), right(nullptr), left(nullptr) {}
 };
 node* buildTree();
-void printPreOrder(node* root);
-void printInOrder(node* root);
-void printPostOrder(node* root);
+void  printPreOrder(node* root);
+void  printInOrder(node* root);
+void  printPostOrder(node* root);
 
 node* insertInBST(node* root, int val) {
     if (!root) return new node(val);
@@ -28,17 +28,17 @@ node* buildTree() {
     if (val == -1) {
         return nullptr;
     }
-    node* root = new node(val);
-    root->left = buildTree();
+    node* root  = new node(val);
+    root->left  = buildTree();
     root->right = buildTree();
     return root;
 }
 
 node* buildTree(vector<int>& arr, int start, int end) {
     if (start > end) return nullptr;
-    int mid = start + (end - start) / 2;
-    node* root = new node(arr[mid]);
-    root->left = buildTree(arr, start, mid - 1);
+    int   mid   = start + (end - start) / 2;
+    node* root  = new node(arr[mid]);
+    root->left  = buildTree(arr, start, mid - 1);
     root->right = buildTree(arr, mid + 1, end);
     return root;
 }
@@ -75,7 +75,7 @@ void replaceSumGreater(node* root, int& sum) {
     if (!root) return;
     replaceSumGreater(root->right, sum);
     int original = root->val;
-    root->val = sum;
+    root->val    = sum;
     sum += original;
     replaceSumGreater(root->left, sum);
 }
@@ -95,7 +95,7 @@ node* buildTreePostIN(vector<int> post, vector<int> in, int start, int end,
                       int& k) {
     if (start > end) return nullptr;
     node* root = new node(post[k--]);
-    int i;
+    int   i;
     for (int j = start; j <= end; j++) {
         if (root->val == in[j]) {
             i = j;
@@ -103,7 +103,7 @@ node* buildTreePostIN(vector<int> post, vector<int> in, int start, int end,
         }
     }
     root->right = buildTreePostIN(post, in, i + 1, end, k);
-    root->left = buildTreePostIN(post, in, start, i - 1, k);
+    root->left  = buildTreePostIN(post, in, start, i - 1, k);
     return root;
 }
 
@@ -121,7 +121,7 @@ int32_t main() {
     cin >> m;
     vector<int> in(n);
     for (int& i : in) cin >> i;
-    int k = n - 1;
+    int   k    = n - 1;
     node* root = buildTreePostIN(post, in, 0, n - 1, k);
     display(root);
     return 0;

@@ -25,10 +25,10 @@ string solve(vector<int>& nums) {
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
+    freopen("output.txt", "w", stdout);
+#endif
     int t;
     cin >> t;
     cin.ignore();
@@ -37,7 +37,7 @@ int32_t main() {
         cin >> n;
         vector<int> arr(n, 0);
         for (int i = 0; i < n; i++) cin >> arr[i];
-        cout<<solve(arr);
+        cout << solve(arr);
     }
     return 0;
 }

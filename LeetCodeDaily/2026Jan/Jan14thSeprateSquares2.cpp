@@ -10,7 +10,7 @@ class SegmentTree {
     vector<int> count;
     vector<int> covered;
     vector<int> xs;
-    int n;
+    int         n;
 
     void modify(int qleft, int qright, int qval, int left, int right, int pos) {
         if (xs[right + 1] <= qleft || xs[left] >= qright) {
@@ -42,7 +42,9 @@ class SegmentTree {
         covered.resize(4 * n, 0);
     }
 
-    void update(int qleft, int qright, int qval) { modify(qleft, qright, qval, 0, n - 1, 0); }
+    void update(int qleft, int qright, int qval) {
+        modify(qleft, qright, qval, 0, n - 1, 0);
+    }
 
     int query() { return covered[0]; }
 };
@@ -51,7 +53,7 @@ class Solution {
    public:
     double separateSquares(vector<vector<int>>& squares) {
         vector<tuple<int, int, int, int>> events;
-        set<int> xsSet;
+        set<int>                          xsSet;
 
         for (auto& sq : squares) {
             int x = sq[0], y = sq[1], l = sq[2];
@@ -67,9 +69,9 @@ class Solution {
         SegmentTree segTree(xs);
 
         vector<double> psum;
-        vector<int> widths;
-        double total_area = 0.0;
-        int prev = get<0>(events[0]);
+        vector<int>    widths;
+        double         total_area = 0.0;
+        int            prev       = get<0>(events[0]);
 
         for (auto& [y, delta, xl, xr] : events) {
             int len = segTree.query();
@@ -80,9 +82,10 @@ class Solution {
             prev = y;
         }
         long long target = (long long) (total_area + 1) / 2;
-        int i = lower_bound(psum.begin(), psum.end(), target) - psum.begin() - 1;
-        double area = psum[i];
-        int width = widths[i], height = get<0>(events[i]);
+        int       i =
+            lower_bound(psum.begin(), psum.end(), target) - psum.begin() - 1;
+        double area  = psum[i];
+        int    width = widths[i], height = get<0>(events[i]);
 
         return height + (total_area - area * 2) / (width * 2.0);
     }

@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> stockSpan(vector<int> &prices) {
-    int n = prices.size();
+vector<int> stockSpan(vector<int>& prices) {
+    int         n = prices.size();
     vector<int> span(n);
-    stack<int> st;
+    stack<int>  st;
 
     for (int i = 0; i < n; i++) {
         while (!st.empty() && prices[st.top()] <= prices[i]) {
@@ -23,14 +23,14 @@ int32_t main() {
 #endif
 
     int n;
-    cin>>n;
+    cin >> n;
     vector<int> prices(n);
-    for(int &price: prices){
-        cin>>price;
+    for (int& price : prices) {
+        cin >> price;
     }
     vector<int> ans = stockSpan(prices);
-    for(int & sp: ans){
-        cout<<sp<<" ";
+    for (int& sp : ans) {
+        cout << sp << " ";
     }
     return 0;
 }

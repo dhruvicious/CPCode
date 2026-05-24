@@ -18,7 +18,7 @@ int countAroundCenter(string& s, int left, int right) {
     return count;
 }
 int palindromicCount(string s) {
-    int n = s.size();
+    int n     = s.size();
     int total = 0;
     for (int i = 0; i < n; i++) {
         total += countAroundCenter(s, i, i);
@@ -28,12 +28,12 @@ int palindromicCount(string s) {
 }
 int32_t main() {
     fastio
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    string s;
+        // #ifndef ONLINE_JUDGE
+        //     freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        string s;
     getline(cin, s);
-    cout << palindromicCount(s)<<endl;
+    cout << palindromicCount(s) << endl;
     return 0;
 }

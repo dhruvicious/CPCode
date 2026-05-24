@@ -46,11 +46,11 @@ using namespace chrono;
 class TrieNode {
    public:
     unordered_map<char, TrieNode*> map;
-    char c;
-    bool isEnd = false;
+    char                           c;
+    bool                           isEnd = false;
     TrieNode(char c) {
         this->c = c;
-        isEnd = false;
+        isEnd   = false;
     }
 };
 
@@ -124,7 +124,8 @@ void print(auto a) {
 }
 
 // --- Write your solve() function here ---
-void solve() {}
+void solve() {
+}
 
 #undef int
 int main() {
@@ -144,7 +145,7 @@ int main() {
         solve();
     }
 
-    auto stop1 = high_resolution_clock::now();
+    auto stop1    = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop1 - start1);
 #ifndef ONLINE_JUDGE
     cerr << "Time: " << duration.count() << " ms" << endl;

@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    private:
-    int val;
+    int   val;
     node* right;
     node* left;
 
@@ -15,7 +15,7 @@ class node {
     // gettersfa
     node* getRight() { return this->right; }
     node* getLeft() { return this->left; }
-    int getVal() { return this->val; }
+    int   getVal() { return this->val; }
 
     // setters
     void setRight(node* right) { this->right = right; }
@@ -76,7 +76,7 @@ int32_t main() {
     ostringstream out;
 
     convertIP(in, out);
-    string fltinp = out.str();
+    string        fltinp = out.str();
     istringstream TreeStream(fltinp);
     cin.rdbuf(TreeStream.rdbuf());
 

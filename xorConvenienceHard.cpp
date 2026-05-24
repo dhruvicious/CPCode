@@ -1,15 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <numeric>
 #include <algorithm>
+#include <iostream>
+#include <numeric>
+#include <vector>
 
 using namespace std;
-
 
 void solve() {
     int n;
     cin >> n;
-    
+
     vector<int> p(n + 1);
     iota(p.begin(), p.end(), 0);
 
@@ -21,7 +20,7 @@ void solve() {
             msb_pos = 31 - __builtin_clz(current_n);
         }
         int L = 1 << msb_pos;
-        
+
         int target = 2 * L - 1;
 
         if (target > current_n) {
@@ -30,7 +29,7 @@ void solve() {
         }
 
         int start_y = L;
-        int end_y = current_n;
+        int end_y   = current_n;
 
         for (int y = start_y; y <= end_y; ++y) {
             int x = target - y;
@@ -53,5 +52,3 @@ int main() {
     }
     return 0;
 }
-
-

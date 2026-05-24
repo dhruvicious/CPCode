@@ -4,13 +4,13 @@ using namespace std;
 class Solution {
    public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
-        int max1s = 0;
+        int max1s     = 0;
         int currCount = 0;
         for (int i : nums) {
             if (i == 1) {
                 currCount++;
             } else {
-                max1s = max(max1s, currCount);
+                max1s     = max(max1s, currCount);
                 currCount = 0;
             }
         }

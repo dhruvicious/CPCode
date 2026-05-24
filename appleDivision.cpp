@@ -1,8 +1,8 @@
+#include <algorithm>
+#include <climits>
 #include <cstdio>
 #include <iostream>
 #include <vector>
-#include <climits>
-#include <algorithm>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main() {
     int n;
     cin >> n;
     vector<int> apples(n);
-    long long         total = 0;
+    long long   total = 0;
     for (int& i : apples) {
         cin >> i;
         total += i;

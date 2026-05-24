@@ -13,10 +13,10 @@ int main() {
 
     string s;
     cin >> s;
-    int n = s.size();
+    int                      n = s.size();
     unordered_map<char, int> freq;
-    int oddcount = 0;
-    char oddchar ='\0';
+    int                      oddcount = 0;
+    char                     oddchar  = '\0';
     for (char c : s) freq[c]++;
     for (auto it : freq) {
         if (it.second % 2 != 0) {

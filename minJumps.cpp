@@ -27,7 +27,7 @@ int minJumpsBacktracking(vector<int>& arr) {
         int minSteps = INT_MAX;
         for (int jump = 1; jump <= arr[idx] && idx + jump < n; jump++) {
             int nextIdx = idx + jump;
-            int res = backtrack(nextIdx);
+            int res     = backtrack(nextIdx);
             if (res != INT_MAX) {
                 minSteps = min(minSteps, 1 + res);
             }
@@ -40,7 +40,7 @@ int minJumpsBacktracking(vector<int>& arr) {
 
 // Solution using top down DP
 int MinJumpsTopDownDP(vector<int>& arr) {
-    int n = arr.size();
+    int         n = arr.size();
     vector<int> dp(n, -1);
 
     function<int(int)> backtrack = [&](int idx) -> int {
@@ -64,8 +64,8 @@ int MinJumpsTopDownDP(vector<int>& arr) {
 
 // Solution using bottom up DP
 int minJumpsBottomUpDP(vector<int>& arr) {
-    int n = arr.size();
-    const int INF = INT_MAX;
+    int         n   = arr.size();
+    const int   INF = INT_MAX;
     vector<int> dp(n, INF);
 
     dp[0] = 0;

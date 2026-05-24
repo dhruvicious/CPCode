@@ -10,8 +10,8 @@ class Solution {
    private:
     int largestHistRect(vector<int> hist) {
         stack<int> st;
-        int maxArea = 0;
-        int n = hist.size();
+        int        maxArea = 0;
+        int        n       = hist.size();
 
         for (int i = 0; i <= n; i++) {
             int currH = (i == n ? 0 : hist[i]);
@@ -21,7 +21,7 @@ class Solution {
                 st.pop();
 
                 int width = st.empty() ? i : i - st.top() - 1;
-                maxArea = max(maxArea, h * width);
+                maxArea   = max(maxArea, h * width);
             }
             st.push(i);
         }
@@ -36,7 +36,7 @@ class Solution {
         int cols = matrix[0].size();
 
         vector<int> heights(cols, 0);
-        int maxArea = 0;
+        int         maxArea = 0;
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {

@@ -23,9 +23,9 @@ using namespace std;
 //     }
 // };
 
-class Solution{
-public:
-    char kthCharacter(long long k, vector<int> &operations){
+class Solution {
+   public:
+    char kthCharacter(long long k, vector<int>& operations) {
         // string s = "a";
         // for (int op : operations){
         //     if (op == 0){
@@ -45,33 +45,32 @@ public:
         // }
         // return s[k-1];
 
-        vector<int> ops=operations;
+        vector<int> ops = operations;
         reverse(ops.begin(), ops.end());
-        char c='a';
-        long long len=1;
+        char      c   = 'a';
+        long long len = 1;
 
-        for(int op:operations){
-            len*=2;
-            if(len>=k) break;
+        for (int op : operations) {
+            len *= 2;
+            if (len >= k) break;
         }
-        for(int i =ops.size()-1;i>=0;i--){
-            if(k>=len/2){
-                len/=2;
+        for (int i = ops.size() - 1; i >= 0; i--) {
+            if (k >= len / 2) {
+                len /= 2;
                 continue;
             }
-            k-=len/2;
-            len/=2;
+            k -= len / 2;
+            len /= 2;
 
-            if(operations[i]==0){
-                c=(c=='a')?'z':c-1;
+            if (operations[i] == 0) {
+                c = (c == 'a') ? 'z' : c - 1;
             }
         }
         return c;
     }
 };
 
-int32_t main()
-{
+int32_t main() {
     fastio
 #ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);

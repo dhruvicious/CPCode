@@ -5,18 +5,17 @@ class node {
    private:
     node* right;
     node* left;
-    int val;
+    int   val;
 
    public:
     node(int val) {
         this->right = nullptr;
-        this->left = nullptr;
-        this->val = val;
+        this->left  = nullptr;
+        this->val   = val;
     }
 };
 
 node* buildTree(vector<int> inOrder, vector<int> preOrder) {
-    
 }
 
 int32_t main() {

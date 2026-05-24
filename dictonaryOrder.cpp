@@ -25,11 +25,11 @@ void permute(string& s, int l, int r, set<string>& result) {
 
 int32_t main() {
     fastio
-// #ifndef ONLINE_JUDGE
-//         freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    string s;
+        // #ifndef ONLINE_JUDGE
+        //         freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        string s;
     cin >> s;
     set<string> arr;
 

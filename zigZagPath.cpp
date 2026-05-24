@@ -5,25 +5,27 @@
 using namespace std;
 
 struct TreeNode {
-    int val;
+    int       val;
     TreeNode* left;
     TreeNode* right;
     TreeNode() : val(0), left(nullptr), right(nullptr) {}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right) :
+        val(x), left(left), right(right) {}
 };
 
 class Solution {
    public:
     int longestZigZag(TreeNode* root) {
-        int ans = 0;
-        function<pair<int, int>(TreeNode * node)> dfs = [&](TreeNode* node) -> pair<int, int> {
+        int                                       ans = 0;
+        function<pair<int, int>(TreeNode * node)> dfs =
+            [&](TreeNode* node) -> pair<int, int> {
             if (node == nullptr) return {0, 0};
 
-            pair<int, int> leftChild = dfs(node->left);
+            pair<int, int> leftChild  = dfs(node->left);
             pair<int, int> rightChild = dfs(node->right);
 
-            int goLeft = 0;
+            int goLeft  = 0;
             int goRight = 0;
 
             if (node->left != nullptr) {

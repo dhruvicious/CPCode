@@ -21,8 +21,7 @@ int main() {
                 cout << 1 << " ";
             }
             cout << "\n";
-        }
-        else {
+        } else {
             if (k == 1) {
                 cout << "NO\n";
             } else if (k == 2) {
@@ -36,7 +35,7 @@ int main() {
                     }
                     cout << "\n";
                 }
-            } else { 
+            } else {
                 if (n == 1) {
                     cout << "NO\n";
                 } else {

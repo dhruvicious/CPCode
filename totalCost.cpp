@@ -1,7 +1,7 @@
+#include <algorithm>
 #include <cstdio>
 #include <functional>
 #include <iostream>
-#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
    public:
     long long totalCost(vector<int>& costs, int k, int candidates) {
-        int n = costs.size();
+        int                                            n = costs.size();
         priority_queue<int, vector<int>, greater<int>> pqHead;
         priority_queue<int, vector<int>, greater<int>> pqTail;
 
@@ -21,12 +21,13 @@ class Solution {
             pqTail.push(costs[i]);
         }
 
-        long long ans = 0;
-        int nextHead = candidates;
-        int nextTail = n - 1 - candidates;
+        long long ans      = 0;
+        int       nextHead = candidates;
+        int       nextTail = n - 1 - candidates;
 
         for (int i = 0; i < n; i++) {
-            if (pqTail.empty() || !pqHead.empty() && pqHead.top() <= pqTail.top()) {
+            if (pqTail.empty()
+                || !pqHead.empty() && pqHead.top() <= pqTail.top()) {
                 ans += pqHead.top();
                 pqHead.pop();
                 if (nextHead <= nextTail) {

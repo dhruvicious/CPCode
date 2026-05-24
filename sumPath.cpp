@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *left, *right;
     node() : val(INT_MIN), left(nullptr), right(nullptr) {}
     node(int val) : val(val), left(nullptr), right(nullptr) {}
@@ -26,8 +26,8 @@ node* buildTree() {
     int val;
     cin >> val;
     if (val == -1) return nullptr;
-    node* root = new node(val);
-    root->left = buildTree();
+    node* root  = new node(val);
+    root->left  = buildTree();
     root->right = buildTree();
     return root;
 }
@@ -68,10 +68,10 @@ int32_t main() {
     string fltInp = out.str();
 
     istringstream treeStream(fltInp);
-    streambuf* cinbuf = cin.rdbuf();
+    streambuf*    cinbuf = cin.rdbuf();
     cin.rdbuf(treeStream.rdbuf());
 
-    node* root = buildTree();
+    node*       root = buildTree();
     vector<int> path = {};
     cin.rdbuf(cinbuf);
     int k;

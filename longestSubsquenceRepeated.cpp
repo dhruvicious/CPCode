@@ -3,13 +3,15 @@ using namespace std;
 
 #define ll long long
 #define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);
 #define endl '\n'
 
 class Solution {
-public:
+   public:
     string s;
-    int k;
+    int    k;
 
     bool isKRepeatedSubsequence(const string& seq) {
         int i = 0, j = 0, count = 0;
@@ -27,7 +29,8 @@ public:
         return false;
     }
 
-    void generateCandidates(string curr, vector<char>& chars, int maxLen, vector<string>& candidates) {
+    void generateCandidates(string curr, vector<char>& chars, int maxLen,
+                            vector<string>& candidates) {
         if (curr.size() > maxLen) return;
         if (!curr.empty()) candidates.push_back(curr);
         for (char c : chars) {
@@ -50,10 +53,11 @@ public:
         vector<string> candidates;
         generateCandidates("", usable, s.size() / k, candidates);
 
-        sort(candidates.begin(), candidates.end(), [](const string& a, const string& b) {
-            if (a.size() != b.size()) return a.size() > b.size();
-            return a > b;
-        });
+        sort(candidates.begin(), candidates.end(),
+             [](const string& a, const string& b) {
+                 if (a.size() != b.size()) return a.size() > b.size();
+                 return a > b;
+             });
 
         for (const string& cand : candidates) {
             if (isKRepeatedSubsequence(cand)) return cand;
@@ -65,10 +69,10 @@ public:
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-    
+    freopen("output.txt", "w", stdout);
+#endif
+
     return 0;
 }

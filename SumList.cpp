@@ -3,10 +3,10 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
     node(int data = 0) {
-        val = data;
+        val  = data;
         next = nullptr;
     }
 };
@@ -23,7 +23,7 @@ class linkedList {
             head = tail = newNode;
         } else {
             tail->next = newNode;
-            tail = newNode;
+            tail       = newNode;
         }
     }
 

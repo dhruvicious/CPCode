@@ -3,15 +3,15 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node* next;
     node(int data = 0) {
-        val = data;
+        val  = data;
         next = nullptr;
     }
 };
-void insertAtTail(node*& head, node*& tail, int data);
-void printList(node* head);
+void  insertAtTail(node*& head, node*& tail, int data);
+void  printList(node* head);
 node* reverseList(node* head);
 node* mergeLists(node* head1, node* head2);
 
@@ -21,7 +21,7 @@ void insertAtTail(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         tail->next = newNode;
-        tail = newNode;
+        tail       = newNode;
     }
 }
 
@@ -31,7 +31,7 @@ void insertAtHead(node*& head, node*& tail, int data) {
         head = tail = newNode;
     } else {
         newNode->next = head;
-        head = newNode;
+        head          = newNode;
     }
 }
 
@@ -50,10 +50,10 @@ node* reverseList(node* head) {
     node* next = nullptr;
 
     while (curr != nullptr) {
-        next = curr->next;
+        next       = curr->next;
         curr->next = prev;
-        prev = curr;
-        curr = next;
+        prev       = curr;
+        curr       = next;
     }
     return prev;
 }
@@ -66,14 +66,14 @@ node* revK(node* head, int k) {
 
     int count = 0;
     while (count < k && curr != nullptr) {
-        next = curr->next;
-        curr->next= prev;
-        prev = curr;
-        curr = next;
+        next       = curr->next;
+        curr->next = prev;
+        prev       = curr;
+        curr       = next;
         count++;
     }
 
-    if(next!=nullptr){
+    if (next != nullptr) {
         head->next = revK(next, k);
     }
 

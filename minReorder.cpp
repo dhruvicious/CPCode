@@ -9,7 +9,7 @@ class Solution {
         int reversals = 0;
         for (auto& nei : adj[node]) {
             int nextNode = nei.first;
-            int cost = nei.second;
+            int cost     = nei.second;
 
             if (nextNode == parent) continue;
 

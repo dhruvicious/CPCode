@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -10,7 +9,7 @@ int main() {
     string a, b, c;
     cin >> a >> b >> c;
 
-    int n1 = a.size(), n2 = b.size(), n3 = c.size();
+    int                         n1 = a.size(), n2 = b.size(), n3 = c.size();
     vector<vector<vector<int>>> dp(
         n1 + 1, vector<vector<int>>(n2 + 1, vector<int>(n3 + 1, 0)));
 

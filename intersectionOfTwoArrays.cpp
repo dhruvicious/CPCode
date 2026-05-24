@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> intersection(vector<int> a, vector<int> b) {
     unordered_map<int, int> map;
-    vector<int> ans;
+    vector<int>             ans;
 
     for (int i : a) {
         map[i]++;
@@ -33,6 +33,6 @@ int32_t main() {
     vector<int> result = intersection(a, b);
 
     for (int& i : result) cout << i << endl;
-    
+
     return 0;
 }

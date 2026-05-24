@@ -11,18 +11,18 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n, m;
+        int       n, m;
         long long h;
         cin >> n >> m >> h;
         vector<int> arr(n);
         for (int& i : arr) cin >> i;
         const vector<int> arrCPY = arr;
-        vector<int> hist;
+        vector<int>       hist;
         while (m--) {
-            int b;
+            int       b;
             long long c;
             cin >> b >> c;
-            int idx = b - 1;
+            int       idx = b - 1;
             long long val = arr[idx] + c;
             if (val > h) {
                 for (int modIdx : hist) {

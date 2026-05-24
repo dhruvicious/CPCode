@@ -18,7 +18,7 @@ class Solution {
    public:
     // logic building part worked it up for understanding
     int numOfWaysBackTracking(int n) {
-        vector<vector<int>> grid(n, vector<int>(3, -1));
+        vector<vector<int>>     grid(n, vector<int>(3, -1));
         function<int(int, int)> backtrack = [&](int r, int c) -> int {
             // baseCase Row reaches n
             if (r == n) {
@@ -32,7 +32,7 @@ class Solution {
             for (int color = 0; color < 3; color++) {
                 if (isValid(grid, r, c, color)) {
                     grid[r][c] = color;
-                    ways = (ways + backtrack(r, c + 1)) % MOD;
+                    ways       = (ways + backtrack(r, c + 1)) % MOD;
                     grid[r][c] = -1;
                 }
             }
@@ -48,8 +48,8 @@ class Solution {
         for (int i = 1; i < n; i++) {
             long long nextABA = (3 * aba + 2 * abc) % MOD;
             long long nextABC = (2 * aba + 2 * abc) % MOD;
-            aba = nextABA;
-            abc = nextABC;
+            aba               = nextABA;
+            abc               = nextABC;
         }
         return (aba + abc) % MOD;
     }

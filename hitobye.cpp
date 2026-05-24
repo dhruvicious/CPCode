@@ -2,8 +2,8 @@
 using namespace std;
 
 int countHI(string& s, int i) {
-    if (i >= (int)s.size() - 1) return 0;
-    if (i + 1 < (int)s.size() && s[i] == 'h' && s[i + 1] == 'i') {
+    if (i >= (int) s.size() - 1) return 0;
+    if (i + 1 < (int) s.size() && s[i] == 'h' && s[i + 1] == 'i') {
         return 1 + countHI(s, i + 2);
     } else {
         return countHI(s, i + 1);
@@ -11,8 +11,8 @@ int countHI(string& s, int i) {
 }
 
 void removeHI(const string& s, string& result, int i) {
-    if (i >= (int)s.size()) return;
-    if (i + 1 < (int)s.size() && s[i] == 'h' && s[i + 1] == 'i') {
+    if (i >= (int) s.size()) return;
+    if (i + 1 < (int) s.size() && s[i] == 'h' && s[i + 1] == 'i') {
         removeHI(s, result, i + 2);
     } else {
         result += s[i];
@@ -21,8 +21,8 @@ void removeHI(const string& s, string& result, int i) {
 }
 
 void replaceHI(const string& s, string& result, int i) {
-    if (i >= (int)s.size()) return;
-    if (i + 1 < (int)s.size() && s[i] == 'h' && s[i + 1] == 'i') {
+    if (i >= (int) s.size()) return;
+    if (i + 1 < (int) s.size() && s[i] == 'h' && s[i + 1] == 'i') {
         result += "bye";
         replaceHI(s, result, i + 2);
     } else {

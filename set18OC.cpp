@@ -13,8 +13,8 @@ int32_t main() {
     s.insert({2, "B"});
 
     while (!s.empty()) {
-        auto address = s.begin();
-        pair<int, string> p = *address;
+        auto              address = s.begin();
+        pair<int, string> p       = *address;
         s.erase(address);
         cout << p.first << p.second;
     }

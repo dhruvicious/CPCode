@@ -21,10 +21,10 @@ int main() {
         int n, s, x;
         std::cin >> n >> s >> x;
         std::vector<int> arr(n);
-        int sum = 0;
+        int              sum = 0;
         for (int& i : arr) {
             std::cin >> i;
-            sum+=i;
+            sum += i;
         }
 
         if (sum <= s && ((s - sum) % x) == 0) {

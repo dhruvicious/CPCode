@@ -20,6 +20,5 @@ int main() {
     int n, w;
     cin >> n >> w;
 
-    for()
-    return 0;
+    for () return 0;
 }

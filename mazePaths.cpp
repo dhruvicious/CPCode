@@ -19,7 +19,7 @@ int countWays(int N, int M, int i, int j) {
 
 void printPaths(int N, int M, int i, int j, string path) {
     if (i >= N || j >= M) return;
-    if (i == N-1 && j == M-1) {
+    if (i == N - 1 && j == M - 1) {
         cout << path << " ";
         return;
     }
@@ -29,14 +29,15 @@ void printPaths(int N, int M, int i, int j, string path) {
 
 int32_t main() {
     fastio
-// #ifndef ONLINE_JUDGE
-//         freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    int N, M;
+        // #ifndef ONLINE_JUDGE
+        //         freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        int N,
+        M;
     cin >> N >> M;
 
-    printPaths(N, M, 0, 0,"");
-    cout<<countWays(N,M,0,0)<<endl;
+    printPaths(N, M, 0, 0, "");
+    cout << countWays(N, M, 0, 0) << endl;
     return 0;
 }

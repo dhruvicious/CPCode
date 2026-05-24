@@ -18,7 +18,7 @@ int main() {
             cout << n << '\n';
             continue;
         } else {
-            int digits = log10(n) + 1;
+            int digits  = log10(n) + 1;
             int power10 = pow(10, digits - 1);
             int leading = n / power10;
 

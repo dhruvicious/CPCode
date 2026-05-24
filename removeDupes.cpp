@@ -9,7 +9,7 @@ using namespace std;
 #define endl '\n'
 
 string removeDupes(string s) {
-    int read = 0, write = 1;
+    int    read = 0, write = 1;
     string ans;
     ans += s[0];
     while (read < s.size()) {
@@ -26,11 +26,11 @@ string removeDupes(string s) {
 
 int32_t main() {
     fastio
-    // #ifndef ONLINE_JUDGE
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // #endif
-    string s;
+        // #ifndef ONLINE_JUDGE
+        //     freopen("input.txt", "r", stdin);
+        //     freopen("output.txt", "w", stdout);
+        // #endif
+        string s;
     getline(cin, s);
     cout << removeDupes(s);
     return 0;

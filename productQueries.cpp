@@ -12,7 +12,7 @@ const int MOD = 1e9 + 7;
 class Solution {
    public:
     vector<int> productQueries(int n, vector<vector<int>>& queries) {
-        int i = 0;
+        int         i = 0;
         vector<int> powers;
         vector<int> ans;
         while (n) {

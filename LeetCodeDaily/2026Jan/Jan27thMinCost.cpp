@@ -20,9 +20,12 @@ class Solution {
             g[x].emplace_back(y, w);
             g[y].emplace_back(x, 2 * w);
         }
-        std::vector<int> d(n, INT_MAX);
+        std::vector<int>  d(n, INT_MAX);
         std::vector<bool> v(n, false);
-        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> q;
+        std::priority_queue<std::pair<int, int>,
+                            std::vector<std::pair<int, int>>,
+                            std::greater<std::pair<int, int>>>
+            q;
         d[0] = 0;
         q.emplace(0, 0);
 

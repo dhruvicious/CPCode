@@ -31,7 +31,7 @@ void printPaths(int r, int c, int N1, int N2, string& currPath) {
     currPath.push_back('V');
     printPaths(r + 1, c, N1, N2, currPath);
     currPath.pop_back();
-    
+
     currPath.push_back('H');
     printPaths(r, c + 1, N1, N2, currPath);
     currPath.pop_back();

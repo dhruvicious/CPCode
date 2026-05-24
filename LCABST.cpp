@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    public:
-    int val;
+    int   val;
     node *left, *right;
     node() : val(INT_MIN), left(nullptr), right(nullptr) {}
     node(int val) : val(val), left(nullptr), right(nullptr) {}
@@ -47,9 +47,9 @@ void duplicateLeft(node* root) {
     duplicateLeft(root->right);
 
     node* oldLeft = root->left;
-    node* dup = new node(root->val);
-    root->left = dup;
-    dup->left = oldLeft;
+    node* dup     = new node(root->val);
+    root->left    = dup;
+    dup->left     = oldLeft;
 }
 
 int32_t main() {
@@ -58,7 +58,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     node* root = nullptr;
-    int n;
+    int   n;
     cin >> n;
     while (n--) {
         int val;

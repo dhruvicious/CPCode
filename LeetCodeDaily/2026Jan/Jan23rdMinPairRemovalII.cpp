@@ -1,9 +1,9 @@
 #include <bitset>
 #include <iostream>
 #include <list>
-#include <vector>
 #include <queue>
 #include <utility>
+#include <vector>
 using namespace std;
 
 typedef long long ll;
@@ -11,7 +11,7 @@ typedef long long ll;
 const int MAX_N = 100005;
 
 struct Node {
-    ll value;
+    ll  value;
     int left;
 };
 
@@ -20,17 +20,17 @@ using ListIt = std::list<Node>::iterator;
 struct Pair {
     ListIt first;
     ListIt second;
-    ll cost;
+    ll     cost;
     size_t firstLeft;
     size_t secondLeft;
 
     Pair() {}
-    Pair(ListIt fi, ListIt se, ll cost)
-        : first(fi),
-          second(se),
-          firstLeft(fi->left),
-          secondLeft(se->left),
-          cost(cost) {}
+    Pair(ListIt fi, ListIt se, ll cost) :
+        first(fi),
+        second(se),
+        firstLeft(fi->left),
+        secondLeft(se->left),
+        cost(cost) {}
 };
 
 struct ComparePair {
@@ -43,19 +43,19 @@ struct ComparePair {
 };
 
 class Solution {
-public:
+   public:
     int minimumPairRemoval(std::vector<int>& nums) {
-        std::list<Node> list;
-        std::bitset<MAX_N> merged;
+        std::list<Node>                                           list;
+        std::bitset<MAX_N>                                        merged;
         std::priority_queue<Pair, std::vector<Pair>, ComparePair> pq;
 
         int decreaseCount = 0;
-        int count = 0;
+        int count         = 0;
 
         list.push_back({nums[0], 0});
 
         for (size_t i = 1; i < nums.size(); ++i) {
-            list.push_back({nums[i], (int)i});
+            list.push_back({nums[i], (int) i});
 
             auto curr = std::prev(list.end());
             auto prev = std::prev(curr);
@@ -75,9 +75,9 @@ public:
                 continue;
             }
 
-            auto first = top.first;
+            auto first  = top.first;
             auto second = top.second;
-            auto cost = top.cost;
+            auto cost   = top.cost;
 
             if (first->value + second->value != cost) {
                 continue;
@@ -113,7 +113,7 @@ public:
                 pq.push({first, next, cost + next->value});
             }
 
-            first->value = cost;
+            first->value         = cost;
             merged[second->left] = 1;
             list.erase(second);
         }
@@ -122,6 +122,5 @@ public:
     }
 };
 
-int main(){
-    
+int main() {
 }

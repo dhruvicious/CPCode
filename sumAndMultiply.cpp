@@ -5,7 +5,7 @@ class Solution {
    public:
     long long sumAndMultiply(int n) {
         vector<int> nums;
-        int sum = 0;
+        int         sum = 0;
         while (n) {
             sum += (n % 10);
             nums.push_back(n % 10);
@@ -20,7 +20,7 @@ class Solution {
                 x = x * 10 + i;
             }
         }
-        return x*sum;
+        return x * sum;
     }
 };
 
@@ -30,7 +30,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     Solution s;
-    cout<<s.sumAndMultiply(10203004);
+    cout << s.sumAndMultiply(10203004);
 
     return 0;
 }

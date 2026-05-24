@@ -2,7 +2,7 @@
 using namespace std;
 
 struct ListNode {
-    int val;
+    int       val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
@@ -10,9 +10,7 @@ struct ListNode {
 };
 
 struct Compare {
-    bool operator()(ListNode* a, ListNode* b) {
-        return a->val > b->val;
-    }
+    bool operator()(ListNode* a, ListNode* b) { return a->val > b->val; }
 };
 
 class Solution {
@@ -23,15 +21,15 @@ class Solution {
             if (node) pq.push(node);
         }
 
-        ListNode dummy(0);
+        ListNode  dummy(0);
         ListNode* tail = &dummy;
-        while(!pq.empty()){
+        while (!pq.empty()) {
             ListNode* smallest = pq.top();
             pq.pop();
             tail->next = smallest;
-            tail = tail->next;
+            tail       = tail->next;
 
-            if(smallest->next){
+            if (smallest->next) {
                 pq.push(smallest->next);
             }
         }

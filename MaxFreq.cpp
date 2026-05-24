@@ -8,7 +8,8 @@ using namespace std;
     cin.tie(0);
 #define endl '\n'
 
-void solve() {}
+void solve() {
+}
 
 int32_t main() {
     fastio
@@ -23,13 +24,13 @@ int32_t main() {
 
     unordered_map<int, int> arrMap;
     for (int i : arr) arrMap[i]++;
-    int maxf = INT_MIN;
+    int maxf   = INT_MIN;
     int maxval = INT_MIN;
 
     for (auto& v : arrMap) {
         if (v.second > maxf) {
             maxval = v.first;
-            maxf = v.second;
+            maxf   = v.second;
         }
     }
 

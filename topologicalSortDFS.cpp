@@ -40,7 +40,7 @@ class Graph {
     }
 
     void topologicalSort() {
-        deque<T> q;
+        deque<T>               q;
         unordered_map<T, bool> visited;
         for (auto p : adj) {
             if (!visited[p.first]) {

@@ -17,7 +17,7 @@ using namespace std;
 
 // Recursive Solution using lambda function
 int longestCommonSubseq(string str1, string str2) {
-    int n = str1.size(), m = str2.size();
+    int                     n = str1.size(), m = str2.size();
     function<int(int, int)> LCS = [&](int i, int j) -> int {
         if (i == n || j == m) {
             return 0;
@@ -32,7 +32,7 @@ int longestCommonSubseq(string str1, string str2) {
 
 // Recursive Solution using Memoization
 int longestCommonSubSeqMem(string str1, string str2) {
-    int n = str1.size(), m = str2.size();
+    int                 n = str1.size(), m = str2.size();
     vector<vector<int>> memMat(n, vector<int>(m, -1));
 
     function<int(int, int)> LCS = [&](int i, int j) -> int {
@@ -54,7 +54,7 @@ int longestCommonSubSeqMem(string str1, string str2) {
 //
 int longestCommonSubSeqTopDown()
 
-int32_t main() {
+    int32_t main() {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);

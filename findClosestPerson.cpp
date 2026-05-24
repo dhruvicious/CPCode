@@ -3,29 +3,32 @@ using namespace std;
 
 #define ll long long
 #define all(x) x.begin(), x.end()
-#define fastio ios::sync_with_stdio(false); cin.tie(0);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);
 #define endl '\n'
 
 class Solution {
-public:
+   public:
     int findClosest(int x, int y, int z) {
-        int d1 = abs(x-z);
-        int d2 = abs(y-z);
+        int d1 = abs(x - z);
+        int d2 = abs(y - z);
 
-        if(d1<d2) return 1; 
-        else if(d2<d1) return 2;
-        else return 0;
+        if (d1 < d2)
+            return 1;
+        else if (d2 < d1)
+            return 2;
+        else
+            return 0;
     }
 };
 
 int32_t main() {
     fastio
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-
-
+    freopen("output.txt", "w", stdout);
+#endif
 
     return 0;
 }

@@ -3,7 +3,7 @@ using namespace std;
 
 class node {
    private:
-    int val;
+    int   val;
     node* left;
     node* right;
 
@@ -12,7 +12,7 @@ class node {
 
     node* getLeft() { return left; }
     node* getRight() { return right; }
-    int getVal() { return val; }
+    int   getVal() { return val; }
 
     void setLeft(node* l) { left = l; }
     void setRight(node* r) { right = r; }
@@ -20,9 +20,9 @@ class node {
 
 node* buildTree() {
     string token;
-    if (!(cin >> token)) return nullptr; 
+    if (!(cin >> token)) return nullptr;
 
-    int val = stoi(token);
+    int   val  = stoi(token);
     node* root = new node(val);
 
     string hasLeft;
@@ -42,10 +42,10 @@ node* buildTree() {
     return root;
 }
 
-
 int sumNodes(node* root) {
     if (!root) return 0;
-    return root->getVal() + sumNodes(root->getLeft()) + sumNodes(root->getRight());
+    return root->getVal() + sumNodes(root->getLeft())
+           + sumNodes(root->getRight());
 }
 
 int main() {

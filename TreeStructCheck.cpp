@@ -3,8 +3,8 @@ using namespace std;
 
 void norm(string& s) {
     stringstream ss(s);
-    string token;
-    string result;
+    string       token;
+    string       result;
     while (ss >> token) {
         if (isdigit(token[0]) || (token[0] == '-' && token.size() > 1)) {
             result += "0 ";
