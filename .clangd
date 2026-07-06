@@ -3,7 +3,3 @@ CompileFlags:
     - -std=c++20
     - -I/opt/homebrew/opt/gcc/include/c++/15.2.0
     - -I/opt/homebrew/opt/gcc/include/c++/15.2.0/aarch64-apple-darwin25
-    - -I/opt/homebrew/opt/gcc/include/c++/15.2.0/backward
-
-Diagnostics:
-  MissingIncludes: Strict

@@ -1,7 +1,6 @@
-mod bitwise_complement;
-use bitwise_complement::Solution;
+mod pair_sum;
+use pair_sum::SolutionPairSum;
 
 fn main() {
-    let res: i32 = Solution::bitwise_complement(5);
-    println!("Result: {}", res);
+   SolutionPairSum::pair_sum(head); 
 }

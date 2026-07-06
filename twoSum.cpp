@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+
 using namespace std;
 
 class Solution {
@@ -19,14 +22,16 @@ class Solution {
     }
 
     // optimized
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> map;
+    vector<int> twoSumOPT(vector<int>& nums, int target) {
+        unordered_map<int /*value */, int /*index */> map;
         for (int i = 0; i < nums.size(); i++) {
-            int targetSearch = target - nums[i];
-            if (map.find(targetSearch) != map.end()) {
-                return {map[targetSearch], i};
-            }
             map[nums[i]] = i;
+        }
+        for (int i = 0; i < nums.size(); i++) {
+            int searchTarget = target - nums[i];
+            if (map.find(searchTarget) != map.end() && map[searchTarget] != i) {
+                return {map[searchTarget], i};
+            }
         }
         return {};
     }
